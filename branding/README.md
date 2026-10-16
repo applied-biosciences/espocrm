@@ -1,0 +1,1 @@
+NuriVoyage is the product name; Nuri's Travel is the company. Bootstrap configures the application name and local email sender. EspoCRM's required legal notice remains visible. A final logo/theme is outside Stage 1–2.

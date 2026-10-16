@@ -1,0 +1,45 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "bookingItem"
+        }
+      ],
+      [
+        {
+          "name": "pickupAt"
+        },
+        {
+          "name": "pickupLocation"
+        }
+      ],
+      [
+        {
+          "name": "confirmation"
+        },
+        {
+          "name": "assignedUser"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

@@ -1,3 +1,73 @@
+# NuriVoyage — local Stage 1–2
+
+NuriVoyage is Nuri's Travel's local travel-management foundation on this EspoCRM fork. Work branch: `codex/nurivoyage-stage-1-2`. No AWS deployment. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
+
+## Clone and run
+
+Prerequisites: Docker Desktop/Engine with Compose v2, Git, Python 3 (standard library only), and free localhost ports 8080, 8081, 8025, 9000, 9001. First MinIO source build requires internet access and a few minutes. The Compose image version matches the fork's package.json (10.0.10); there are no core source changes in this stage. It runs the matching official distribution with this checkout's custom directories mounted, rather than building Espo's raw development frontend.
+
+```sh
+git clone --branch codex/nurivoyage-stage-1-2 https://github.com/applied-biosciences/espocrm.git
+cd espocrm
+scripts/local configure
+scripts/local start
+scripts/local credentials
+```
+
+`configure` creates `.env` from `.env.example` with random local passwords and mode 0600. Existing `.env` is preserved. To configure manually, copy `.env.example` to `.env`, replace every CHANGE_ME, and restrict permissions. Never commit `.env`. The first start builds MinIO from a pinned upstream source commit because the former community registry/download endpoints no longer serve the images. Its source is AGPLv3; EspoCRM's storage adapter remains S3-compatible. Service versions, source commit and base-image digests are pinned in Compose/Dockerfile. Do not silently upgrade them.
+
+Open http://localhost:8080. Local role credentials are written by `scripts/local credentials` to `.local/test-credentials.md`. The System Administrator username is `admin@nuri.local`; the other six role usernames are in [the UAT checklist](docs/testing/stage-2-human-uat.md). A separate bootstrap maintenance login uses ESPO_ADMIN_USERNAME/ESPO_ADMIN_PASSWORD. Local email capture: http://localhost:8025. MinIO console: http://localhost:9001 (same private sheet). Documents should be accessed through CRM so record permissions apply.
+
+The seven roles and fields/relationships are documented in [Stage 1 design](docs/nurivoyage/stage-1-design.md). [Migration notes](docs/nurivoyage/migrations.md) describe schema v1. Defaults: ZAR base, ZAR/USD/GBP/EUR/SAR/AED, DD/MM/YYYY, configurable APP_TIMEZONE. Rates and all records are synthetic examples. Baseline workflow statuses are manual; posted accounting, computed balances/profitability, frozen commission calculations and automated travel workflows are later scope.
+
+## Daily commands
+
+```sh
+scripts/local start               # build, start, reconcile bootstrap and rebuild
+scripts/local stop                # compose down; retain data volumes
+scripts/local health-check
+scripts/local smoke               # synthetic integration tests, restarts and restore; brief downtime
+scripts/local backup              # backups/<UTC timestamp>, private permissions
+scripts/local restore backups/<timestamp>  # replaces local DB/runtime/documents/email with snapshot
+scripts/local bootstrap           # reconcile local defaults, roles/users; no reseed of existing data
+scripts/local reset-passwords     # apply current DEV_USER_PASSWORD to seven role users
+scripts/local credentials         # regenerate private local credential sheet
+scripts/local reset-local         # destructive volume deletion; typed confirmation required
+```
+
+Do not run bootstrap, smoke, backups or restores concurrently. Take a backup before resetting. Restore intentionally replaces local data; use only this project's snapshots and matching checkout/.env. Backups include SQL plus Espo data, MinIO and Mailpit files, with checksums. Writers are stopped during snapshots/restores and restarted in a finally block. No automatic destructive cleanup is performed by start/stop. Backup files include runtime secrets, stay local, and must never be committed. `.env` and tracked customisation code are preserved separately; snapshots do not change the Git checkout.
+
+Docker named volumes persist MariaDB, Espo runtime/config/upload staging, MinIO objects and Mailpit. Supported `custom/` and `client/custom/` paths are bind-mounted from Git and survive `compose down`. Administration changes to supported custom metadata/layouts appear in this checkout; review and commit intentionally. No edits inside containers are required. Rebuild after changing metadata; `scripts/local bootstrap` performs it. Reserved future infrastructure is under infrastructure/terraform and contains no resources.
+
+By default all published ports bind to 127.0.0.1. MariaDB/SMTP are not published. `DOCKER_SUBNET` defaults to 10.231.0.0/24 to avoid exhausted Docker Desktop address pools on this Mac; choose another free private /24 in `.env` if it conflicts. See UAT for optional temporary LAN configuration. This is a local development setup, not production hardening.
+
+## Tests and human acceptance
+
+Run `scripts/local smoke` after starting. It checks Compose/container health, page/API login, MariaDB, customer/contact creation and restart persistence, private MinIO upload/download/restart/delete, Espo-to-Mailpit delivery, scheduled jobs, WebSocket handshake, snapshot validity, destructive change/restore recovery, currencies and seven-role API boundaries. It updates [the smoke report](docs/testing/stage-2-smoke-test.md) with actual evidence. No password values are included.
+
+Then follow the [exact 20-step human UAT checklist](docs/testing/stage-2-human-uat.md). Human UAT is pending until a human completes and signs it; leave the local stack running. A PR can be opened after automated smoke tests pass; merge is separate.
+
+## Logs and troubleshooting
+
+```sh
+docker compose ps
+docker compose logs -f                    # all container stdout/stderr
+docker compose logs -f crm                # Apache/PHP process messages
+docker compose exec crm sh -c 'tail -f data/logs/*.log' # Espo/PHP application exceptions
+docker compose logs -f db                 # MariaDB startup/connection errors
+docker compose logs -f daemon             # daemon/scheduler process errors
+docker compose exec crm php bin/command app-check
+docker compose logs -f websocket
+docker compose logs -f minio minio-init    # object store / bucket bootstrap
+docker compose logs -f mailpit            # SMTP capture; inspect http://localhost:8025
+```
+
+A failed startup is not a successful install. Inspect logs, fix the error, rerun start and smoke. Health checks do not replace role/API tests. If document uploads initially stage in Espo data/upload, wait for the daemon's move job and inspect native Attachment.storage; small API uploads use MinIO directly. Do not use real passports. Delete synthetic files through CRM; do not alter the bucket behind it during normal use.
+
+Official references: [Espo Docker installation](https://docs.espocrm.com/administration/docker/installation/), [file storage](https://docs.espocrm.com/administration/file-storage/), [MinIO pinned source release](https://github.com/minio/minio/tree/9e49d5e7a648f00e26f2246f4dc28e6b07f8c84a).
+
+---
+
 ## EspoCRM
 
 [![PHPStan level 8](https://img.shields.io/badge/PHPStan-level%208-brightgreen)](#espocrm)

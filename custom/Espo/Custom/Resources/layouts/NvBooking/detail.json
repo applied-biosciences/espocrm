@@ -1,0 +1,53 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "customer"
+        }
+      ],
+      [
+        {
+          "name": "enquiry"
+        },
+        {
+          "name": "package"
+        }
+      ],
+      [
+        {
+          "name": "status"
+        },
+        {
+          "name": "supplierStatus"
+        }
+      ],
+      [
+        {
+          "name": "sellingPrice"
+        },
+        {
+          "name": "travelDate"
+        }
+      ],
+      [
+        {
+          "name": "returnDate"
+        },
+        {
+          "name": "assignedUser"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

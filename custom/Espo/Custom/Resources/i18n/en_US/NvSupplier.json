@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "category": "Category"
+  },
+  "labels": {
+    "Create NvSupplier": "Create Supplier"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "espoVersion": "10.0.10",
+  "entities": [
+    "NvEnquiry",
+    "NvTraveller",
+    "NvQuote",
+    "NvBooking",
+    "NvBookingItem",
+    "NvSupplier",
+    "NvPurchaseOrder",
+    "NvSupplierBill",
+    "NvCustomerInvoice",
+    "NvCustomerPayment",
+    "NvSupplierPayment",
+    "NvCommission",
+    "NvFxRate",
+    "NvTravelDocument",
+    "NvHotel",
+    "NvFlight",
+    "NvTransfer",
+    "NvVisa",
+    "NvPackage"
+  ],
+  "salesWorkflow": [
+    "New Enquiry",
+    "Qualified",
+    "Quote Prepared",
+    "Quote Sent",
+    "Follow-up",
+    "Customer Accepted",
+    "Deposit Requested",
+    "Deposit Paid",
+    "Booking Confirmed",
+    "Lost",
+    "Cancelled",
+    "Expired Quote"
+  ],
+  "supplierWorkflow": [
+    "Booking Confirmed",
+    "Supplier Selected",
+    "Purchase Order Created",
+    "PO Emailed",
+    "Supplier Confirmation",
+    "Supplier Invoice Received",
+    "Payment Due",
+    "Paid"
+  ]
+}

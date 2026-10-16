@@ -1,0 +1,5 @@
+{
+  "implementationClassNameMap": {
+    "AwsS3": "Espo\\Custom\\Core\\FileStorage\\Storages\\S3"
+  }
+}

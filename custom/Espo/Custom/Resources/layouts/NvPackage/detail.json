@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "destination"
+        }
+      ],
+      [
+        {
+          "name": "sellingPrice"
+        },
+        {
+          "name": "durationDays"
+        }
+      ],
+      [
+        {
+          "name": "assignedUser"
+        },
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

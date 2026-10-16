@@ -1,0 +1,13 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "bookingItem": "Booking Item",
+    "pickupAt": "Pickup At",
+    "pickupLocation": "Pickup Location",
+    "confirmation": "Confirmation"
+  },
+  "labels": {
+    "Create NvTransfer": "Create Transfer"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "status": "Status",
+    "customer": "Customer",
+    "lead": "Lead",
+    "travelDate": "Travel Date",
+    "travellerCount": "Traveller Count"
+  },
+  "labels": {
+    "Create NvEnquiry": "Create Enquiry"
+  }
+}

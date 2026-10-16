@@ -1,0 +1,13 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "traveller": "Traveller",
+    "bookingItem": "Booking Item",
+    "status": "Status",
+    "country": "Country"
+  },
+  "labels": {
+    "Create NvVisa": "Create Visa"
+  }
+}

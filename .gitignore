@@ -30,3 +30,18 @@
 client/css/espo/*
 client/lib/*
 client/modules/crm/lib/*
+
+# NuriVoyage local environment and supported customisation sources
+.env
+.env.*
+!.env.example
+.local/
+backups/
+!custom/Espo/Custom/**/
+!custom/Espo/Custom/**/*.json
+!custom/Espo/Custom/**/*.php
+
+!/client/custom/
+!/client/custom/**
+__pycache__/
+*.pyc

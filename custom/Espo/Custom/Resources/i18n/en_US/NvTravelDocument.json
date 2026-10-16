@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "traveller": "Traveller",
+    "file": "File",
+    "documentType": "Document Type",
+    "expiryDate": "Expiry Date"
+  },
+  "labels": {
+    "Create NvTravelDocument": "Create Travel Document"
+  }
+}

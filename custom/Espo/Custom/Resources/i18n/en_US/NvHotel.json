@@ -1,0 +1,13 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "bookingItem": "Booking Item",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "confirmation": "Confirmation"
+  },
+  "labels": {
+    "Create NvHotel": "Create Hotel"
+  }
+}

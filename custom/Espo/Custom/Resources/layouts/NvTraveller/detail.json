@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "customer"
+        }
+      ],
+      [
+        {
+          "name": "booking"
+        },
+        {
+          "name": "dateOfBirth"
+        }
+      ],
+      [
+        {
+          "name": "nationality"
+        },
+        {
+          "name": "assignedUser"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "status"
+        }
+      ],
+      [
+        {
+          "name": "customer"
+        },
+        {
+          "name": "lead"
+        }
+      ],
+      [
+        {
+          "name": "travelDate"
+        },
+        {
+          "name": "travellerCount"
+        }
+      ],
+      [
+        {
+          "name": "assignedUser"
+        },
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

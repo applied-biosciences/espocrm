@@ -1,0 +1,45 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "bookingItem"
+        }
+      ],
+      [
+        {
+          "name": "checkIn"
+        },
+        {
+          "name": "checkOut"
+        }
+      ],
+      [
+        {
+          "name": "confirmation"
+        },
+        {
+          "name": "assignedUser"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

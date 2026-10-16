@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+case "${1:-help}" in
+  configure)
+    python3 scripts/nurivoyage/configure.py ;;
+  start)
+    "$0" configure
+    docker compose up -d --build --wait --wait-timeout 300
+    docker compose exec -T -u www-data crm php /opt/nurivoyage/bootstrap.php
+    docker compose exec -T -u www-data crm php rebuild.php
+    docker compose restart daemon websocket
+    docker compose up -d --wait --wait-timeout 300
+    "$0" credentials
+    "$0" health-check ;;
+  stop) docker compose down ;;
+  bootstrap)
+    docker compose exec -T -u www-data crm php /opt/nurivoyage/bootstrap.php
+    docker compose exec -T -u www-data crm php rebuild.php ;;
+  reset-passwords)
+    docker compose exec -T -u www-data crm php /opt/nurivoyage/bootstrap.php --reset-passwords ;;
+  credentials) python3 scripts/nurivoyage/credentials.py ;;
+  health-check) python3 scripts/nurivoyage/health.py ;;
+  smoke) python3 tests/nurivoyage/smoke.py ;;
+  backup) bash scripts/nurivoyage/backup.sh ;;
+  restore) bash scripts/nurivoyage/restore.sh "${2:?Usage: scripts/local restore backups/TIMESTAMP}" ;;
+  reset-local)
+    echo 'WARNING: This deletes ALL NuriVoyage local Docker volumes. Backups and Git files remain.'
+    read -r -p 'Type DELETE NURIVOYAGE to confirm: ' answer
+    test "$answer" = 'DELETE NURIVOYAGE' || exit 1
+    docker compose down -v
+    "$0" start ;;
+  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|smoke|backup|restore DIR|reset-local}' ;;
+esac
