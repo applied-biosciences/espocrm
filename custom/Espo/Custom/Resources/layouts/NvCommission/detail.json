@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "method"
+        },
+        {
+          "name": "amount"
+        }
+      ],
+      [
+        {
+          "name": "status"
+        },
+        {
+          "name": "ruleSnapshot"
+        }
+      ],
+      [
+        {
+          "name": "assignedUser"
+        },
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

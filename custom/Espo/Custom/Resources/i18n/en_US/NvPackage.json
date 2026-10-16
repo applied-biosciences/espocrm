@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "destination": "Destination",
+    "sellingPrice": "Selling Price",
+    "durationDays": "Duration Days"
+  },
+  "labels": {
+    "Create NvPackage": "Create Package"
+  }
+}

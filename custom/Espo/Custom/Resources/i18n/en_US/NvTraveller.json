@@ -1,0 +1,11 @@
+{
+  "fields": {
+    "customer": "Customer",
+    "booking": "Booking",
+    "dateOfBirth": "Date Of Birth",
+    "nationality": "Nationality"
+  },
+  "labels": {
+    "Create NvTraveller": "Create Traveller"
+  }
+}

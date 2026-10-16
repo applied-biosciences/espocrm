@@ -14,3 +14,10 @@ bin/command text eol=lf
 .gitignore text eol=crlf
 
 *.png binary
+
+# Local development entry points must remain executable on fresh checkouts.
+scripts/** text eol=lf
+tests/nurivoyage/** text eol=lf
+infrastructure/local/** text eol=lf
+compose.yaml text eol=lf
+.env.example text eol=lf

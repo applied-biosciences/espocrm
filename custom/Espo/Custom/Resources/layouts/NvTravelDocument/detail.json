@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "traveller"
+        },
+        {
+          "name": "file"
+        }
+      ],
+      [
+        {
+          "name": "documentType"
+        },
+        {
+          "name": "expiryDate"
+        }
+      ],
+      [
+        {
+          "name": "assignedUser"
+        },
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

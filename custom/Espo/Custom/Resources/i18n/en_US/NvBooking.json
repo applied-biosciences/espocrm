@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "customer": "Customer",
+    "enquiry": "Enquiry",
+    "package": "Package",
+    "status": "Status",
+    "supplierStatus": "Supplier Status",
+    "sellingPrice": "Selling Price",
+    "travelDate": "Travel Date",
+    "returnDate": "Return Date"
+  },
+  "labels": {
+    "Create NvBooking": "Create Booking"
+  }
+}

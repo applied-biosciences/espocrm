@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "method": "Method",
+    "amount": "Amount",
+    "status": "Status",
+    "ruleSnapshot": "Rule Snapshot"
+  },
+  "labels": {
+    "Create NvCommission": "Create Commission"
+  }
+}

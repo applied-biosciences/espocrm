@@ -1,0 +1,13 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "productType": "Product Type",
+    "sellingPrice": "Selling Price",
+    "purchaseCost": "Purchase Cost",
+    "supplierStatus": "Supplier Status"
+  },
+  "labels": {
+    "Create NvBookingItem": "Create Booking Item"
+  }
+}

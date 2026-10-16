@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "status": "Status",
+    "amount": "Amount",
+    "dueDate": "Due Date"
+  },
+  "labels": {
+    "Create NvPurchaseOrder": "Create Purchase Order"
+  }
+}

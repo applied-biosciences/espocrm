@@ -1,0 +1,45 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "enquiry"
+        }
+      ],
+      [
+        {
+          "name": "customer"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "status"
+        },
+        {
+          "name": "sellingPrice"
+        }
+      ],
+      [
+        {
+          "name": "validUntil"
+        },
+        {
+          "name": "assignedUser"
+        }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

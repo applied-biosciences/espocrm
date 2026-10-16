@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "status"
+        }
+      ],
+      [
+        {
+          "name": "amount"
+        },
+        {
+          "name": "dueDate"
+        }
+      ],
+      [
+        {
+          "name": "assignedUser"
+        },
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]
