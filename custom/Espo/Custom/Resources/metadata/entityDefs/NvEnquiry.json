@@ -60,6 +60,33 @@
     "lead": {
       "type": "link"
     },
+    "contact": {
+      "type": "link"
+    },
+    "source": {
+      "type": "enum",
+      "options": ["Website", "Phone", "Email", "Walk-in", "Referral", "Social Media", "Other"],
+      "default": "Other",
+      "audited": true
+    },
+    "sourceDetail": { "type": "varchar" },
+    "destination": { "type": "varchar" },
+    "serviceType": {
+      "type": "enum",
+      "options": ["Umrah", "Hajj", "Flight", "Hotel", "Holiday Package", "Visa", "Transfer", "Other"],
+      "default": "Other"
+    },
+    "preferredContactMethod": {
+      "type": "enum",
+      "options": ["Phone", "Email", "WhatsApp", "SMS", "Any"],
+      "default": "Any"
+    },
+    "budget": { "type": "currency", "min": 0 },
+    "nextFollowUpAt": { "type": "datetime" },
+    "lostReason": {
+      "type": "enum",
+      "options": ["Price", "No Response", "Travel Cancelled", "Chose Another Provider", "Dates Unavailable", "Other"]
+    },
     "travelDate": {
       "type": "date"
     },
@@ -94,6 +121,10 @@
     "lead": {
       "type": "belongsTo",
       "entity": "Lead"
+    },
+    "contact": {
+      "type": "belongsTo",
+      "entity": "Contact"
     }
   },
   "collection": {

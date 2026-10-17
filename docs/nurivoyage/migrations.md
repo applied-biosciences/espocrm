@@ -11,3 +11,7 @@ Before future schema changes: take `scripts/local backup`, add a numbered migrat
 ## Stage 3 — no schema version change
 
 Stage 3 adds a supported theme, login/navbar views, grouped tab configuration, labels/icons, main detail-layout polish and three native EmailTemplate records. It retains schemaVersion=1 and the existing business entities, fields and financial ACL. Management is granted the existing EmailTemplate scope to review templates; restricted-role cost/commission grants remain unchanged. No SQL migration or core upgrade is performed. Reapply via `scripts/local bootstrap`; original assets and generated publication copies are versioned. Human Stage 2 acceptance is recorded separately from the new Stage 3 UAT.
+
+## Stage 4 — enquiry workflow extension
+
+Stage 4 adds operational lead and enquiry fields to the existing `NvEnquiry` entity: contact, source, source detail, destination, service type, preferred contact method, budget, next follow-up and lost reason. This is an additive metadata change applied by `scripts/local bootstrap`; no core files, SQL migration or external integration is introduced. Existing Stage 1 status vocabulary and role boundaries remain in force.

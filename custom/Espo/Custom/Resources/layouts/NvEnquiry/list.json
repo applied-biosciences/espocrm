@@ -6,6 +6,9 @@
   {
     "name": "status"
   },
+  { "name": "source" },
+  { "name": "serviceType" },
+  { "name": "nextFollowUpAt" },
   {
     "name": "assignedUser"
   }

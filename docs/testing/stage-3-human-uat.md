@@ -1,6 +1,6 @@
 # Stage 3 human localhost acceptance
 
-Status: **PENDING**. Stage 2 was accepted by the user on 17 October 2026. That approval does not mark this new Stage 3 build accepted. Choose PASS / FAIL / CHANGE REQUESTED for every test; record notes and sign below. Do not merge Stage 3 before explicit human acceptance.
+Status: **ACCEPTED**. The user accepted Stage 3 in chat after the automated checks and localhost review. The recorded acceptance applies to the Stage 3 build on `codex/nurivoyage-stage-3`.
 
 ## Local access
 
