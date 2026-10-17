@@ -58,20 +58,76 @@
     "expiryDate": {
       "type": "date"
     },
-    "documentNumber": { "type": "varchar", "audited": true },
-    "countryOfIssue": { "type": "varchar" },
-    "issueDate": { "type": "date" },
+    "documentNumber": {
+      "type": "varchar",
+      "audited": true
+    },
+    "countryOfIssue": {
+      "type": "varchar"
+    },
+    "issueDate": {
+      "type": "date"
+    },
     "verificationStatus": {
       "type": "enum",
-      "options": ["Pending", "Verified", "Rejected", "Expired"],
+      "options": [
+        "Pending",
+        "Verified",
+        "Rejected",
+        "Expired"
+      ],
       "default": "Pending",
       "audited": true
     },
-    "verifiedAt": { "type": "datetime", "readOnly": true },
+    "verifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
     "verifiedBy": {
       "type": "link",
       "readOnly": true,
       "view": "views/fields/user"
+    },
+    "verificationHistory": {
+      "type": "text",
+      "audited": true
+    },
+    "retentionRule": {
+      "type": "enum",
+      "options": [
+        "Keep until expiry",
+        "Keep 7 years",
+        "Keep indefinitely"
+      ],
+      "default": "Keep until expiry",
+      "audited": true
+    },
+    "retentionUntil": {
+      "type": "date"
+    },
+    "expiryAlertDays": {
+      "type": "int",
+      "min": 0,
+      "default": 30
+    },
+    "checklistStatus": {
+      "type": "enum",
+      "options": [
+        "Not Started",
+        "In Progress",
+        "Complete",
+        "Exception"
+      ],
+      "default": "Not Started",
+      "audited": true
+    },
+    "pdfReady": {
+      "type": "bool",
+      "default": false
+    },
+    "printable": {
+      "type": "bool",
+      "default": true
     }
   },
   "links": {
