@@ -42,7 +42,8 @@
       "NvCustomerPayment",
       "NvSupplierPayment",
       "NvCommission",
-      "NvFxRate"
+      "NvFxRate",
+      "NvPerformanceReport"
     ]
   },
   {

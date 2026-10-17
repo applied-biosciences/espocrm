@@ -102,6 +102,7 @@ $scopes = $c->get('metadata')->get(['scopes']);
 foreach ($roles as $name=>$allowed) {
     // PDF generation uses the Template scope; all local operational roles need read access to select layouts.
     $allowed[] = "Template";
+    $allowed[] = "NvPerformanceReport";
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {
@@ -163,6 +164,15 @@ foreach ($agentUsers as $login=>$agentName) {
     upsert('NvAgentLogin','name',$agentName.' Login',['agentId'=>$agent->getId(),'eventType'=>'Login','eventAt'=>'2026-10-17 08:30:00','ipAddress'=>'127.0.0.1','userAgent'=>'Synthetic UAT']);
     upsert('NvAgentLogin','name',$agentName.' Logout',['agentId'=>$agent->getId(),'eventType'=>'Logout','eventAt'=>'2026-10-17 17:00:00','ipAddress'=>'127.0.0.1','userAgent'=>'Synthetic UAT']);
 }
+// Role-safe synthetic Stage 13 management reports. Access is controlled by the role ACL above.
+foreach ([
+ ['Profitability','Profitability Dashboard',40000,25000,15000,0,0,0,0,2,1],
+ ['Sales Performance','Sales Performance Dashboard',40000,0,0,0,0,0,0,2,1],
+ ['Operations Performance','Operations Performance Dashboard',0,0,0,0,0,0,0,2,1],
+ ['Supplier Payables','Supplier Payables Dashboard',0,0,0,0,12000,12000,12000,2,0],
+ ['Debtors','Debtor Dashboard',40000,0,0,18000,0,0,0,2,1],
+ ['Creditors','Creditor Dashboard',0,0,0,0,12000,12000,12000,2,0]
+] as $r) { upsert('NvPerformanceReport','name',$r[1],['reportType'=>$r[0],'periodStart'=>'2026-10-01','periodEnd'=>'2026-10-31','salesTotal'=>$r[2],'costTotal'=>$r[3],'profitTotal'=>$r[4],'debtorTotal'=>$r[5],'creditorTotal'=>$r[6],'supplierOutstanding'=>$r[7],'openBookings'=>$r[8],'completedSales'=>$r[9],'description'=>'SYNTHETIC LOCAL STAGE 13 REPORT']); }
 // Seed only once. Re-running bootstrap preserves human UAT edits and transactions.
 if (!$config->get('nurivoyageSeedVersion')) {
     $customers=[];

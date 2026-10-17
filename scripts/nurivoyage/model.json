@@ -24,7 +24,8 @@
     "NvSightseeing",
     "NvItinerarySegment",
     "NvAgent",
-    "NvAgentLogin"
+    "NvAgentLogin",
+    "NvPerformanceReport"
   ],
   "salesWorkflow": [
     "New Enquiry",

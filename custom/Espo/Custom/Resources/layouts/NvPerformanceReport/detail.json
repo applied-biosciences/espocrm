@@ -1,0 +1,1 @@
+[{"label":"Report Summary","rows":[[{"name":"name"},{"name":"reportType"}],[{"name":"periodStart"},{"name":"periodEnd"}],[{"name":"salesTotal"},{"name":"costTotal"}],[{"name":"profitTotal"},{"name":"debtorTotal"}],[{"name":"creditorTotal"},{"name":"supplierOutstanding"}],[{"name":"openBookings"},{"name":"completedSales"}],[{"name":"description"},false]]}]
