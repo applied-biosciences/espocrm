@@ -59,12 +59,12 @@ upsert('InboundEmail','emailAddress','admin@nuri.local',[
 ]);
 $common = ['Account','Contact','Lead','NvEnquiry','NvQuote','NvBooking','NvBookingItem','NvTraveller','NvCustomerInvoice','NvCustomerPayment','NvPackage','NvProduct','Email','Task'];
 $ops = ['Account','Contact','NvBooking','NvBookingItem','NvTraveller','NvItinerarySegment','NvTravelDocument','NvHotel','NvFlight','NvTransfer','NvSightseeing','NvVisa','NvSupplier','NvPackage','NvProduct','Document','Email','Task'];
-$finance = ['Account','Contact','NvBooking','NvBookingItem','NvTraveller','NvSupplier','NvPurchaseOrder','NvSupplierBill','NvCustomerInvoice','NvCustomerPayment','NvSupplierPayment','NvFxRate','NvCommission','Email','Task'];
+$finance = ['Account','Contact','NvBooking','NvBookingItem','NvTraveller','NvSupplier','NvPurchaseOrder','NvSupplierBill','NvCustomerInvoice','NvCustomerPayment','NvSupplierPayment','NvFxRate','NvCommission','NvAgent','Email','Task'];
 $roles = [
     'Sales Agent' => $common,
     'Operations' => $ops,
     'Sales + Operations Hybrid' => array_unique(array_merge($common,$ops)),
-    'Sales + Operations Commercial' => array_unique(array_merge($common,$ops,['NvPurchaseOrder','NvSupplierBill'])),
+    'Sales + Operations Commercial' => array_unique(array_merge($common,$ops,['NvPurchaseOrder','NvSupplierBill','NvAgent'])),
     'Finance' => $finance,
     'Management' => $tabs,
     'System Administrator' => [],

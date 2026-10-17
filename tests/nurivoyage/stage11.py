@@ -6,6 +6,8 @@ exec(source[:source.index('try:\n    stamp=')], ns)
 api = ns['api']; stamp = uuid.uuid4().hex[:8]
 fields = api('Metadata')['entityDefs']['NvCommission']['fields']
 assert {'commissionNumber','basisAmount','amount','status','ruleSnapshot','frozen','approvedAt','paidAt','settlementReference'}.issubset(fields)
+agentFields = api('Metadata')['entityDefs']['NvAgent']['fields']
+assert {'user','login','lastLoginAt','loginAuditTrail','completedSales','openSales','commissionType','commissionPaid','commissionOwed'}.issubset(agentFields)
 booking = api('NvBooking', 'POST', {'name':'Stage 11 Synthetic Booking '+stamp,'status':'Booking Confirmed'}, user='finance')
 commission = api('NvCommission', 'POST', {'name':'Stage 11 Synthetic Commission '+stamp,'bookingId':booking['id'],'method':'Percent of Sale','basisAmount':10000,'amount':1000,'amountCurrency':'ZAR','status':'Draft','frozen':False,'ruleSnapshot':'10% synthetic rule'}, user='manager')
 api('NvCommission/'+commission['id'], 'PUT', {'status':'Approved','frozen':True,'approvedAt':'2027-02-01 10:00:00'}, user='finance')

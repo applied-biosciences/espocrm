@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "user": "User Login", "login": "Login", "lastLoginAt": "Last Login", "loginAuditTrail": "Login Audit Trail",
+    "completedSales": "Completed Sales", "openSales": "Open Incomplete Sales", "commissionType": "Commission Type",
+    "commissionRate": "Commission Rate", "commissionPaid": "Commission Paid", "commissionOwed": "Commission Owed"
+  },
+  "labels": { "Create NvAgent": "Create Agent" }
+}
