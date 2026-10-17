@@ -58,7 +58,7 @@ upsert('InboundEmail','emailAddress','admin@nuri.local',[
     'storeSentEmails'=>false,
 ]);
 $common = ['Account','Contact','Lead','NvEnquiry','NvQuote','NvBooking','NvBookingItem','NvTraveller','NvCustomerInvoice','NvCustomerPayment','NvPackage','Email','Task'];
-$ops = ['Account','Contact','NvBooking','NvBookingItem','NvTraveller','NvTravelDocument','NvHotel','NvFlight','NvTransfer','NvSightseeing','NvVisa','NvSupplier','NvPackage','Document','Email','Task'];
+$ops = ['Account','Contact','NvBooking','NvBookingItem','NvTraveller','NvItinerarySegment','NvTravelDocument','NvHotel','NvFlight','NvTransfer','NvSightseeing','NvVisa','NvSupplier','NvPackage','Document','Email','Task'];
 $finance = ['Account','Contact','NvBooking','NvBookingItem','NvTraveller','NvSupplier','NvPurchaseOrder','NvSupplierBill','NvCustomerInvoice','NvCustomerPayment','NvSupplierPayment','NvFxRate','NvCommission','Email','Task'];
 $roles = [
     'Sales Agent' => $common,
