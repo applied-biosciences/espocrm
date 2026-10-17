@@ -22,8 +22,16 @@
     "itinerarySegments": "City Segments",
     "transfers": "Transfers",
     "sightseeing": "Sightseeing"
+    ,"hotels": "Hotels by City"
   },
   "labels": {
     "Create NvBooking": "Create Booking"
+  },
+  "links": {
+    "travellers": "Travellers",
+    "itinerarySegments": "City Stops",
+    "hotels": "Hotels by City",
+    "transfers": "Transfers",
+    "sightseeing": "Sightseeing"
   }
 }

@@ -38,6 +38,7 @@
     "booking": {
       "type": "link"
     },
+    "itinerarySegment": { "type": "link" },
     "supplier": {
       "type": "link"
     },
@@ -52,6 +53,7 @@
     },
     "city": { "type": "varchar" },
     "staySequence": { "type": "int", "min": 1 },
+    "cost": { "type": "currency", "min": 0 },
     "confirmation": {
       "type": "varchar"
     }
@@ -78,6 +80,10 @@
     "booking": {
       "type": "belongsTo",
       "entity": "NvBooking"
+    },
+    "itinerarySegment": {
+      "type": "belongsTo",
+      "entity": "NvItinerarySegment"
     },
     "supplier": {
       "type": "belongsTo",

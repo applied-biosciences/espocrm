@@ -6,13 +6,16 @@
     "city": { "type": "varchar", "required": true },
     "arrivalDate": { "type": "date" },
     "departureDate": { "type": "date" },
-    "transferMode": { "type": "enum", "options": ["Car", "Bus", "Air", "Road", "Train", "None"], "default": "None" },
+    "transferMode": { "type": "enum", "options": ["Car", "Bus", "Plane", "Train", "None"], "default": "None" },
     "transferFromCity": { "type": "varchar" },
     "transferCost": { "type": "currency", "min": 0 },
     "transferCostCurrency": { "type": "enum", "options": ["ZAR", "USD", "GBP", "EUR", "SAR", "AED"], "default": "ZAR" },
     "notes": { "type": "text" }
   },
-  "links": { "booking": { "type": "belongsTo", "entity": "NvBooking" } },
+  "links": {
+    "booking": { "type": "belongsTo", "entity": "NvBooking" },
+    "hotels": { "type": "hasMany", "entity": "NvHotel", "foreign": "itinerarySegment" }
+  },
   "collection": { "orderBy": "sequence", "order": "asc" },
   "indexes": { "bookingSequence": { "columns": ["bookingId", "sequence", "deleted"] } }
 }

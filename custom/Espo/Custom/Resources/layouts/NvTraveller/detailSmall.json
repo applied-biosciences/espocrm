@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Group Member",
+    "rows": [
+      [ { "name": "name" }, { "name": "customer" } ],
+      [ { "name": "booking" }, { "name": "groupReference" } ],
+      [ { "name": "isLeadTraveller" }, false ]
+    ]
+  }
+]

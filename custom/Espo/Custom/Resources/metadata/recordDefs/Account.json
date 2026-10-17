@@ -1,0 +1,5 @@
+{
+  "afterUnlinkHookClassNameList": [
+    "Espo\\Custom\\Classes\\RecordHooks\\Account\\UnlinkTravellerFromBooking"
+  ]
+}

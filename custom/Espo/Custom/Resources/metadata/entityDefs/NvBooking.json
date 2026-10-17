@@ -172,6 +172,11 @@
       "type": "hasMany",
       "entity": "NvSightseeing",
       "foreign": "booking"
+    },
+    "hotels": {
+      "type": "hasMany",
+      "entity": "NvHotel",
+      "foreign": "booking"
     }
   },
   "collection": {

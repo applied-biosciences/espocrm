@@ -1,0 +1,11 @@
+{
+  "relationshipPanels": {
+    "travellers": {
+      "layout": "listForAccount",
+      "createAttributeMap": {
+        "id": "customerId",
+        "name": "customerName"
+      }
+    }
+  }
+}

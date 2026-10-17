@@ -1,6 +1,7 @@
 {
   "fields": {
     "customer": "Customer",
+    "travellerNumber": "Traveller Number",
     "booking": "Booking",
     "dateOfBirth": "Date Of Birth",
     "nationality": "Nationality",

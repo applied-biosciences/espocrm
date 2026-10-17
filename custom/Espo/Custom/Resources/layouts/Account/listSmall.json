@@ -1,0 +1,5 @@
+[
+  { "name": "name", "link": true },
+  { "name": "customerNumber", "widthPx": 135 },
+  { "name": "billingAddressCountry", "width": 50 }
+]

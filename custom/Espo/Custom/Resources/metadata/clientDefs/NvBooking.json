@@ -1,6 +1,21 @@
 {
   "controller": "controllers/record",
   "iconClass": "fas fa-suitcase",
+  "relationshipPanels": {
+    "itinerarySegments": { "layout": "list" },
+    "hotels": { "layout": "list" },
+    "travellers": {
+      "layout": "listForBooking",
+      "createAttributeMap": {
+        "id": "bookingId",
+        "name": "bookingName",
+        "customerId": "customerId",
+        "customerName": "customerName"
+      }
+    },
+    "transfers": { "layout": "list" },
+    "sightseeing": { "layout": "list" }
+  },
   "boolFilterList": [
     "onlyMy"
   ]

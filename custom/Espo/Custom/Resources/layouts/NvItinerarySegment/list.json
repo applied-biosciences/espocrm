@@ -1,1 +1,1 @@
-[{ "name": "sequence" }, { "name": "city", "link": true }, { "name": "transferMode" }, { "name": "transferCost" }]
+[{ "name": "sequence" }, { "name": "city", "link": true }, { "name": "arrivalDate" }, { "name": "departureDate" }, { "name": "transferFromCity" }, { "name": "transferMode" }, { "name": "transferCost" }]

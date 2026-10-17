@@ -1,1 +1,16 @@
-{ "controller": "controllers/record", "iconClass": "fas fa-route", "boolFilterList": ["onlyMy"] }
+{
+  "controller": "controllers/record",
+  "iconClass": "fas fa-route",
+  "boolFilterList": ["onlyMy"],
+  "relationshipPanels": {
+    "hotels": {
+      "layout": "listForSegment",
+      "createAttributeMap": {
+        "id": "itinerarySegmentId",
+        "city": "city",
+        "bookingId": "bookingId",
+        "bookingName": "bookingName"
+      }
+    }
+  }
+}

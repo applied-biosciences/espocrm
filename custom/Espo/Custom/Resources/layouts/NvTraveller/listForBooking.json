@@ -1,0 +1,7 @@
+[
+  { "name": "name", "link": true },
+  { "name": "travellerNumber" },
+  { "name": "customer" },
+  { "name": "isLeadTraveller" },
+  { "name": "groupReference" }
+]

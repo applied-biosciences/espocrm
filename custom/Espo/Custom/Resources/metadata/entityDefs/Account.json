@@ -1,4 +1,10 @@
 {
+  "fields": {
+    "customerNumber": { "type": "autoincrement", "index": true }
+  },
+  "collection": {
+    "textFilterFields": ["name", "emailAddress", "customerNumber"]
+  },
   "links": {
     "travellers": {
       "type": "hasMany",

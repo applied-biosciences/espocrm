@@ -2,6 +2,14 @@
 
 ## v10.0.10.0.s7 — Stage 7 development
 
+- Fixed the Customer page crash caused by a nonexistent linked-list field view, and placed Group Travellers in the native relationship panel.
+- Rendered City Stops, Travellers, Transfers and Sightseeing as working itinerary relationship panels, with a complete add-city form and dated stop list.
+- Added an idempotent synthetic four-city family fixture for local UAT.
+- Linked priced hotel stays to individual city stops, allowing multiple hotels in one city and showing hotel costs on both city and itinerary pages.
+- Added Travellers to the Sales menu and visible, searchable Customer and Traveller numbers. A traveller can be linked from the Customer's Group Travellers panel by traveller number, or from the Traveller form by customer number.
+- When a group member is unlinked from a Customer, also clear their booking link and lead-traveller designation for that customer's booking.
+- Added Booking traveller management: create a new traveller with the Booking prefilled, or select an existing traveller by Traveller Number. Linked members are immediately listed on the Booking page.
+
 - Added a private passport photo attachment to traveller records.
 - Added booking reference, itinerary, route, traveller-count and confirmation fields.
 - Added multi-city itinerary cities, inter-city transfers with type and cost, multiple hotel stays by city and sightseeing activities with city/date/cost.

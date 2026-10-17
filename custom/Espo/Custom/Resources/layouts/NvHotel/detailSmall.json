@@ -1,0 +1,11 @@
+[
+  {
+    "label": "Hotel Stay",
+    "rows": [
+      [ { "name": "name" }, { "name": "city" } ],
+      [ { "name": "itinerarySegment" }, { "name": "booking" } ],
+      [ { "name": "checkIn" }, { "name": "checkOut" } ],
+      [ { "name": "staySequence" }, { "name": "cost" } ]
+    ]
+  }
+]
