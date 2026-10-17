@@ -20,6 +20,12 @@ define('custom:views/nurivoyage/navbar', ['views/site/navbar'], NavbarView => {
                 const image = brand.querySelector('img');
                 if (image) image.alt = "Umra Tours and Nuri's Travels";
             }
+            if (brand && !brand.querySelector('.nuri-version')) {
+                const version = document.createElement('small');
+                version.className = 'nuri-version';
+                version.textContent = 'v10.0.10.0';
+                brand.append(version);
+            }
         }
     };
 });

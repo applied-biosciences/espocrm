@@ -44,6 +44,13 @@
     "booking": {
       "type": "link"
     },
+    "quoteNumber": {
+      "type": "varchar",
+      "audited": true
+    },
+    "optionName": {
+      "type": "varchar"
+    },
     "status": {
       "type": "enum",
       "options": [
@@ -63,6 +70,18 @@
     },
     "validUntil": {
       "type": "date"
+    },
+    "sentAt": {
+      "type": "datetime",
+      "audited": true
+    },
+    "acceptedAt": {
+      "type": "datetime",
+      "audited": true
+    },
+    "lostReason": {
+      "type": "enum",
+      "options": ["Price", "No Response", "Travel Cancelled", "Chose Another Provider", "Dates Unavailable", "Other"]
     }
   },
   "links": {

@@ -52,6 +52,8 @@ a:hover { color: #0B1F3A; }
 .navbar-brand { display: flex !important; align-items: center; flex-direction: column; gap: 7px; height: auto; padding: 10px 8px !important; }
 .navbar-brand img.logo { width: 165px !important; height: auto !important; max-width: 100%; background: white; border-radius: 5px; padding: 5px; }
 .nuri-app-name { display: block; color: white; font-weight: 650; font-size: 17px; letter-spacing: -.03em; line-height: 1.1; }
+.nuri-version { display: block; color: #E7D59A; font-size: 10px; letter-spacing: .08em; line-height: 1.2; }
+.nuri-version-badge { position: fixed; right: 12px; bottom: 8px; z-index: 1000; color: #435E70; font-size: 10px; letter-spacing: .06em; opacity: .78; pointer-events: none; }
 .navbar-logo-container { min-height: 100px; }
 body > footer, footer .credit { color: #435E70; }
 /* Login: fixed identity + native Espo authentication controls, no custom auth flow. */
@@ -64,6 +66,7 @@ body > footer, footer .credit { color: #435E70; }
 .nuri-brand-story h1 { font-size: clamp(38px,4vw,58px); line-height: 1.05; margin: 0 0 16px; letter-spacing: -.06em; }
 .nuri-gold-dot { color: #826309; }
 .nuri-descriptor { font-size: 18px; color: #123B7A; margin: 0; }
+.nuri-brand-story .nuri-version { margin-top: 12px; color: #526679; }
 .nuri-brand-rule { background: #C9A227; width: 58px; height: 4px; margin: 28px 0; border-radius: 2px; }
 .nuri-brand-caption { color: #304E68; font-size: 24px; line-height: 1.4; font-weight: 400; letter-spacing: -.03em; }
 .nuri-login-layout > .container-centering { width: 100%; margin: 0; position: static; display: block; transform: none; }

@@ -1,6 +1,8 @@
-# NuriVoyage — local Stage 1–2
+# NuriVoyage — local travel management platform v10.0.10.0
 
-NuriVoyage is Nuri's Travel's local travel-management foundation on this EspoCRM fork. Work branch: `codex/nurivoyage-stage-1-2`. No AWS deployment. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
+NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-6`; Stage 5 is accepted and Stage 6 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
+
+The application version shown in the login and application pages is `v10.0.10.0`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -14,7 +16,7 @@ scripts/local start
 scripts/local credentials
 ```
 
-`configure` creates `.env` from `.env.example` with random local passwords and mode 0600. Existing `.env` is preserved. To configure manually, copy `.env.example` to `.env`, replace every CHANGE_ME, and restrict permissions. Never commit `.env`. The first start builds MinIO from a pinned upstream source commit because the former community registry/download endpoints no longer serve the images. Its source is AGPLv3; EspoCRM's storage adapter remains S3-compatible. Service versions, source commit and base-image digests are pinned in Compose/Dockerfile. Do not silently upgrade them.
+`configure` creates `.env` from `.env.example` with random local passwords and mode 0600. Existing `.env` is preserved. To configure manually, copy `.env.example` to `.env`, replace every CHANGE_ME, and restrict permissions. Never commit `.env`. The first start builds MinIO from a pinned upstream source commit because the former community registry/download endpoints no longer serve the images. Its source is AGPLv3; EspoCRM's storage adapter remains S3-compatible. Service versions, source commit and base-image digests are pinned in Compose/Dockerfile. Do not silently upgrade them. See [CHANGELOG.md](CHANGELOG.md) for the NuriVoyage implementation history.
 
 Open http://localhost:8080. Local role credentials are written by `scripts/local credentials` to `.local/test-credentials.md`. The System Administrator username is `admin@nuri.local`; the other six role usernames are in [the UAT checklist](docs/testing/stage-2-human-uat.md). A separate bootstrap maintenance login uses ESPO_ADMIN_USERNAME/ESPO_ADMIN_PASSWORD. Local email capture: http://localhost:8025. MinIO console: http://localhost:9001 (same private sheet). Documents should be accessed through CRM so record permissions apply.
 
@@ -27,6 +29,9 @@ scripts/local start               # build, start, reconcile bootstrap and rebuil
 scripts/local stop                # compose down; retain data volumes
 scripts/local health-check
 scripts/local smoke               # synthetic integration tests, restarts and restore; brief downtime
+scripts/local smoke-stage4        # focused Stage 4 enquiry checks
+scripts/local smoke-stage5        # focused Stage 5 traveller/document checks
+scripts/local smoke-stage6        # focused Stage 6 quote/version checks
 scripts/local backup              # backups/<UTC timestamp>, private permissions
 scripts/local restore backups/<timestamp>  # replaces local DB/runtime/documents/email with snapshot
 scripts/local bootstrap           # reconcile local defaults, roles/users; no reseed of existing data
@@ -176,4 +181,12 @@ Use `scripts/local bootstrap` after branding source edits to publish assets, rec
 
 ## Stage 4 leads and enquiries
 
-Stage 4 extends the existing `NvEnquiry` foundation with operational source, contact, destination, service, budget, follow-up and lost-reason fields. Run `scripts/local bootstrap` to apply metadata, `scripts/local smoke-stage4` for the focused checks, and `docs/testing/stage-4-human-uat.md` for localhost acceptance. The Stage 3 acceptance is recorded in its UAT document; Stage 4 remains separate and unmerged until accepted.
+Stage 4 extends the existing `NvEnquiry` foundation with operational source, contact, destination, service, budget, follow-up and lost-reason fields. Run `scripts/local bootstrap` to apply metadata, `scripts/local smoke-stage4` for the focused checks, and `docs/testing/stage-4-human-uat.md` for localhost acceptance. Stage 4 is accepted.
+
+## Stage 5 travellers and documents
+
+Stage 5 adds passport identity fields to travellers and verification metadata to private travel documents. Run `scripts/local smoke-stage5` for focused checks and follow [the Stage 5 UAT checklist](docs/testing/stage-5-human-uat.md). Stage 5 is accepted.
+
+## Stage 6 quotes and sales pipeline
+
+Stage 6 adds quote numbers, option names, sent and accepted timestamps, lost reasons and the `v10.0.10.0` marker on the login and application pages. Run `scripts/local bootstrap`, `scripts/local smoke-stage6` and follow [the Stage 6 UAT checklist](docs/testing/stage-6-human-uat.md). Stage 6 remains separate and unmerged until accepted.
