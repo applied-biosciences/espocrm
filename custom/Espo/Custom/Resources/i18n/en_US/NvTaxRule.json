@@ -1,0 +1,1 @@
+{"scopeNames":{"NvTaxRule":"Tax Rules","NvTaxRulePlural":"Tax Rules"},"fields":{"name":"Rule Name","taxType":"Tax Type","rate":"Rate","effectiveFrom":"Effective From","effectiveTo":"Effective To","active":"Active"},"labels":{"Create NvTaxRule":"Create Tax Rule"}}
