@@ -51,10 +51,9 @@
     "passportCountry": { "type": "varchar" },
     "passportIssueDate": { "type": "date" },
     "passportExpiryDate": { "type": "date", "audited": true }
-    ,"passportPhoto": {
-      "type": "file",
-      "audited": true
-    }
+    ,"passportPhoto": { "type": "image", "view": "views/fields/image", "audited": true }
+    ,"isLeadTraveller": { "type": "bool", "default": false, "audited": true }
+    ,"groupReference": { "type": "varchar" }
   },
   "links": {
     "createdBy": {

@@ -8,7 +8,9 @@
     "passportCountry": "Passport Country",
     "passportIssueDate": "Passport Issue Date",
     "passportExpiryDate": "Passport Expiry Date"
-    ,"passportPhoto": "Passport Photo"
+    ,"passportPhoto": "Passport Photo",
+    "isLeadTraveller": "Lead Traveller",
+    "groupReference": "Group Reference"
   },
   "labels": {
     "Create NvTraveller": "Create Traveller"

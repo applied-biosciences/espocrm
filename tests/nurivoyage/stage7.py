@@ -7,7 +7,7 @@ source = p.read_text(); ns = {'__file__': str(p)}
 exec(source[:source.index('try:\n    stamp=')], ns)
 api = ns['api']
 fields = api('Metadata')['entityDefs']['NvTraveller']['fields']
-assert 'passportPhoto' in fields and fields['passportPhoto']['type'] == 'file'
+assert 'passportPhoto' in fields and fields['passportPhoto']['type'] == 'image'
 head = urllib.request.urlopen('http://localhost:8080/client/custom/nurivoyage-head.js').read().decode()
 assert 'v10.0.10.0.s7' in head
 print('PASS Stage 7 metadata and version marker')

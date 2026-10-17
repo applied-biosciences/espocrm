@@ -17,5 +17,6 @@ Use the synthetic credentials in `.local/test-credentials.md`. Use only a synthe
 11. Add two hotel stays in different cities and confirm both remain linked to the booking with their city and stay sequence.
 12. Add an Inter-city transfer between two itinerary cities and enter its transfer cost.
 13. Add one or more sightseeing activities in an itinerary city and enter each activity cost.
+14. For a family/group booking, confirm the customer is the billing/customer account, the booking has one Lead Traveller, and every group member is a separate Traveller linked to the same booking and Group Reference.
 
 Record PASS, FAIL or CHANGE REQUESTED for each item before accepting Stage 7.

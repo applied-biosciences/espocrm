@@ -3,7 +3,7 @@
     "NvEnquiry": "Enquiry",
     "NvTraveller": "Traveller",
     "NvQuote": "Quote",
-    "NvBooking": "Booking",
+    "NvBooking": "Itinerary",
     "NvBookingItem": "Booking Item",
     "NvSupplier": "Supplier",
     "NvPurchaseOrder": "Purchase Order",
@@ -19,13 +19,14 @@
     "NvTransfer": "Transfer",
     "NvVisa": "Visa",
     "NvPackage": "Package",
+    "NvSightseeing": "Sightseeing",
     "Account": "Customer"
   },
   "scopeNamesPlural": {
     "NvEnquiry": "Enquiries",
     "NvTraveller": "Travellers",
     "NvQuote": "Quotes",
-    "NvBooking": "Bookings",
+    "NvBooking": "Itineraries",
     "NvBookingItem": "Booking Items",
     "NvSupplier": "Suppliers",
     "NvPurchaseOrder": "Purchase Orders",
@@ -41,6 +42,7 @@
     "NvTransfer": "Transfers",
     "NvVisa": "Visas",
     "NvPackage": "Packages",
+    "NvSightseeing": "Sightseeing",
     "Account": "Customers"
   }
 }

@@ -1,6 +1,7 @@
 {
   "fields": {
     "customer": "Customer",
+    "leadTraveller": "Lead Traveller",
     "enquiry": "Enquiry",
     "package": "Package",
     "status": "Status",

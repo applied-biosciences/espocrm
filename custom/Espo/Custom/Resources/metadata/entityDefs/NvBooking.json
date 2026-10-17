@@ -35,9 +35,8 @@
       "type": "linkMultiple",
       "view": "views/fields/teams"
     },
-    "customer": {
-      "type": "link"
-    },
+    "customer": { "type": "link" },
+    "leadTraveller": { "type": "link" },
     "enquiry": {
       "type": "link"
     },
@@ -149,6 +148,10 @@
     "package": {
       "type": "belongsTo",
       "entity": "NvPackage"
+    },
+    "leadTraveller": {
+      "type": "belongsTo",
+      "entity": "NvTraveller"
     }
   },
   "collection": {

@@ -39,6 +39,14 @@
         false
       ],
       [
+        { "name": "isLeadTraveller" },
+        { "name": "groupReference" }
+      ],
+      [
+        { "name": "passportPhoto" },
+        false
+      ],
+      [
         {
           "name": "description"
         },

@@ -195,3 +195,5 @@ Stage 6 adds quote numbers, option names, sent and accepted timestamps, lost rea
 ## Stage 7 travellers and passport photos
 
 Stage 7 delivers the planned bookings and itineraries foundation, adds a private passport photo attachment to the traveller detail page and advances the displayed application version to `v10.0.10.0.s7`. Use only synthetic itinerary data and head-and-shoulders images. Run `scripts/local bootstrap`, `scripts/local smoke-stage7` and follow [the Stage 7 UAT checklist](docs/testing/stage-7-human-uat.md). Stage 7 remains separate and unmerged until accepted.
+
+For a family or group booking, the Customer is the billing/customer account. The Booking has one Lead Traveller, while every other person is a separate Traveller record linked to the same Booking and Group Reference. The Quote links to the Customer and Booking; the Traveller records provide the passenger manifest and each can have its own passport photo and documents.
