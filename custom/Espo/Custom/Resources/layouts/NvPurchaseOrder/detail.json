@@ -10,6 +10,7 @@
           "name": "booking"
         }
       ],
+      [ { "name": "purchaseOrderNumber" }, { "name": "supplierReference" } ],
       [
         {
           "name": "supplier"
@@ -26,6 +27,7 @@
           "name": "dueDate"
         }
       ],
+      [ { "name": "requestedAt" }, { "name": "confirmedAt" } ],
       [
         false,
         {

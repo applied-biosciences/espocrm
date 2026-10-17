@@ -5,6 +5,7 @@
       "required": true,
       "pattern": "$noBadCharacters"
     },
+    "purchaseOrderNumber": { "type": "autoincrement", "index": true },
     "description": {
       "type": "text"
     },
@@ -62,7 +63,10 @@
     },
     "dueDate": {
       "type": "date"
-    }
+    },
+    "requestedAt": { "type": "datetime" },
+    "confirmedAt": { "type": "datetime" },
+    "supplierReference": { "type": "varchar" }
   },
   "links": {
     "createdBy": {

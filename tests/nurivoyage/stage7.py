@@ -19,7 +19,7 @@ stop_form = api('NvItinerarySegment/layout/detailSmall')
 stop_form_fields = {field['name'] for panel in stop_form for row in panel['rows'] for field in row if isinstance(field, dict)}
 assert {'sequence','city','arrivalDate','departureDate','transferFromCity','transferMode','transferCost'}.issubset(stop_form_fields)
 head = urllib.request.urlopen('http://localhost:8080/client/custom/nurivoyage-head.js').read().decode()
-assert 'v10.0.10.0.s7' in head
+assert 'v10.0.10.0.s9' in head
 print('PASS Stage 7 metadata and version marker')
 stamp = uuid.uuid4().hex[:8]
 traveller = api('NvTraveller', 'POST', {'name':'Stage 7 Synthetic Traveller '+stamp}, user='operations')

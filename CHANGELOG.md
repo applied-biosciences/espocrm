@@ -8,6 +8,11 @@
 - Added reusable products with supplier, service type, destination, rates and validity dates.
 - Added CSV bulk import for airline and hotel catalogue rows with required-column validation and dry-run support.
 
+## v10.0.10.0.s9 — Stage 9 development
+
+- Added PO numbers, supplier references, request and confirmation timestamps to purchase orders.
+- Added Stage 9 procurement lifecycle smoke coverage and advanced the application marker to `v10.0.10.0.s9`.
+
 - Fixed the Customer page crash caused by a nonexistent linked-list field view, and placed Group Travellers in the native relationship panel.
 - Rendered City Stops, Travellers, Transfers and Sightseeing as working itinerary relationship panels, with a complete add-city form and dated stop list.
 - Added an idempotent synthetic four-city family fixture for local UAT.

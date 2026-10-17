@@ -1,10 +1,14 @@
 {
   "fields": {
+    "purchaseOrderNumber": "PO Number",
     "booking": "Booking",
     "supplier": "Supplier",
     "status": "Status",
     "amount": "Amount",
-    "dueDate": "Due Date"
+    "dueDate": "Due Date",
+    "requestedAt": "Requested At",
+    "confirmedAt": "Confirmed At",
+    "supplierReference": "Supplier Reference"
   },
   "labels": {
     "Create NvPurchaseOrder": "Create Purchase Order"

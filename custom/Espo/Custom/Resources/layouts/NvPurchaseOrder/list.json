@@ -3,6 +3,8 @@
     "name": "name",
     "link": true
   },
+  { "name": "purchaseOrderNumber" },
+  { "name": "supplier" },
   {
     "name": "status"
   },
