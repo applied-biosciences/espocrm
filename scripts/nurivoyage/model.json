@@ -28,7 +28,8 @@
     "NvPerformanceReport",
     "NvCommunication",
     "NvTaxRule",
-    "NvConversionSnapshot"
+    "NvConversionSnapshot",
+    "NvWorkflowTask"
   ],
   "salesWorkflow": [
     "New Enquiry",

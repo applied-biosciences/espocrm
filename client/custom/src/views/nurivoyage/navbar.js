@@ -23,7 +23,7 @@ define('custom:views/nurivoyage/navbar', ['views/site/navbar'], NavbarView => {
             if (brand && !brand.querySelector('.nuri-version')) {
                 const version = document.createElement('small');
                 version.className = 'nuri-version';
-                version.textContent = 'v10.0.10.0.s15';
+                version.textContent = 'v10.0.10.0.s16';
                 brand.append(version);
             }
         }

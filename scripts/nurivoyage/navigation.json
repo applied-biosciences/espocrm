@@ -55,7 +55,8 @@
       "NvCommunication",
       "NvPerformanceReport",
       "Report",
-      "Dashboard"
+      "Dashboard",
+      "NvWorkflowTask"
     ]
   },
   {

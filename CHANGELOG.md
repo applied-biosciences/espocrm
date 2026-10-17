@@ -1,9 +1,9 @@
 # Changelog
 
-## v10.0.10.0.s15 — Stage 11 development
+## v10.0.10.0.s16 — Stage 11 development
 
 - Added commission numbers, basis amounts, frozen rule snapshots, approval and paid timestamps, and settlement references.
-- Added Stage 11 commission approval, freeze and settlement smoke coverage and advanced the application marker to `v10.0.10.0.s15`.
+- Added Stage 11 commission approval, freeze and settlement smoke coverage and advanced the application marker to `v10.0.10.0.s16`.
 
 ## v10.0.10.0.s7 — Stage 7 development
 
@@ -71,21 +71,21 @@
 - Added the NuriVoyage business model, seven roles, synthetic seed data and local Docker stack.
 - Added MariaDB, daemon, WebSocket, MinIO, Mailpit, backups, restore, health checks and automated smoke tests.
 
-## v10.0.10.0.s15 — Stage 12 development
+## v10.0.10.0.s16 — Stage 12 development
 
 - Added document lifecycle controls for expiry alerts, verification history, retention rules and checklist status.
 - Added PDF-ready and printable document flags for local download/printing workflows.
 
-## v10.0.10.0.s15 — Stage 13 development
+## v10.0.10.0.s16 — Stage 13 development
 
 - Added role-safe profitability, sales, operations, supplier, debtor, creditor and performance report records.
 - Added synthetic local report dashboards and Purchasing & Finance navigation entry.
 
-## v10.0.10.0.s15 — Stage 14 development
+## v10.0.10.0.s16 — Stage 14 development
 
 - Added reusable communication records with email templates, customer communication history and future WhatsApp/SMS channel states.
 
-## v10.0.10.0.s15 — Stage 15 development
+## v10.0.10.0.s16 — Stage 15 development
 
 - Added exchange-rate provider configuration for Frankfurter, tax rules and immutable conversion snapshots with audit context.
 
@@ -93,3 +93,8 @@
 - Registered browser controllers for Tax Rules, Conversion Snapshots and Customer Communications, resolving frontend 404s.
 - Repaired agent-table collation mismatch that caused bootstrap exit 255.
 - Added the USD/GBP/ZAR/SAR currency table with live Frankfurter v2 refresh, provider date and error feedback; retained one finance FX navigation item.
+
+## v10.0.10.0.s16 — Stage 16 development
+
+- Added role-safe workflow controls for approvals, reminders, document expiry, supplier follow-ups and exception queues.
+- Added due dates, reminder dates, escalation state, ownership and auditable last-action/exception fields.

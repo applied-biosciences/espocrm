@@ -114,6 +114,7 @@ foreach ($roles as $name=>$allowed) {
     $allowed[] = "NvCommunication";
     $allowed[] = "NvTaxRule";
     $allowed[] = "NvConversionSnapshot";
+    $allowed[] = "NvWorkflowTask";
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {

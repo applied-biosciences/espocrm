@@ -1,8 +1,8 @@
-# NuriVoyage — local travel management platform v10.0.10.0.s15
+# NuriVoyage — local travel management platform v10.0.10.0.s16
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.0.s15`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.10.0.s16`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -231,3 +231,7 @@ Reusable templates remain in Email Templates. Customer communication history is 
 Exchange-rate records support the Frankfurter provider (`https://frankfurter.dev`). Tax rules and conversion snapshots preserve the rate, tax, provider and calculation context used for each auditable calculation.
 
 Stage 15 repair: **Purchasing & Finance → Exchange Rates & Currency Converter** opens the live four-currency table. Enter USD, GBP, ZAR or SAR in any row; the remaining amounts update immediately. **Update rates** fetches Frankfurter v2 daily reference rates and displays the provider date and refresh time. Conversion inputs stay in the browser; no amounts are sent to Frankfurter. This calculator does not overwrite saved transaction conversion snapshots.
+
+### Stage 16 workflow controls
+
+Management Dashboards & Reporting → Workflow Controls holds approval, reminder, document expiry, supplier follow-up and exception tasks. Each item has an owner, due/reminder dates, priority, status, escalation and auditable action context.
