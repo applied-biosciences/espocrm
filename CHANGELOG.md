@@ -2,6 +2,12 @@
 
 ## v10.0.10.0.s7 — Stage 7 development
 
+## v10.0.10.0.s8 — Stage 8 development
+
+- Added supplier contact details, codes and active status.
+- Added reusable products with supplier, service type, destination, rates and validity dates.
+- Added CSV bulk import for airline and hotel catalogue rows with required-column validation and dry-run support.
+
 - Fixed the Customer page crash caused by a nonexistent linked-list field view, and placed Group Travellers in the native relationship panel.
 - Rendered City Stops, Travellers, Transfers and Sightseeing as working itinerary relationship panels, with a complete add-city form and dated stop list.
 - Added an idempotent synthetic four-city family fixture for local UAT.

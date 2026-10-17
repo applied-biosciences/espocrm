@@ -18,6 +18,10 @@
           "name": "durationDays"
         }
       ],
+      [ { "name": "productType" }, { "name": "supplier" } ],
+      [ { "name": "supplierProductCode" }, { "name": "supplierCost" } ],
+      [ { "name": "validFrom" }, { "name": "validTo" } ],
+      [ { "name": "active" }, false ],
       [
         false,
         {

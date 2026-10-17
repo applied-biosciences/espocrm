@@ -41,6 +41,10 @@
     "phoneNumber": {
       "type": "phone"
     },
+    "contactName": { "type": "varchar" },
+    "website": { "type": "url" },
+    "supplierCode": { "type": "varchar", "index": true },
+    "active": { "type": "bool", "default": true },
     "category": {
       "type": "enum",
       "options": [

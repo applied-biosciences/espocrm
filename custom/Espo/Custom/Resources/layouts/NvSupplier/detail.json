@@ -14,10 +14,16 @@
         {
           "name": "phoneNumber"
         },
+        { "name": "contactName" },
+        { "name": "supplierCode" }
+      ],
+      [
+        { "name": "website" },
         {
           "name": "category"
         }
       ],
+      [ { "name": "active" }, false ],
       [
         false,
         {

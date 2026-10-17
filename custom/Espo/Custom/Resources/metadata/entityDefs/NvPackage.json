@@ -42,10 +42,14 @@
       "type": "currency",
       "min": 0
     },
-    "durationDays": {
-      "type": "int",
-      "min": 1
-    }
+    "durationDays": { "type": "int", "min": 1 },
+    "productType": { "type": "enum", "options": ["Flight", "Hotel", "Transfer", "Visa", "Package", "Activity", "Other"], "default": "Package" },
+    "supplier": { "type": "link" },
+    "supplierProductCode": { "type": "varchar" },
+    "supplierCost": { "type": "currency", "min": 0 },
+    "validFrom": { "type": "date" },
+    "validTo": { "type": "date" },
+    "active": { "type": "bool", "default": true }
   },
   "links": {
     "createdBy": {
@@ -65,6 +69,10 @@
       "entity": "Team",
       "relationName": "entityTeam",
       "layoutRelationshipsDisabled": true
+    },
+    "supplier": {
+      "type": "belongsTo",
+      "entity": "NvSupplier"
     }
   },
   "collection": {

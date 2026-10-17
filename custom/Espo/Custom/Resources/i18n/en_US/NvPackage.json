@@ -2,7 +2,9 @@
   "fields": {
     "destination": "Destination",
     "sellingPrice": "Selling Price",
-    "durationDays": "Duration Days"
+    "durationDays": "Duration Days",
+    "productType": "Product Type", "supplier": "Supplier", "supplierProductCode": "Supplier Product Code",
+    "supplierCost": "Supplier Cost", "validFrom": "Valid From", "validTo": "Valid To", "active": "Active"
   },
   "labels": {
     "Create NvPackage": "Create Package"
