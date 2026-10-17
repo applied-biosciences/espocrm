@@ -64,6 +64,12 @@
     "teams": {
       "type": "linkMultiple",
       "view": "views/fields/teams"
+    },
+    "commissions": {
+      "type": "linkMultiple"
+    },
+    "loginEvents": {
+      "type": "linkMultiple"
     }
   },
   "links": {
@@ -80,6 +86,16 @@
       "entity": "Team",
       "relationName": "entityTeam",
       "layoutRelationshipsDisabled": true
+    },
+    "commissions": {
+      "type": "hasMany",
+      "entity": "NvCommission",
+      "foreignKey": "agentId"
+    },
+    "loginEvents": {
+      "type": "hasMany",
+      "entity": "NvAgentLogin",
+      "foreignKey": "agentId"
     }
   },
   "collection": {

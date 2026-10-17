@@ -5,7 +5,10 @@
       "required": true,
       "pattern": "$noBadCharacters"
     },
-    "commissionNumber": { "type": "autoincrement", "index": true },
+    "commissionNumber": {
+      "type": "autoincrement",
+      "index": true
+    },
     "description": {
       "type": "text"
     },
@@ -54,7 +57,10 @@
       "type": "currency",
       "min": 0
     },
-    "basisAmount": { "type": "currency", "min": 0 },
+    "basisAmount": {
+      "type": "currency",
+      "min": 0
+    },
     "status": {
       "type": "enum",
       "options": [
@@ -68,10 +74,23 @@
     "ruleSnapshot": {
       "type": "text"
     },
-    "frozen": { "type": "bool", "default": false, "audited": true },
-    "approvedAt": { "type": "datetime" },
-    "paidAt": { "type": "datetime" },
-    "settlementReference": { "type": "varchar" }
+    "frozen": {
+      "type": "bool",
+      "default": false,
+      "audited": true
+    },
+    "approvedAt": {
+      "type": "datetime"
+    },
+    "paidAt": {
+      "type": "datetime"
+    },
+    "settlementReference": {
+      "type": "varchar"
+    },
+    "agent": {
+      "type": "link"
+    }
   },
   "links": {
     "createdBy": {
@@ -95,6 +114,10 @@
     "booking": {
       "type": "belongsTo",
       "entity": "NvBooking"
+    },
+    "agent": {
+      "type": "belongsTo",
+      "entity": "NvAgent"
     }
   },
   "collection": {

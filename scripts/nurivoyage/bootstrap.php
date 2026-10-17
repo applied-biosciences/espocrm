@@ -69,6 +69,7 @@ $em->getSqlExecutor()->execute("CREATE TABLE IF NOT EXISTS nv_agent (
     INDEX idx_nv_agent_name_deleted (name, deleted),
     INDEX idx_nv_agent_login_deleted (login, deleted)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+$em->getSqlExecutor()->execute("CREATE TABLE IF NOT EXISTS nv_agent_login (id VARCHAR(24) NOT NULL PRIMARY KEY, name VARCHAR(255) NOT NULL, deleted TINYINT(1) DEFAULT 0, created_at DATETIME NULL, modified_at DATETIME NULL, agent_id VARCHAR(24) NULL, event_type VARCHAR(20) NULL, event_at DATETIME NULL, ip_address VARCHAR(64) NULL, user_agent VARCHAR(255) NULL, description TEXT NULL, INDEX idx_nv_agent_login_agent (agent_id, deleted), INDEX idx_nv_agent_login_event (event_at)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
 function upsert(string $type, string $key, string $value, array $data) {
     global $em;
     $record = $em->getRDBRepository($type)->where([$key=>$value])->findOne();
@@ -153,6 +154,13 @@ foreach ($users as $login=>$roleName) {
     $em->getRDBRepository('User')->getRelation($user,'roles')->relateById($roleIds[$roleName]);
     $userIds[$login]=$user->getId();
 }
+// Seed two synthetic agent profiles and link them to the local demo logins.
+$agentUsers = ['sales'=>'Aisha Khan','hybrid-commercial'=>'Omar Patel'];
+foreach ($agentUsers as $login=>$agentName) {
+    $agent=upsert('NvAgent','login',$login.'@nuri.local',['name'=>$agentName,'userId'=>$userIds[$login],'commissionType'=>'Percent of Sale','commissionRate'=>5,'description'=>'SYNTHETIC LOCAL AGENT PROFILE']);
+    upsert('NvAgentLogin','name',$agentName.' Login',['agentId'=>$agent->getId(),'eventType'=>'Login','eventAt'=>'2026-10-17 08:30:00','ipAddress'=>'127.0.0.1','userAgent'=>'Synthetic UAT']);
+    upsert('NvAgentLogin','name',$agentName.' Logout',['agentId'=>$agent->getId(),'eventType'=>'Logout','eventAt'=>'2026-10-17 17:00:00','ipAddress'=>'127.0.0.1','userAgent'=>'Synthetic UAT']);
+}
 // Seed only once. Re-running bootstrap preserves human UAT edits and transactions.
 if (!$config->get('nurivoyageSeedVersion')) {
     $customers=[];
@@ -179,7 +187,7 @@ if (!$config->get('nurivoyageSeedVersion')) {
         }
         upsert('NvTraveller','name',['Ahmed Khan','Fatima Patel','Mohammed Ismail'][$i],['customerId'=>$customers[$i],'bookingId'=>$booking->getId()]);
         upsert('NvCustomerInvoice','name',$scenario.' Invoice',['bookingId'=>$booking->getId(),'customerId'=>$customers[$i],'amount'=>40000+$i*5000,'amountCurrency'=>'ZAR','status'=>'Issued']);
-        upsert('NvCommission','name',$scenario.' Commission',['bookingId'=>$booking->getId(),'amount'=>500,'amountCurrency'=>'ZAR','method'=>'Fixed','assignedUserId'=>$userIds['sales'],
+        upsert('NvCommission','name',$scenario.' Commission',['bookingId'=>$booking->getId(),'amount'=>500,'amountCurrency'=>'ZAR','method'=>'Fixed','assignedUserId'=>$userIds['sales'],'agentId'=>$em->getRDBRepository('NvAgent')->where(['login'=>'sales@nuri.local'])->findOne()->getId(),
             'ruleSnapshot'=>'Synthetic baseline only; immutable ledger and calculations are future scope.']);
         upsert('NvPurchaseOrder','name',$scenario.' PO',['bookingId'=>$booking->getId(),'supplierId'=>$supplierIds[0],'amount'=>700,'amountCurrency'=>'USD']);
     }

@@ -23,7 +23,8 @@
     "NvPackage",
     "NvSightseeing",
     "NvItinerarySegment",
-    "NvAgent"
+    "NvAgent",
+    "NvAgentLogin"
   ],
   "salesWorkflow": [
     "New Enquiry",
