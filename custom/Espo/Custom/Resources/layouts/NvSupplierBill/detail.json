@@ -30,9 +30,7 @@
         {
           "name": "dueDate"
         },
-        {
-          "name": "assignedUser"
-        }
+        false
       ],
       [
         {

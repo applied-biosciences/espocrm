@@ -21,3 +21,6 @@ tests/nurivoyage/** text eol=lf
 infrastructure/local/** text eol=lf
 compose.yaml text eol=lf
 .env.example text eol=lf
+client/custom/** text eol=lf
+client/custom/branding/*.png binary
+branding/**/*.png binary

@@ -1,0 +1,52 @@
+[
+  {
+    "text": "Sales",
+    "iconClass": "fas fa-compass",
+    "itemList": [
+      "Lead",
+      "NvEnquiry",
+      "Account",
+      "Contact",
+      "NvQuote",
+      "NvBooking",
+      "NvPackage"
+    ]
+  },
+  {
+    "text": "Operations",
+    "iconClass": "fas fa-plane",
+    "itemList": [
+      "NvBookingItem",
+      "NvTraveller",
+      "NvFlight",
+      "NvHotel",
+      "NvTransfer",
+      "NvVisa",
+      "NvTravelDocument",
+      "Document"
+    ]
+  },
+  {
+    "text": "Purchasing & Finance",
+    "iconClass": "fas fa-coins",
+    "itemList": [
+      "NvSupplier",
+      "NvPurchaseOrder",
+      "NvSupplierBill",
+      "NvCustomerInvoice",
+      "NvCustomerPayment",
+      "NvSupplierPayment",
+      "NvCommission",
+      "NvFxRate"
+    ]
+  },
+  {
+    "text": "Workspace",
+    "iconClass": "fas fa-envelope",
+    "itemList": [
+      "Email",
+      "Task",
+      "EmailTemplate"
+    ]
+  }
+]

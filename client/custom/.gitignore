@@ -3,3 +3,12 @@
 !modules
 
 !README.md
+!branding/
+!branding/**
+!css/
+!css/**
+!src/
+!src/**
+!res/
+!res/**
+!nurivoyage-head.js

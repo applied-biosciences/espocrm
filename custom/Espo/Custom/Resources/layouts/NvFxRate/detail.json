@@ -22,9 +22,7 @@
         {
           "name": "rateDate"
         },
-        {
-          "name": "assignedUser"
-        }
+        false
       ],
       [
         {

@@ -8,23 +8,31 @@ $app->getInjectableFactory()->create(Espo\Core\ApplicationUser::class)->setupSys
 $em = $c->get('entityManager');
 $config = $c->get('config');
 $writer = $app->getInjectableFactory()->create(Espo\Core\Utils\Config\ConfigWriter::class);
+if (getenv('SMTP_HOST') !== 'mailpit' || (int)getenv('SMTP_PORT') !== 1025) {
+    throw new RuntimeException('Local Stage 3 email must use Mailpit (SMTP_HOST=mailpit, SMTP_PORT=1025).');
+}
 $model = json_decode(file_get_contents('/opt/nurivoyage/model.json'), true, 512, JSON_THROW_ON_ERROR);
 if ($config->get('version') !== $model['espoVersion']) {
     throw new RuntimeException('EspoCRM version mismatch; do not silently upgrade.');
 }
-$tabs = array_merge(['Account', 'Contact', 'Lead'], $model['entities'], ['Email', 'Task', 'Document']);
+$tabs = array_merge(['Account', 'Contact', 'Lead'], $model['entities'], ['Email', 'Task', 'Document', 'EmailTemplate']);
+$navigation = json_decode(file_get_contents('/opt/nurivoyage/navigation.json'), false, 512, JSON_THROW_ON_ERROR);
 foreach ([
     'siteUrl' => getenv('APP_URL'), 'webSocketUrl' => getenv('WS_URL') ?: 'ws://localhost:8081',
+    'theme'=>'NuriVoyage','themeParams'=>(object)['navbar'=>'side','direction'=>'ltr'],
+    'userThemesDisabled'=>true,'loginView'=>'custom:views/nurivoyage/login',
+    'logoSrc'=>'client/custom/branding/utnt-logo.png',
+    'applicationDescription'=>"NuriVoyage — Travel Management Platform for Nuri's Travel",
     'applicationName' => 'NuriVoyage', 'companyName' => "Nuri's Travel",
     'defaultCurrency' => getenv('DEFAULT_CURRENCY'), 'baseCurrency' => getenv('DEFAULT_CURRENCY'),
     'currencyList' => ['ZAR','USD','GBP','EUR','SAR','AED'],
     // Synthetic illustrative rates only: finance must never use these as live rates.
     'currencyRates' => ['ZAR'=>1, 'USD'=>0.055, 'GBP'=>0.043, 'EUR'=>0.051, 'SAR'=>0.206, 'AED'=>0.202],
     'dateFormat' => 'DD/MM/YYYY', 'timeZone' => getenv('APP_TIMEZONE'),
-    'tabList' => $tabs, 'quickCreateList' => ['Account','Contact','NvEnquiry','NvBooking','NvTravelDocument'],
+    'tabList' => $navigation, 'quickCreateList' => ['Account','Contact','NvEnquiry','NvBooking','NvTravelDocument'],
     'smtpServer' => getenv('SMTP_HOST'), 'smtpPort' => (int) getenv('SMTP_PORT'),
     'smtpAuth' => false, 'smtpSecurity' => null, 'outboundEmailIsShared' => true,
-    'outboundEmailFromName' => "Nuri's Travel (LOCAL)", 'outboundEmailFromAddress' => 'admin@nuri.local',
+    'outboundEmailFromName' => "NuriVoyage · Nuri's Travel (LOCAL)", 'outboundEmailFromAddress' => 'admin@nuri.local',
     'defaultFileStorage' => 'AwsS3', 'attachmentAvailableStorageList' => ['AwsS3'],
     'awsS3Storage' => [
         'bucketName' => getenv('MINIO_BUCKET'), 'path' => '', 'region' => 'us-east-1',
@@ -154,3 +162,14 @@ if (!$config->get('nurivoyageSeedVersion')) {
     $writer->set('nurivoyageSeedVersion',1);$writer->save();
 }
 echo "NuriVoyage schema v1 configured; seven roles/eight local logins; synthetic seed ready.\n";
+
+foreach (['quotation','invoice','purchase-order'] as $kind) {
+    $html=file_get_contents('/opt/nurivoyage/branding-email/'.$kind.'.html');
+    $html=str_replace('[[APP_URL]]',rtrim(getenv('APP_URL'),'/'),$html);
+    upsert('EmailTemplate','name','NuriVoyage — '.ucwords(str_replace('-',' ',$kind)),[
+        'subject'=>'NuriVoyage | '.ucwords(str_replace('-',' ',$kind)),
+        'body'=>$html,'isHtml'=>true,'status'=>'Active',
+        'description'=>'Stage 3 branding foundation. Fill clearly marked placeholders with synthetic data before local testing. Mailpit only.',
+    ]);
+}
+echo "Stage 3 theme, navigation and three branded email templates configured.\n";

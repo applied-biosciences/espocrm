@@ -1,0 +1,12 @@
+{
+  "favicon": "client/custom/branding/plane.png",
+  "faviconAlternate": "client/custom/branding/plane.png",
+  "scriptList": [
+    "__APPEND__",
+    "client/custom/nurivoyage-head.js"
+  ],
+  "developerModeScriptList": [
+    "__APPEND__",
+    "client/custom/nurivoyage-head.js"
+  ]
+}

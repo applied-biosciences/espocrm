@@ -30,9 +30,7 @@
         {
           "name": "supplierStatus"
         },
-        {
-          "name": "assignedUser"
-        }
+        false
       ],
       [
         {

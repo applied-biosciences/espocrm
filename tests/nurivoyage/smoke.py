@@ -46,7 +46,7 @@ def report():
     text+='| Check | Result | Evidence |\n|---|---|---|\n'
     for name,status,detail in RESULTS:
         text+='| '+name+' | '+status+' | '+detail.replace('|','/').replace('\n',' ')+' |\n'
-    text+='\nHuman UAT remains **PENDING**. See [exact human checklist](stage-2-human-uat.md).\n'
+    text+='\nThe Stage 2 baseline was accepted by the user on 17 October 2026. This is an automated regression run; Stage 3 requires its own [human UAT](stage-3-human-uat.md). See the [Stage 2 checklist](stage-2-human-uat.md).\n'
     text+='\nImplementation scope and limitations: [Stage 1 design](../nurivoyage/stage-1-design.md). No AWS deployment or production data used.\n'
     pathlib.Path('docs/testing/stage-2-smoke-test.md').write_text(text)
 

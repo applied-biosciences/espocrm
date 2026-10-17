@@ -35,9 +35,7 @@
         }
       ],
       [
-        {
-          "name": "assignedUser"
-        },
+        false,
         {
           "name": "description"
         }

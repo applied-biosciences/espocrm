@@ -7,6 +7,7 @@ case "${1:-help}" in
   start)
     "$0" configure
     docker compose up -d --build --wait --wait-timeout 300
+    python3 scripts/nurivoyage/publish-branding.py
     docker compose exec -T -u www-data crm php /opt/nurivoyage/bootstrap.php
     docker compose exec -T -u www-data crm php rebuild.php
     docker compose restart daemon websocket
@@ -15,13 +16,16 @@ case "${1:-help}" in
     "$0" health-check ;;
   stop) docker compose down ;;
   bootstrap)
+    python3 scripts/nurivoyage/publish-branding.py
     docker compose exec -T -u www-data crm php /opt/nurivoyage/bootstrap.php
     docker compose exec -T -u www-data crm php rebuild.php ;;
   reset-passwords)
+    python3 scripts/nurivoyage/publish-branding.py
     docker compose exec -T -u www-data crm php /opt/nurivoyage/bootstrap.php --reset-passwords ;;
   credentials) python3 scripts/nurivoyage/credentials.py ;;
   health-check) python3 scripts/nurivoyage/health.py ;;
   smoke) python3 tests/nurivoyage/smoke.py ;;
+  smoke-stage3) python3 tests/nurivoyage/stage3.py ;;
   backup) bash scripts/nurivoyage/backup.sh ;;
   restore) bash scripts/nurivoyage/restore.sh "${2:?Usage: scripts/local restore backups/TIMESTAMP}" ;;
   reset-local)
@@ -30,5 +34,5 @@ case "${1:-help}" in
     test "$answer" = 'DELETE NURIVOYAGE' || exit 1
     docker compose down -v
     "$0" start ;;
-  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|smoke|backup|restore DIR|reset-local}' ;;
+  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|smoke|smoke-stage3|backup|restore DIR|reset-local}' ;;
 esac

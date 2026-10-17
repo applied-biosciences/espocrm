@@ -1,0 +1,16 @@
+# Stage 3 automated browser procedure
+
+Use the desktop CUA browser tool against the running local stack. Browser checks are separate from `scripts/local smoke-stage3`: the CLI reproduces API/service/email/asset tests and links the recorded browser evidence; it does not pretend to drive a browser from Python.
+
+1. Obtain a dedicated in-app browser tab at http://localhost:8080. Use the documented viewport capability to set 1440×900, 1280×800, 768×1024 and 390×844 in turn.
+2. At each size, reload and wait for the Log in button. Read the DOM/AX state. Assert documentElement.scrollWidth ≤ innerWidth + 1, body computed background rgb(194,249,255), theme-color #C9A227, company logo loaded and descriptor present. Assert Username/Password labels target their fields; the login button fits within the viewport and is at least 44px high. Save desktop/mobile screenshots before filling credentials.
+3. Log in as admin@nuri.local using DEV_USER_PASSWORD from the ignored .env (never print/copy it into evidence). Wait for the native user menu and verify authenticated navigation.
+4. Open Bookings through the Sales group. Repeat all four viewport/overflow/background checks on the list. Verify native table responsiveness and that any necessary horizontal scroll stays inside the list container. On the phone viewport, expand the labelled Toggle navigation control and verify the menu can be used. Close it afterwards.
+5. Open Create Booking on the phone viewport; wait for Save. Verify no page overflow, legible inputs and visible Save/Cancel; cancel without saving. Native link/date/status selection logic must remain intact. Confirm Assigned User appears only in the native side panel.
+6. At 1280×800, log in/out through the normal UI as Sales, Hybrid, Finance and Management. Read DOM navigation hrefs. Sales/Hybrid must retain sales and appropriate operations links while NvPurchaseOrder/NvSupplierBill/NvSupplierPayment/NvFxRate are absent. Finance/Management must have their permitted finance links. Backend cost/commission ACL is separately rechecked by the full Stage 2 suite.
+7. Inspect browser error logs for failed custom module loads/recurring custom-asset 404s. The API test separately requests every published asset and checks server logs.
+8. Review the static PDF-layout preview (not a generated PDF), confirming original logo and placeholder notices. Save a screenshot if useful.
+9. After CLI tests restart and restore the stack, reload the browser and recheck login or authenticated page identity, colour and asset loading.
+10. Save a JSON evidence object under docs/testing/stage-3-browser-evidence.json containing recordedUtc, checks (screen/width/height/status/DOM measurements), and browser errors. Do not include passwords, auth tokens or internal application objects. Include screenshots under docs/testing/screenshots/. Reset the viewport override and leave localhost open for the human tester.
+
+All browser evaluations are read-only DOM inspections; actions use documented locators/native UI. This is automated testing, not human acceptance. Record failures honestly, fix the cause and rerun affected screens before final acceptance. Stage 3 human UAT remains pending until the user signs its separate checklist.

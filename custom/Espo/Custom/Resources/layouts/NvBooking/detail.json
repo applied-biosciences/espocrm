@@ -38,9 +38,7 @@
         {
           "name": "returnDate"
         },
-        {
-          "name": "assignedUser"
-        }
+        false
       ],
       [
         {
