@@ -1,5 +1,16 @@
 /* Loaded through app.client metadata. Presentation only; no authentication or ACL changes. */
 (() => {
+    const version = 'v10.0.10.0';
+    const addVersionBadge = () => {
+        if (document.querySelector('.nuri-version-badge')) return;
+        const badge = document.createElement('span');
+        badge.className = 'nuri-version-badge';
+        badge.textContent = version;
+        badge.setAttribute('aria-label', `NuriVoyage version ${version}`);
+        document.body.append(badge);
+    };
+    if (document.body) addVersionBadge();
+    else document.addEventListener('DOMContentLoaded', addVersionBadge, {once: true});
     let theme = document.querySelector('meta[name="theme-color"]');
     if (!theme) {
         theme = document.createElement('meta');

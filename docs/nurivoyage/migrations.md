@@ -19,3 +19,7 @@ Stage 4 adds operational lead and enquiry fields to the existing `NvEnquiry` ent
 ## Stage 5 — traveller and document metadata
 
 Stage 5 adds passport identity metadata to `NvTraveller` and document number, issuing country, issue date and verification state to `NvTravelDocument`, including read-only verification attribution. This is an additive metadata change applied by `scripts/local bootstrap`; files remain in the existing private MinIO-backed document path and no OCR, external identity validation or AWS deployment is introduced.
+
+## Stage 6 — quote and version metadata
+
+Stage 6 adds quote number, option name, sent-at, accepted-at and lost-reason fields to `NvQuote`. It also publishes the application version marker `v10.0.10.0` through supported custom login, navbar and client head assets. This is an additive metadata and presentation change; the EspoCRM distribution remains pinned to 10.0.10 and no core files are changed.

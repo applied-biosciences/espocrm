@@ -11,6 +11,10 @@
         }
       ],
       [
+        { "name": "quoteNumber" },
+        { "name": "optionName" }
+      ],
+      [
         {
           "name": "customer"
         },
@@ -30,7 +34,13 @@
         {
           "name": "validUntil"
         },
-        false
+        {
+          "name": "sentAt"
+        }
+      ],
+      [
+        { "name": "acceptedAt" },
+        { "name": "lostReason" }
       ],
       [
         {

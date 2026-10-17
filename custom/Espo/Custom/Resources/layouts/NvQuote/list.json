@@ -6,6 +6,8 @@
   {
     "name": "status"
   },
+  { "name": "quoteNumber" },
+  { "name": "validUntil" },
   {
     "name": "assignedUser"
   }
