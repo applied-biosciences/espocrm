@@ -25,7 +25,7 @@
     "NvTaxRule": "Tax Rule",
     "NvConversionSnapshot": "Conversion Snapshot",
     "NvCommunication": "Customer Communication",
-    "NvWorkflowTask": "Workflow Controls"
+    "NvWorkflowTask": "Workflow Control"
   },
   "scopeNamesPlural": {
     "NvEnquiry": "Enquiries",
