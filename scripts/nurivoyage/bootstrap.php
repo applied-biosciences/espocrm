@@ -185,6 +185,10 @@ foreach ([
  ['Debtors','Debtor Dashboard',40000,0,0,18000,0,0,0,2,1],
  ['Creditors','Creditor Dashboard',0,0,0,0,12000,12000,12000,2,0]
 ] as $r) { upsert('NvPerformanceReport','name',$r[1],['reportType'=>$r[0],'periodStart'=>'2026-10-01','periodEnd'=>'2026-10-31','salesTotal'=>$r[2],'costTotal'=>$r[3],'profitTotal'=>$r[4],'debtorTotal'=>$r[5],'creditorTotal'=>$r[6],'supplierOutstanding'=>$r[7],'openBookings'=>$r[8],'completedSales'=>$r[9],'description'=>'SYNTHETIC LOCAL STAGE 13 REPORT']); }
+// Seed one synthetic task per Stage 16 automation class for local UAT.
+foreach ([['Approval','Synthetic quote approval'],['Reminder','Synthetic customer reminder'],['Document Expiry','Synthetic passport expiry alert'],['Supplier Follow-up','Synthetic supplier confirmation follow-up'],['Exception','Synthetic unresolved exception']] as [$type,$name]) {
+    upsert('NvWorkflowTask','name',$name,['workflowType'=>$type,'status'=>'Open','priority'=>$type==='Exception'?'High':'Normal','dueAt'=>'2026-10-31 09:00:00','reminderAt'=>'2026-10-24 09:00:00','lastAction'=>'Seeded Stage 16 synthetic workflow']);
+}
 // Seed only once. Re-running bootstrap preserves human UAT edits and transactions.
 if (!$config->get('nurivoyageSeedVersion')) {
     $customers=[];
