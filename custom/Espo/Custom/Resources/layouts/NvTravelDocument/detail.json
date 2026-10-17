@@ -27,6 +27,18 @@
         }
       ],
       [
+        { "name": "documentNumber" },
+        { "name": "countryOfIssue" }
+      ],
+      [
+        { "name": "issueDate" },
+        { "name": "verificationStatus" }
+      ],
+      [
+        { "name": "verifiedAt" },
+        { "name": "verifiedBy" }
+      ],
+      [
         false,
         {
           "name": "description"

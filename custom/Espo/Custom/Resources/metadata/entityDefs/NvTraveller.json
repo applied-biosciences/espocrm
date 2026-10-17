@@ -46,7 +46,11 @@
     },
     "nationality": {
       "type": "varchar"
-    }
+    },
+    "passportNumber": { "type": "varchar", "audited": true },
+    "passportCountry": { "type": "varchar" },
+    "passportIssueDate": { "type": "date" },
+    "passportExpiryDate": { "type": "date", "audited": true }
   },
   "links": {
     "createdBy": {

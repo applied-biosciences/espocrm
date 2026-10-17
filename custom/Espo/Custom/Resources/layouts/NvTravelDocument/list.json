@@ -6,6 +6,9 @@
   {
     "name": "booking"
   },
+  { "name": "documentType" },
+  { "name": "expiryDate" },
+  { "name": "verificationStatus" },
   {
     "name": "assignedUser"
   }

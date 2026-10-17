@@ -3,7 +3,11 @@
     "customer": "Customer",
     "booking": "Booking",
     "dateOfBirth": "Date Of Birth",
-    "nationality": "Nationality"
+    "nationality": "Nationality",
+    "passportNumber": "Passport Number",
+    "passportCountry": "Passport Country",
+    "passportIssueDate": "Passport Issue Date",
+    "passportExpiryDate": "Passport Expiry Date"
   },
   "labels": {
     "Create NvTraveller": "Create Traveller"

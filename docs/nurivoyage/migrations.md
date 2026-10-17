@@ -15,3 +15,7 @@ Stage 3 adds a supported theme, login/navbar views, grouped tab configuration, l
 ## Stage 4 — enquiry workflow extension
 
 Stage 4 adds operational lead and enquiry fields to the existing `NvEnquiry` entity: contact, source, source detail, destination, service type, preferred contact method, budget, next follow-up and lost reason. This is an additive metadata change applied by `scripts/local bootstrap`; no core files, SQL migration or external integration is introduced. Existing Stage 1 status vocabulary and role boundaries remain in force.
+
+## Stage 5 — traveller and document metadata
+
+Stage 5 adds passport identity metadata to `NvTraveller` and document number, issuing country, issue date and verification state to `NvTravelDocument`, including read-only verification attribution. This is an additive metadata change applied by `scripts/local bootstrap`; files remain in the existing private MinIO-backed document path and no OCR, external identity validation or AWS deployment is introduced.
