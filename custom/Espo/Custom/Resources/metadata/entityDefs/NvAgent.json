@@ -2,26 +2,105 @@
   "type": "Base",
   "module": "Custom",
   "fields": {
-    "name": { "type": "varchar", "required": true, "pattern": "$noBadCharacters" },
-    "user": { "type": "link" },
-    "login": { "type": "varchar" },
-    "lastLoginAt": { "type": "datetime" },
-    "loginAuditTrail": { "type": "text" },
-    "completedSales": { "type": "int", "min": 0, "default": 0 },
-    "openSales": { "type": "int", "min": 0, "default": 0 },
-    "commissionType": { "type": "enum", "options": ["Percent of Sale", "Percent of Gross Profit", "Fixed", "Product Specific"], "default": "Percent of Sale" },
-    "commissionRate": { "type": "float", "min": 0 },
-    "commissionPaid": { "type": "currency", "min": 0, "default": 0 },
-    "commissionOwed": { "type": "currency", "min": 0, "default": 0 },
-    "description": { "type": "text" },
-    "assignedUser": { "type": "link", "required": false, "view": "views/fields/assigned-user" },
-    "teams": { "type": "linkMultiple", "view": "views/fields/teams" }
+    "name": {
+      "type": "varchar",
+      "required": true,
+      "pattern": "$noBadCharacters"
+    },
+    "user": {
+      "type": "link"
+    },
+    "login": {
+      "type": "varchar"
+    },
+    "lastLoginAt": {
+      "type": "datetime"
+    },
+    "loginAuditTrail": {
+      "type": "text"
+    },
+    "completedSales": {
+      "type": "int",
+      "min": 0,
+      "default": 0
+    },
+    "openSales": {
+      "type": "int",
+      "min": 0,
+      "default": 0
+    },
+    "commissionType": {
+      "type": "enum",
+      "options": [
+        "Percent of Sale",
+        "Percent of Gross Profit",
+        "Fixed",
+        "Product Specific"
+      ],
+      "default": "Percent of Sale"
+    },
+    "commissionRate": {
+      "type": "float",
+      "min": 0
+    },
+    "commissionPaid": {
+      "type": "currency",
+      "min": 0,
+      "default": 0
+    },
+    "commissionOwed": {
+      "type": "currency",
+      "min": 0,
+      "default": 0
+    },
+    "description": {
+      "type": "text"
+    },
+    "assignedUser": {
+      "type": "link",
+      "required": false,
+      "view": "views/fields/assigned-user"
+    },
+    "teams": {
+      "type": "linkMultiple",
+      "view": "views/fields/teams"
+    }
   },
   "links": {
-    "user": { "type": "belongsTo", "entity": "User" },
-    "assignedUser": { "type": "belongsTo", "entity": "User" },
-    "teams": { "type": "hasMany", "entity": "Team", "relationName": "entityTeam", "layoutRelationshipsDisabled": true }
+    "user": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "teams": {
+      "type": "hasMany",
+      "entity": "Team",
+      "relationName": "entityTeam",
+      "layoutRelationshipsDisabled": true
+    }
   },
-  "collection": { "orderBy": "name", "textFilterFields": ["name", "login"] },
-  "indexes": { "name": { "columns": ["name", "deleted"] }, "login": { "columns": ["login", "deleted"] } }
+  "collection": {
+    "orderBy": "name",
+    "textFilterFields": [
+      "name",
+      "login"
+    ]
+  },
+  "indexes": {
+    "name": {
+      "columns": [
+        "name",
+        "deleted"
+      ]
+    },
+    "login": {
+      "columns": [
+        "login",
+        "deleted"
+      ]
+    }
+  }
 }

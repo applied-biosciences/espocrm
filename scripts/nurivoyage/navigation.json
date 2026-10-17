@@ -34,6 +34,7 @@
     "text": "Purchasing & Finance",
     "iconClass": "fas fa-coins",
     "itemList": [
+      "NvAgent",
       "NvSupplier",
       "NvPurchaseOrder",
       "NvSupplierBill",

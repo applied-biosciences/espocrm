@@ -42,6 +42,33 @@ foreach ([
     'nurivoyageSchemaVersion' => 1,
 ] as $key=>$value) { $writer->set($key,$value); }
 $writer->save();
+// Stage 11 migration: the Agents entity is a first-class Espo record backed by nv_agent.
+// Keep this idempotent so local bootstrap can safely be rerun after a fresh volume restore.
+$em->getSqlExecutor()->execute("CREATE TABLE IF NOT EXISTS nv_agent (
+    id VARCHAR(24) NOT NULL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    deleted TINYINT(1) DEFAULT 0,
+    created_at DATETIME NULL,
+    modified_at DATETIME NULL,
+    user_id VARCHAR(24) NULL,
+    assigned_user_id VARCHAR(24) NULL,
+    created_by_id VARCHAR(24) NULL,
+    modified_by_id VARCHAR(24) NULL,
+    login VARCHAR(255) NULL,
+    last_login_at DATETIME NULL,
+    login_audit_trail TEXT NULL,
+    completed_sales INT DEFAULT 0,
+    open_sales INT DEFAULT 0,
+    commission_type VARCHAR(100) NULL,
+    commission_rate DECIMAL(16,8) NULL,
+    commission_paid DECIMAL(16,8) DEFAULT 0,
+    commission_paid_currency VARCHAR(3) NULL,
+    commission_owed DECIMAL(16,8) DEFAULT 0,
+    commission_owed_currency VARCHAR(3) NULL,
+    description TEXT NULL,
+    INDEX idx_nv_agent_name_deleted (name, deleted),
+    INDEX idx_nv_agent_login_deleted (login, deleted)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
 function upsert(string $type, string $key, string $value, array $data) {
     global $em;
     $record = $em->getRDBRepository($type)->where([$key=>$value])->findOne();
