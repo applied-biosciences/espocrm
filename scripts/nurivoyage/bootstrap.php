@@ -103,6 +103,7 @@ foreach ($roles as $name=>$allowed) {
     // PDF generation uses the Template scope; all local operational roles need read access to select layouts.
     $allowed[] = "Template";
     $allowed[] = "NvPerformanceReport";
+    $allowed[] = "NvCommunication";
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {

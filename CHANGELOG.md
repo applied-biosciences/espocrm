@@ -1,9 +1,9 @@
 # Changelog
 
-## v10.0.10.0.s13 — Stage 11 development
+## v10.0.10.0.s14 — Stage 11 development
 
 - Added commission numbers, basis amounts, frozen rule snapshots, approval and paid timestamps, and settlement references.
-- Added Stage 11 commission approval, freeze and settlement smoke coverage and advanced the application marker to `v10.0.10.0.s13`.
+- Added Stage 11 commission approval, freeze and settlement smoke coverage and advanced the application marker to `v10.0.10.0.s14`.
 
 ## v10.0.10.0.s7 — Stage 7 development
 
@@ -71,12 +71,16 @@
 - Added the NuriVoyage business model, seven roles, synthetic seed data and local Docker stack.
 - Added MariaDB, daemon, WebSocket, MinIO, Mailpit, backups, restore, health checks and automated smoke tests.
 
-## v10.0.10.0.s13 — Stage 12 development
+## v10.0.10.0.s14 — Stage 12 development
 
 - Added document lifecycle controls for expiry alerts, verification history, retention rules and checklist status.
 - Added PDF-ready and printable document flags for local download/printing workflows.
 
-## v10.0.10.0.s13 — Stage 13 development
+## v10.0.10.0.s14 — Stage 13 development
 
 - Added role-safe profitability, sales, operations, supplier, debtor, creditor and performance report records.
 - Added synthetic local report dashboards and Purchasing & Finance navigation entry.
+
+## v10.0.10.0.s14 — Stage 14 development
+
+- Added reusable communication records with email templates, customer communication history and future WhatsApp/SMS channel states.

@@ -50,6 +50,7 @@
     "text": "Management Dashboards & Reporting",
     "iconClass": "fas fa-chart-line",
     "itemList": [
+      "NvCommunication",
       "NvPerformanceReport",
       "Report",
       "Dashboard"

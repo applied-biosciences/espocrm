@@ -1,0 +1,1 @@
+[{"label":"Communication","rows":[[{"name":"name"},{"name":"channel"}],[{"name":"customer"},{"name":"booking"}],[{"name":"direction"},{"name":"status"}],[{"name":"subject"},{"name":"templateName"}],[{"name":"sentAt"},{"name":"externalReference"}],[{"name":"message"},false]]}]

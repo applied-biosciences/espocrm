@@ -1,8 +1,8 @@
-# NuriVoyage — local travel management platform v10.0.10.0.s13
+# NuriVoyage — local travel management platform v10.0.10.0.s14
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.0.s13`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.10.0.s14`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -221,3 +221,7 @@ On Travel Documents, Quotes, Customer Invoices and Purchase Orders, select one o
 ### Stage 13 reporting
 
 Purchasing & Finance → Performance Reports provides role-filtered profitability, sales, operations, supplier payables, debtor and creditor summaries. Synthetic local reports are seeded by `scripts/local bootstrap` for smoke and UAT.
+
+### Stage 14 customer communications
+
+Reusable templates remain in Email Templates. Customer communication history is recorded under Customer Communications with Email, WhatsApp (Future) and SMS (Future) channel states.
