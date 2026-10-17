@@ -90,12 +90,12 @@
     "commissions": {
       "type": "hasMany",
       "entity": "NvCommission",
-      "foreignKey": "agentId"
+      "foreign": "agent"
     },
     "loginEvents": {
       "type": "hasMany",
       "entity": "NvAgentLogin",
-      "foreignKey": "agentId"
+      "foreign": "agent"
     }
   },
   "collection": {
