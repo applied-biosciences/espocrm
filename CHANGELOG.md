@@ -13,6 +13,11 @@
 - Added PO numbers, supplier references, request and confirmation timestamps to purchase orders.
 - Added Stage 9 procurement lifecycle smoke coverage and advanced the application marker to `v10.0.10.0.s9`.
 
+## v10.0.10.0.s10 — Stage 10 development
+
+- Added invoice numbers, paid and balance amounts, payment numbers, deposit/payment/refund types and allocation amounts.
+- Added Stage 10 invoice and payment lifecycle smoke coverage and advanced the application marker to `v10.0.10.0.s10`.
+
 - Fixed the Customer page crash caused by a nonexistent linked-list field view, and placed Group Travellers in the native relationship panel.
 - Rendered City Stops, Travellers, Transfers and Sightseeing as working itinerary relationship panels, with a complete add-city form and dated stop list.
 - Added an idempotent synthetic four-city family fixture for local UAT.

@@ -10,6 +10,7 @@
           "name": "booking"
         }
       ],
+      [ { "name": "paymentNumber" }, { "name": "paymentType" } ],
       [
         {
           "name": "customer"
@@ -26,6 +27,7 @@
           "name": "paymentDate"
         }
       ],
+      [ { "name": "allocatedAmount" }, { "name": "paymentDate" } ],
       [
         {
           "name": "reference"
