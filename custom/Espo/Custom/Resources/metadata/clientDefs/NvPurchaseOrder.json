@@ -3,5 +3,8 @@
   "iconClass": "fas fa-shopping-cart",
   "boolFilterList": [
     "onlyMy"
+  ],
+  "massActionList": [
+    "printPdf"
   ]
 }

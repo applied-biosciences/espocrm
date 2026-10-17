@@ -213,3 +213,7 @@ Stage 10 adds invoice numbers, paid and balance amounts, customer deposits, paym
 ## Stage 11 commissions and settlements
 
 Stage 11 adds commission numbers, basis amounts, frozen rule snapshots, approval and paid timestamps, and settlement references. Finance and Management can approve and settle commissions while agents retain own-commission visibility. Run `scripts/local smoke-stage11` for focused checks.
+
+### PDF and printing (Stage 12)
+
+On Travel Documents, Quotes, Customer Invoices and Purchase Orders, select one or more records in the list and use **Print PDF**. The generated PDF opens in the browser for download or system printing. Record detail pages also expose Espo's standard print/PDF action menu when available.

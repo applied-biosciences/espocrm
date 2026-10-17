@@ -3,5 +3,8 @@
   "iconClass": "fas fa-file-alt",
   "boolFilterList": [
     "onlyMy"
+  ],
+  "massActionList": [
+    "printPdf"
   ]
 }
