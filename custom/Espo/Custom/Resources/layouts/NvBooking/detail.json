@@ -15,6 +15,14 @@
         false
       ],
       [
+        { "name": "travellers" },
+        { "name": "itinerarySegments" }
+      ],
+      [
+        { "name": "transfers" },
+        { "name": "sightseeing" }
+      ],
+      [
         {
           "name": "enquiry"
         },

@@ -152,6 +152,26 @@
     "leadTraveller": {
       "type": "belongsTo",
       "entity": "NvTraveller"
+    },
+    "travellers": {
+      "type": "hasMany",
+      "entity": "NvTraveller",
+      "foreign": "booking"
+    },
+    "itinerarySegments": {
+      "type": "hasMany",
+      "entity": "NvItinerarySegment",
+      "foreign": "booking"
+    },
+    "transfers": {
+      "type": "hasMany",
+      "entity": "NvTransfer",
+      "foreign": "booking"
+    },
+    "sightseeing": {
+      "type": "hasMany",
+      "entity": "NvSightseeing",
+      "foreign": "booking"
     }
   },
   "collection": {

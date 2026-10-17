@@ -20,6 +20,7 @@
     "NvVisa": "Visa",
     "NvPackage": "Package",
     "NvSightseeing": "Sightseeing",
+    "NvItinerarySegment": "City Segment",
     "Account": "Customer"
   },
   "scopeNamesPlural": {
@@ -43,6 +44,7 @@
     "NvVisa": "Visas",
     "NvPackage": "Packages",
     "NvSightseeing": "Sightseeing",
+    "NvItinerarySegment": "City Segments",
     "Account": "Customers"
   }
 }

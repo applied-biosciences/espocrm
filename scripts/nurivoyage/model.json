@@ -21,7 +21,8 @@
     "NvTransfer",
     "NvVisa",
     "NvPackage",
-    "NvSightseeing"
+    "NvSightseeing",
+    "NvItinerarySegment"
   ],
   "salesWorkflow": [
     "New Enquiry",

@@ -1,0 +1,18 @@
+{
+  "fields": {
+    "name": { "type": "varchar", "required": true, "pattern": "$noBadCharacters" },
+    "booking": { "type": "link", "required": true },
+    "sequence": { "type": "int", "min": 1, "required": true },
+    "city": { "type": "varchar", "required": true },
+    "arrivalDate": { "type": "date" },
+    "departureDate": { "type": "date" },
+    "transferMode": { "type": "enum", "options": ["Air", "Road", "Train", "None"], "default": "None" },
+    "transferFromCity": { "type": "varchar" },
+    "transferCost": { "type": "currency", "min": 0 },
+    "transferCostCurrency": { "type": "enum", "options": ["ZAR", "USD", "GBP", "EUR", "SAR", "AED"], "default": "ZAR" },
+    "notes": { "type": "text" }
+  },
+  "links": { "booking": { "type": "belongsTo", "entity": "NvBooking" } },
+  "collection": { "orderBy": "sequence", "order": "asc" },
+  "indexes": { "bookingSequence": { "columns": ["bookingId", "sequence", "deleted"] } }
+}

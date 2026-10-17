@@ -16,12 +16,14 @@
     "text": "Operations",
     "iconClass": "fas fa-plane",
     "itemList": [
+      "NvBooking",
       "NvBookingItem",
       "NvTraveller",
       "NvFlight",
       "NvHotel",
       "NvTransfer",
       "NvSightseeing",
+      "NvItinerarySegment",
       "NvVisa",
       "NvTravelDocument",
       "Document"

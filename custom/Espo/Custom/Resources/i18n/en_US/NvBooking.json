@@ -17,7 +17,11 @@
     ,"travellerCount": "Traveller Count"
     ,"itineraryNotes": "Itinerary Notes"
     ,"confirmedAt": "Confirmed At",
-    "itineraryCities": "Itinerary Cities"
+    "itineraryCities": "Itinerary Cities",
+    "travellers": "Travellers (+ / −)",
+    "itinerarySegments": "City Segments",
+    "transfers": "Transfers",
+    "sightseeing": "Sightseeing"
   },
   "labels": {
     "Create NvBooking": "Create Booking"
