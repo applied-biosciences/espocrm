@@ -19,6 +19,18 @@
         }
       ],
       [
+        { "name": "contact" },
+        { "name": "source" }
+      ],
+      [
+        { "name": "sourceDetail" },
+        { "name": "serviceType" }
+      ],
+      [
+        { "name": "destination" },
+        { "name": "preferredContactMethod" }
+      ],
+      [
         {
           "name": "travelDate"
         },
@@ -26,6 +38,11 @@
           "name": "travellerCount"
         }
       ],
+      [
+        { "name": "budget" },
+        { "name": "nextFollowUpAt" }
+      ],
+      [false, { "name": "lostReason" }],
       [
         false,
         {

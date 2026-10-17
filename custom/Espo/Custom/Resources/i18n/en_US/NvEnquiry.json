@@ -4,7 +4,16 @@
     "customer": "Customer",
     "lead": "Lead",
     "travelDate": "Travel Date",
-    "travellerCount": "Traveller Count"
+    "travellerCount": "Traveller Count",
+    "contact": "Contact",
+    "source": "Enquiry Source",
+    "sourceDetail": "Source Detail",
+    "destination": "Destination",
+    "serviceType": "Service Type",
+    "preferredContactMethod": "Preferred Contact Method",
+    "budget": "Estimated Budget",
+    "nextFollowUpAt": "Next Follow-up",
+    "lostReason": "Lost Reason"
   },
   "labels": {
     "Create NvEnquiry": "Create Enquiry"
