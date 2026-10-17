@@ -7,6 +7,7 @@
 - Added multi-city itinerary cities, inter-city transfers with type and cost, multiple hotel stays by city and sightseeing activities with city/date/cost.
 - Added Operations-menu itineraries with expandable city segments (two initial cities plus unlimited additions), priced air/road/train transfers, and booking-page transfer/sightseeing panels.
 - Added booking-to-traveller linked lists with add/remove controls for group members before final confirmation.
+- Added the same group traveller relationship to Customer records and expanded city transfer choices to Car and Bus with arrival/departure dates.
 - Made traveller records and passport photos readable by all named application roles, including Sales.
 - Added the family/group booking model: Customer billing account, Lead Traveller, member Travellers and shared Group Reference.
 - Added the passport photo to the traveller detail page and Stage 7 UAT.

@@ -1,0 +1,9 @@
+{
+  "links": {
+    "travellers": {
+      "type": "hasMany",
+      "entity": "NvTraveller",
+      "foreign": "customer"
+    }
+  }
+}

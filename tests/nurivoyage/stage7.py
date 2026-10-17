@@ -26,13 +26,14 @@ print('PASS Stage 7 lifecycle: Operations attached private passport photo; Sales
 booking_fields = api('Metadata')['entityDefs']['NvBooking']['fields']
 required_booking = ['bookingReference','itineraryTitle','destination','departureCity','arrivalCity','travellerCount','itineraryNotes','confirmedAt']
 assert all(name in booking_fields for name in required_booking)
+customer = api('Account', 'POST', {'name':'Stage 7 Synthetic Family Customer '+stamp, 'type':'Customer'}, user='sales')
 booking = api('NvBooking', 'POST', {
     'name':'Stage 7 Synthetic Itinerary '+stamp,
     'bookingReference':'NV-B-'+stamp, 'itineraryTitle':'Umrah Family Itinerary',
     'destination':'Makkah and Madinah', 'departureCity':'Cape Town',
     'arrivalCity':'Jeddah', 'travellerCount':2,
     'travelDate':'2027-01-10', 'returnDate':'2027-01-21',
-    'status':'Booking Confirmed', 'confirmedAt':'2026-10-22 10:00:00',
+    'status':'Booking Confirmed', 'confirmedAt':'2026-10-22 10:00:00', 'customerId':customer['id'],
     'itineraryNotes':'Synthetic itinerary for Stage 7 local testing.'
 }, user='operations')
 itinerary = api('NvBooking/'+booking['id'], user='operations')
@@ -40,8 +41,8 @@ assert itinerary['bookingReference'] == 'NV-B-'+stamp and itinerary['destination
 print('PASS Stage 7 itinerary lifecycle: Operations created and read a synthetic itinerary')
 segments = [
     {'name':'Stage 7 City 1 Makkah '+stamp, 'bookingId':booking['id'], 'sequence':1, 'city':'Makkah', 'transferMode':'None'},
-    {'name':'Stage 7 City 2 Madinah '+stamp, 'bookingId':booking['id'], 'sequence':2, 'city':'Madinah', 'transferMode':'Road', 'transferFromCity':'Makkah', 'transferCost':850, 'transferCostCurrency':'ZAR'},
-    {'name':'Stage 7 City 3 Jeddah '+stamp, 'bookingId':booking['id'], 'sequence':3, 'city':'Jeddah', 'transferMode':'Air', 'transferFromCity':'Madinah', 'transferCost':1200, 'transferCostCurrency':'ZAR'},
+    {'name':'Stage 7 City 2 Madinah '+stamp, 'bookingId':booking['id'], 'sequence':2, 'city':'Madinah', 'arrivalDate':'2027-01-12', 'departureDate':'2027-01-16', 'transferMode':'Bus', 'transferFromCity':'Makkah', 'transferCost':850, 'transferCostCurrency':'ZAR'},
+    {'name':'Stage 7 City 3 Jeddah '+stamp, 'bookingId':booking['id'], 'sequence':3, 'city':'Jeddah', 'arrivalDate':'2027-01-18', 'departureDate':'2027-01-21', 'transferMode':'Air', 'transferFromCity':'Madinah', 'transferCost':1200, 'transferCostCurrency':'ZAR'},
 ]
 for segment in segments:
     api('NvItinerarySegment', 'POST', segment, user='operations')
@@ -67,11 +68,12 @@ sightseeing = api('NvSightseeing', 'POST', {
 assert api('NvSightseeing/'+sightseeing['id'], user='operations')['city'] == 'Makkah'
 print('PASS Stage 7 multi-city itinerary: inter-city transfer, multi-hotel stays and sightseeing cost persisted')
 booking_detail = api('NvBooking/'+booking['id'], user='operations')
-group_member = api('NvTraveller', 'POST', {'name':'Stage 7 Booking Member '+stamp, 'bookingId':booking['id'], 'isLeadTraveller':False}, user='operations')
+group_member = api('NvTraveller', 'POST', {'name':'Stage 7 Booking Member '+stamp, 'bookingId':booking['id'], 'customerId':customer['id'], 'isLeadTraveller':False}, user='operations')
 assert api('NvBooking/'+booking['id']+'/travellers', user='operations')['total'] >= 1
 api('NvTraveller/'+group_member['id'], 'PUT', {'bookingId':None}, user='operations')
 assert api('NvBooking/'+booking['id']+'/travellers', user='operations')['total'] == 0
 api('NvTraveller/'+group_member['id'], 'PUT', {'bookingId':booking['id']}, user='operations')
+assert api('Account/'+customer['id']+'/travellers', user='operations')['total'] >= 1
 assert api('NvBooking/'+booking['id']+'/itinerarySegments', user='operations')['total'] >= 3
 assert api('NvBooking/'+booking['id']+'/transfers', user='operations')['total'] >= 1
 assert api('NvBooking/'+booking['id']+'/sightseeing', user='operations')['total'] >= 1
