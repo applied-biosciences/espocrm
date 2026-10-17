@@ -4,7 +4,13 @@
     "traveller": "Traveller",
     "file": "File",
     "documentType": "Document Type",
-    "expiryDate": "Expiry Date"
+    "expiryDate": "Expiry Date",
+    "documentNumber": "Document Number",
+    "countryOfIssue": "Country of Issue",
+    "issueDate": "Issue Date",
+    "verificationStatus": "Verification Status",
+    "verifiedAt": "Verified At",
+    "verifiedBy": "Verified By"
   },
   "labels": {
     "Create NvTravelDocument": "Create Travel Document"

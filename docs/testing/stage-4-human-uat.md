@@ -1,5 +1,7 @@
 # Stage 4 human localhost UAT
 
+Status: **ACCEPTED**. The user accepted Stage 4 in chat after the automated checks and localhost review.
+
 URL: http://localhost:8080
 
 Use the synthetic credentials in `.local/test-credentials.md`. Do not enter real customer details.

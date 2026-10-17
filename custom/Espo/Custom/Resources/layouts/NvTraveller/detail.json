@@ -22,6 +22,16 @@
         {
           "name": "nationality"
         },
+        {
+          "name": "passportNumber"
+        }
+      ],
+      [
+        { "name": "passportCountry" },
+        { "name": "passportIssueDate" }
+      ],
+      [
+        { "name": "passportExpiryDate" },
         false
       ],
       [

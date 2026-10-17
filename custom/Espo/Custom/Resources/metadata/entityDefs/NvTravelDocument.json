@@ -57,6 +57,21 @@
     },
     "expiryDate": {
       "type": "date"
+    },
+    "documentNumber": { "type": "varchar", "audited": true },
+    "countryOfIssue": { "type": "varchar" },
+    "issueDate": { "type": "date" },
+    "verificationStatus": {
+      "type": "enum",
+      "options": ["Pending", "Verified", "Rejected", "Expired"],
+      "default": "Pending",
+      "audited": true
+    },
+    "verifiedAt": { "type": "datetime", "readOnly": true },
+    "verifiedBy": {
+      "type": "link",
+      "readOnly": true,
+      "view": "views/fields/user"
     }
   },
   "links": {
@@ -85,6 +100,10 @@
     "traveller": {
       "type": "belongsTo",
       "entity": "NvTraveller"
+    },
+    "verifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
     }
   },
   "collection": {
