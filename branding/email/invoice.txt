@@ -1,0 +1,14 @@
+NuriVoyage — Travel Management Platform
+Nuri's Travel
+
+Your travel invoice
+Dear [[CUSTOMER_NAME]],
+
+Please find your invoice summary below. Contact your travel consultant if you have any questions.
+Reference: [[DOCUMENT_NUMBER]]
+Total: [[CURRENCY]] [[TOTAL]]
+[[DOCUMENT_MESSAGE_OR_ATTACHMENT_NOTE]]
+
+Nuri's Travel
+[[CONSULTANT_NAME]] — [[CONTACT_DETAILS]]
+Local synthetic preview only.

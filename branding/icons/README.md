@@ -1,0 +1,1 @@
+The supplied plane artwork is preserved at ../favicon/plane.png and used as the app favicon. Module navigation uses the existing bundled Espo Font Awesome icons, selected through supported custom clientDefs metadata. No external icon/font service is requested.

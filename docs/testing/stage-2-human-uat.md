@@ -1,6 +1,6 @@
 # Stage 2 human localhost UAT
 
-Status: **PENDING — a human must perform and record this checklist.** Automated API/browser testing does not mark this passed.
+Status: **PASSED — the human tester confirmed “passed” in this chat on 17 October 2026.** Individual per-step evidence was not supplied; the checklist below remains the test specification.
 
 ## URLs and credentials
 
@@ -52,7 +52,7 @@ Log out between role tests (top-right user menu → Log Out), or use separate pr
 
 Tester: ______  Date/time/timezone: ______  Browser/device: ______
 
-Overall: PENDING / PASSED / FAILED
+Overall: PASSED — user confirmation, 17 October 2026
 
 Optional LAN: PENDING / PASSED / SKIPPED (reason: ______)
 
@@ -60,4 +60,4 @@ Defects (role, route, synthetic record ID, expected, observed): ______
 
 Permission notes: ______
 
-Human approval: ______
+Human approval: User confirmed “passed” and authorised Stage 3 in this chat.

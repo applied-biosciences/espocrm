@@ -30,9 +30,7 @@
         {
           "name": "validUntil"
         },
-        {
-          "name": "assignedUser"
-        }
+        false
       ],
       [
         {

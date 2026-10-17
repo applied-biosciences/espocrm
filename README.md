@@ -167,3 +167,9 @@ Branches:
 If you want to improve existing translation or add a language that is not available yet, you can contribute on our [POEditor](https://poeditor.com/join/project/gLDKZtUF4i) project. See instructions [here](https://www.espocrm.com/blog/how-to-use-poeditor-to-translate-espocrm/). It may be reasonable to let us know about your intention to join the POEditor project by posting on our forum or via the contact form on our website.
 
 Changes on POEditor are usually merged to the GitHub repository before minor releases.
+
+## Stage 3 branding and review
+
+The Stage 3 branch builds on the approved Stage 1–2 commit, with original UTNT logo, plane favicon, NuriVoyage custom theme, #C2F9FF page canvases, royal-blue controls/nav and gold accents/browser theme hint. [Architecture and limits](docs/nurivoyage/stage-3-branding.md), [brand assets](branding/README.md), [Stage 3 smoke report](docs/testing/stage-3-smoke-test.md) and [exact human UAT checklist](docs/testing/stage-3-human-uat.md).
+
+Use `scripts/local bootstrap` after branding source edits to publish assets, reconcile supported config/templates and rebuild metadata. Use `scripts/local smoke-stage3` for all Stage 2 regressions plus Stage 3 integration checks. Browser viewport testing is separate; see tests/nurivoyage/stage-3-browser.md and its dated evidence. The user accepted Stage 2; Stage 3 remains pending human acceptance and must not be merged before that approval. Source assets are under branding/; no core Espo files are edited. PDF layouts are specifications/static previews until native financial functionality is installed.

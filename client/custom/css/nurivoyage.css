@@ -1,0 +1,118 @@
+@import url('../../css/espo/light.css');
+/* NuriVoyage v1. All page canvases use the customer's exact cyan. */
+:root {
+  --nuri-page: #C2F9FF; --nuri-blue: #123B7A; --nuri-navy: #0B1F3A;
+  --nuri-gold: #C9A227; --nuri-soft-gold: #E7D59A; --nuri-border: #C8DCE8;
+  --body-bg: #C2F9FF; --panel-bg: #FFFFFF; --text-color: #0B1F3A;
+  --text-muted-color: #526679; --text-gray-color: #526679; --link-color: #123B7A;
+  --link-hover-color: #0B1F3A; --brand-primary: #123B7A; --brand-primary-text: #FFFFFF;
+  --brand-primary-5: #10366F; --brand-primary-10: #0B1F3A;
+  --brand-primary-lighten-50: #E6F0FA; --brand-primary-lighten-30: #DCEAF8;
+  --navbar-bg: #123B7A; --navbar-link-color: #FFFFFF; --navbar-link-icon-color: #E7D59A;
+  --navbar-link-hover-color: #FFFFFF; --navbar-link-hover-bg: #0B1F3A; --navbar-link-active-bg: #0B1F3A;
+  --navbar-inverse-bg: #123B7A; --navbar-inverse-color: #FFFFFF; --navbar-inverse-link-color: #FFFFFF;
+  --navbar-inverse-link-active-bg: #0B1F3A; --navbar-inverse-link-hover-bg: #0B1F3A;
+  --navbar-inverse-link-hover-color: #FFFFFF; --navbar-inverse-border: #123B7A;
+  --navbar-inverse-link-icon-color: #E7D59A; --navbar-inverse-link-icon-hover-color: #FFFFFF;
+  --navbar-inverse-toggle-hover-bg: #0B1F3A; --navbar-inverse-bg-7: #0B1F3A;
+  --navbar-header-height: 100px;
+  --btn-primary-bg: #123B7A; --btn-primary-border: #123B7A; --btn-primary-color: #FFFFFF;
+  --btn-primary-hover-bg: #0B1F3A; --btn-primary-hover-border: #0B1F3A;
+  --btn-primary-active-bg: #0B1F3A; --btn-primary-active-border: #0B1F3A;
+  --btn-default-bg: #FFFFFF; --btn-default-color: #123B7A; --btn-default-border: #B6CEDF;
+  --btn-default-hover-bg: #EDF6FB; --btn-default-hover-border: #123B7A;
+  --input-color: #0B1F3A; --input-bg: #FFFFFF; --input-border: #A4BDCE; --input-border-focus: #123B7A;
+  --input-border-focus-rgba: rgba(18,59,122,.24);
+  --modal-content-bg: #FFFFFF; --modal-header-bg: #FFFFFF; --modal-footer-bg: #FFFFFF;
+  --panel-heading-bg: #FFFFFF; --table-bg: #FFFFFF; --table-bg-hover: #EFF9FC;
+  --state-danger-bg: #FCE8EB; --state-danger-text: #8B2035;
+  --state-success-bg: #E5F3EB; --state-success-text: #20533C;
+  --state-warning-bg: #FBF2D6; --state-warning-text: #624A08;
+}
+html, body { background-color: #C2F9FF; color: #0B1F3A; }
+body > .content, #main, #main-container, .page-header, .header-breadcrumbs { background-color: #C2F9FF; }
+h1,h2,h3,h4,.page-header h3 { color: #0B1F3A; font-weight: 600; letter-spacing: -.025em; }
+a { color: #123B7A; }
+a:hover { color: #0B1F3A; }
+:where(a,button,input,select,textarea,[tabindex]):focus-visible { outline: 3px solid #123B7A; outline-offset: 3px; }
+.navbar :where(a,button,[tabindex]):focus-visible { outline-color: #E7D59A; outline-offset: -3px; }
+.panel, .dashlet, .modal-content { border-color: #C8DCE8; border-radius: 12px; box-shadow: 0 3px 14px rgba(11,31,58,.045); }
+.panel-heading { border-color: #DCE8EE; }
+.panel-title { color: #0B1F3A; font-weight: 600; }
+.btn { border-radius: 7px; font-weight: 500; }
+.btn-primary { background: #123B7A; border-color: #123B7A; color: white; }
+.btn-primary:hover,.btn-primary:focus { background: #0B1F3A; border-color: #0B1F3A; color: white; }
+.form-control { border-radius: 6px; color: #0B1F3A; }
+.table { background: white; }
+.table > thead > tr > th { background: #EFF6FA; color: #0B1F3A; font-weight: 600; border-bottom: 2px solid #C8DCE8; }
+.table > tbody > tr > td { border-color: #E4EDF2; }
+.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover { color: #123B7A; border-top: 3px solid #C9A227; font-weight: 600; }
+.navbar .tabs > li.active > a { border-left: 4px solid #C9A227 !important; background-color: #0B1F3A !important; color: white !important; }
+.navbar .tabs .nav-divider-text { color: #E7D59A; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+.navbar-brand { display: flex !important; align-items: center; flex-direction: column; gap: 7px; height: auto; padding: 10px 8px !important; }
+.navbar-brand img.logo { width: 165px !important; height: auto !important; max-width: 100%; background: white; border-radius: 5px; padding: 5px; }
+.nuri-app-name { display: block; color: white; font-weight: 650; font-size: 17px; letter-spacing: -.03em; line-height: 1.1; }
+.navbar-logo-container { min-height: 100px; }
+body > footer, footer .credit { color: #435E70; }
+/* Login: fixed identity + native Espo authentication controls, no custom auth flow. */
+.nuri-login-page { width: 100% !important; padding: 0 28px; }
+.nuri-login-layout { max-width: 1040px; margin: min(10vh,100px) auto 40px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 78px; align-items: center; }
+.nuri-brand-story { padding: 24px 0; }
+.nuri-company-logo { display: inline-block; background: white; padding: 12px 20px; border-radius: 10px; margin-bottom: 36px; box-shadow: 0 2px 8px rgba(11,31,58,.04); }
+.nuri-company-logo img { display: block; width: 230px; max-width: 100%; height: auto; }
+.nuri-eyebrow { color: #123B7A; letter-spacing: .16em; font-weight: 700; font-size: 11px; line-height: 1.6; margin-bottom: 12px; }
+.nuri-brand-story h1 { font-size: clamp(38px,4vw,58px); line-height: 1.05; margin: 0 0 16px; letter-spacing: -.06em; }
+.nuri-gold-dot { color: #826309; }
+.nuri-descriptor { font-size: 18px; color: #123B7A; margin: 0; }
+.nuri-brand-rule { background: #C9A227; width: 58px; height: 4px; margin: 28px 0; border-radius: 2px; }
+.nuri-brand-caption { color: #304E68; font-size: 24px; line-height: 1.4; font-weight: 400; letter-spacing: -.03em; }
+.nuri-login-layout > .container-centering { width: 100%; margin: 0; position: static; display: block; transform: none; }
+#login { width: 100%; max-width: 430px; margin: 0 auto; border: 1px solid #B9DCE5; border-top: 4px solid #C9A227; border-radius: 16px; overflow: visible; box-shadow: 0 16px 48px rgba(11,31,58,.09); }
+#login .nuri-login-heading { padding: 28px 30px 12px; background: white; border: 0; border-radius: 12px 12px 0 0; }
+#login h2 { font-size: 23px; margin: 0 0 10px; line-height: 1.25; }
+#login .panel-heading p:last-child { color: #526679; font-size: 14px; margin-bottom: 4px; }
+#login .panel-body { padding: 18px 30px 30px; background: white; border-radius: 0 0 12px 12px; }
+#login .form-group { margin-bottom: 20px; }
+#login label { font-size: 13px; font-weight: 600; color: #0B1F3A; }
+#login .form-control { min-height: 46px; font-size: 16px; border: 1px solid #A4BDCE; }
+#login [data-name="submit"] { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 12px; }
+#login #btn-login { width: 100%; min-height: 46px; font-size: 15px; }
+#login [data-action="passwordChangeRequest"] { align-self: center; float: none !important; margin: 0 !important; }
+#login [data-action="toggleShowPassword"] { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; top: 1px; right: 1px; }
+@media (max-width: 991px) {
+ .nuri-login-layout { gap: 36px; margin-top: 7vh; }
+ .nuri-company-logo img { width: 200px; }
+ .nuri-brand-story h1 { font-size: 40px; }
+}
+@media (max-width: 767px) {
+ .nuri-login-page { padding: 0 20px; }
+ .nuri-login-layout { display: block; max-width: 430px; margin: 22px auto 20px; }
+ .nuri-brand-story { text-align: center; padding: 0 0 22px; }
+ .nuri-company-logo { padding: 6px 12px; margin-bottom: 15px; border-radius: 6px; }
+ .nuri-company-logo img { width: 170px; }
+ .nuri-brand-story .nuri-eyebrow { display: none; }
+ .nuri-brand-story h1 { font-size: 34px; margin-bottom: 7px; }
+ .nuri-descriptor { font-size: 14px; }
+ .nuri-brand-rule,.nuri-brand-caption { display: none; }
+ #login .nuri-login-heading { padding: 22px 22px 8px; }
+ #login h2 { font-size: 21px; }
+ #login .panel-body { padding: 14px 22px 24px; }
+ .navbar-logo-container { min-height: 0; }
+ .navbar-brand { flex-direction: row; height: 48px; padding: 6px 10px !important; gap: 10px; }
+ .navbar-brand img.logo { width: 88px !important; max-height: 38px; object-fit: contain; padding: 2px; }
+ .nuri-app-name { font-size: 16px; }
+ .navbar-toggle,.side-menu-button { min-width: 44px; min-height: 44px; }
+ .btn:not(.btn-icon):not(.btn-xs):not(.btn-sm) { min-height: 44px; }
+ .list-container { max-width: 100%; overflow-x: auto; }
+ .page-header h3 { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; } }
+/* Native login rules use an ID selector; keep the custom heading inset explicitly. */
+#login.panel .panel-heading.nuri-login-heading { padding: 28px 30px 12px; }
+@media (max-width:767px) { #login.panel .panel-heading.nuri-login-heading { padding: 22px 22px 8px; } }
+.navbar .navbar-brand { height:100px !important; width:100%; justify-content:center; gap:4px; padding:8px !important; }
+.navbar .navbar-brand img.logo { width:150px !important; height:58px !important; max-height:none !important; object-fit:contain; flex:none; }
+@media (max-width:767px) {
+ .navbar .navbar-brand { height:48px !important; width:auto; justify-content:flex-start; gap:10px; padding:6px 10px !important; }
+ .navbar .navbar-brand img.logo { width:88px !important; height:34px !important; }
+}

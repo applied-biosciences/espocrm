@@ -1,0 +1,4 @@
+@import url('../../css/espo/light-iframe.css');
+:root { --body-bg: #C2F9FF; --text-color: #0B1F3A; --link-color: #123B7A; }
+body { background: #C2F9FF; color: #0B1F3A; }
+a { color: #123B7A; }

@@ -1,6 +1,6 @@
 {
   "controller": "controllers/record",
-  "iconClass": "fas fa-plane",
+  "iconClass": "fas fa-comment-dots",
   "boolFilterList": [
     "onlyMy"
   ]

@@ -1,0 +1,14 @@
+NuriVoyage — Travel Management Platform
+Nuri's Travel
+
+Your travel quotation
+Dear [[CUSTOMER_NAME]],
+
+Thank you for planning your journey with Nuri’s Travel. Please review your quotation details below.
+Reference: [[DOCUMENT_NUMBER]]
+Total: [[CURRENCY]] [[TOTAL]]
+[[DOCUMENT_MESSAGE_OR_ATTACHMENT_NOTE]]
+
+Nuri's Travel
+[[CONSULTANT_NAME]] — [[CONTACT_DETAILS]]
+Local synthetic preview only.

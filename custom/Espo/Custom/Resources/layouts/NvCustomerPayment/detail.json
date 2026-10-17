@@ -30,9 +30,7 @@
         {
           "name": "reference"
         },
-        {
-          "name": "assignedUser"
-        }
+        false
       ],
       [
         {
