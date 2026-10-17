@@ -5,7 +5,11 @@
     "bookingItem": "Booking Item",
     "pickupAt": "Pickup At",
     "pickupLocation": "Pickup Location",
-    "confirmation": "Confirmation"
+    "confirmation": "Confirmation",
+    "transferType": "Transfer Type",
+    "originCity": "Origin City",
+    "destinationCity": "Destination City",
+    "cost": "Transfer Cost"
   },
   "labels": {
     "Create NvTransfer": "Create Transfer"

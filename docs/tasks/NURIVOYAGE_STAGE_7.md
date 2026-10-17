@@ -7,6 +7,7 @@ Stage 7 delivers the planned bookings and itineraries foundation, adds a private
 - Add a passport photo file field to `NvTraveller`.
 - Display the field on the traveller detail page with the existing private attachment controls; traveller records and this photo are readable by all named application roles, including Sales.
 - Add booking reference, itinerary title, destination, route, traveller count, notes and confirmation timestamp to `NvBooking`.
+- Support a city sequence, multiple hotel stays in the same itinerary, inter-city transfer type/cost and one or more sightseeing activities with city and cost.
 - Display the itinerary fields on the native booking detail and list pages.
 - Keep the head-and-shoulders photo requirement in human UAT guidance; do not use real identity photos.
 - Update login, application-page and changelog version markers to `v10.0.10.0.s7`.

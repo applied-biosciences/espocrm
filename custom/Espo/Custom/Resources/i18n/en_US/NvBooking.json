@@ -15,7 +15,8 @@
     ,"arrivalCity": "Arrival City"
     ,"travellerCount": "Traveller Count"
     ,"itineraryNotes": "Itinerary Notes"
-    ,"confirmedAt": "Confirmed At"
+    ,"confirmedAt": "Confirmed At",
+    "itineraryCities": "Itinerary Cities"
   },
   "labels": {
     "Create NvBooking": "Create Booking"

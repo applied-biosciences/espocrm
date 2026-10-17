@@ -5,7 +5,9 @@
     "bookingItem": "Booking Item",
     "checkIn": "Check In",
     "checkOut": "Check Out",
-    "confirmation": "Confirmation"
+    "confirmation": "Confirmation",
+    "city": "City",
+    "staySequence": "Stay Sequence"
   },
   "labels": {
     "Create NvHotel": "Create Hotel"

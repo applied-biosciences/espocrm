@@ -50,6 +50,15 @@
     "pickupLocation": {
       "type": "varchar"
     },
+    "transferType": {
+      "type": "enum",
+      "options": ["Airport", "Hotel", "Inter-city", "Local", "Other"],
+      "default": "Local",
+      "audited": true
+    },
+    "originCity": { "type": "varchar" },
+    "destinationCity": { "type": "varchar" },
+    "cost": { "type": "currency", "min": 0 },
     "confirmation": {
       "type": "varchar"
     }

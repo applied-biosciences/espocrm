@@ -4,6 +4,7 @@
 
 - Added a private passport photo attachment to traveller records.
 - Added booking reference, itinerary, route, traveller-count and confirmation fields.
+- Added multi-city itinerary cities, inter-city transfers with type and cost, multiple hotel stays by city and sightseeing activities with city/date/cost.
 - Made traveller records and passport photos readable by all named application roles, including Sales.
 - Added the passport photo to the traveller detail page and Stage 7 UAT.
 - Updated login and application-page version markers to `v10.0.10.0.s7`.

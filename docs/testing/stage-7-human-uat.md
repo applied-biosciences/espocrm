@@ -14,5 +14,8 @@ Use the synthetic credentials in `.local/test-credentials.md`. Use only a synthe
 8. Confirm the Stage 3 branded layout and responsive behaviour remain intact.
 9. Create a synthetic booking and enter booking reference, itinerary title, destination, departure city, arrival city, traveller count and itinerary notes.
 10. Confirm the itinerary fields persist after refresh and are visible on the booking list/detail pages.
+11. Add two hotel stays in different cities and confirm both remain linked to the booking with their city and stay sequence.
+12. Add an Inter-city transfer between two itinerary cities and enter its transfer cost.
+13. Add one or more sightseeing activities in an itinerary city and enter each activity cost.
 
 Record PASS, FAIL or CHANGE REQUESTED for each item before accepting Stage 7.

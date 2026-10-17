@@ -50,6 +50,8 @@
     "checkOut": {
       "type": "date"
     },
+    "city": { "type": "varchar" },
+    "staySequence": { "type": "int", "min": 1 },
     "confirmation": {
       "type": "varchar"
     }

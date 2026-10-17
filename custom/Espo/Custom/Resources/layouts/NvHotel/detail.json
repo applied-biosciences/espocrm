@@ -33,6 +33,10 @@
         false
       ],
       [
+        { "name": "city" },
+        { "name": "staySequence" }
+      ],
+      [
         {
           "name": "description"
         },

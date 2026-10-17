@@ -59,6 +59,10 @@
         { "name": "itineraryNotes" }
       ],
       [
+        false,
+        { "name": "itineraryCities" }
+      ],
+      [
         {
           "name": "description"
         },

@@ -33,6 +33,14 @@
         false
       ],
       [
+        { "name": "transferType" },
+        { "name": "cost" }
+      ],
+      [
+        { "name": "originCity" },
+        { "name": "destinationCity" }
+      ],
+      [
         {
           "name": "description"
         },

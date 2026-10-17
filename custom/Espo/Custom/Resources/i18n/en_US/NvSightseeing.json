@@ -1,0 +1,1 @@
+{ "fields": { "booking": "Booking", "city": "City", "activityDate": "Activity Date", "cost": "Sightseeing Cost", "status": "Status", "assignedUser": "Assigned User" }, "labels": { "Create NvSightseeing": "Create Sightseeing" } }

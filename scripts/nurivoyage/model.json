@@ -20,7 +20,8 @@
     "NvFlight",
     "NvTransfer",
     "NvVisa",
-    "NvPackage"
+    "NvPackage",
+    "NvSightseeing"
   ],
   "salesWorkflow": [
     "New Enquiry",

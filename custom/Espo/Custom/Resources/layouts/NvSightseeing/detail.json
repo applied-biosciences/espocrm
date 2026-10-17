@@ -1,0 +1,1 @@
+[{ "label": "Overview", "rows": [[{ "name": "name" }, { "name": "booking" }], [{ "name": "city" }, { "name": "activityDate" }], [{ "name": "cost" }, { "name": "status" }], [{ "name": "assignedUser" }, false], [false, { "name": "description" }]] }]

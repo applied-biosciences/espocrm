@@ -111,6 +111,9 @@
     "itineraryNotes": {
       "type": "text"
     },
+    "itineraryCities": {
+      "type": "text"
+    },
     "confirmedAt": {
       "type": "datetime",
       "audited": true

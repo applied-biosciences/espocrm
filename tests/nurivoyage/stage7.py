@@ -38,3 +38,19 @@ booking = api('NvBooking', 'POST', {
 itinerary = api('NvBooking/'+booking['id'], user='operations')
 assert itinerary['bookingReference'] == 'NV-B-'+stamp and itinerary['destination'] == 'Makkah and Madinah'
 print('PASS Stage 7 itinerary lifecycle: Operations created and read a synthetic itinerary')
+transfer = api('NvTransfer', 'POST', {
+    'name':'Stage 7 Inter-city Transfer '+stamp, 'transferType':'Inter-city',
+    'originCity':'Makkah', 'destinationCity':'Madinah', 'cost':850,
+    'costCurrency':'ZAR'
+}, user='operations')
+assert api('NvTransfer/'+transfer['id'], user='operations')['transferType'] == 'Inter-city'
+hotel1 = api('NvHotel', 'POST', {'name':'Stage 7 Makkah Hotel '+stamp,'city':'Makkah','staySequence':1}, user='operations')
+hotel2 = api('NvHotel', 'POST', {'name':'Stage 7 Madinah Hotel '+stamp,'city':'Madinah','staySequence':2}, user='operations')
+assert api('NvHotel/'+hotel1['id'], user='operations')['city'] == 'Makkah'
+assert api('NvHotel/'+hotel2['id'], user='operations')['city'] == 'Madinah'
+sightseeing = api('NvSightseeing', 'POST', {
+    'name':'Stage 7 Makkah Sightseeing '+stamp, 'city':'Makkah',
+    'activityDate':'2027-01-14', 'cost':300, 'costCurrency':'ZAR', 'status':'Planned'
+}, user='operations')
+assert api('NvSightseeing/'+sightseeing['id'], user='operations')['city'] == 'Makkah'
+print('PASS Stage 7 multi-city itinerary: inter-city transfer, multi-hotel stays and sightseeing cost persisted')
