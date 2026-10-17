@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [ { "name": "name" }, { "name": "website" } ],
+      [ { "name": "emailAddress" }, { "name": "phoneNumber" } ],
+      [ { "name": "billingAddress" }, { "name": "shippingAddress" } ],
+      [ { "name": "travellers", "view": "views/fields/linked-list" }, false ]
+    ]
+  },
+  {
+    "label": "Details",
+    "rows": [
+      [ { "name": "type" }, { "name": "industry" } ],
+      [ { "name": "description", "fullWidth": true } ]
+    ]
+  }
+]
