@@ -10,6 +10,7 @@
           "name": "booking"
         }
       ],
+      [ { "name": "commissionNumber" }, { "name": "status" } ],
       [
         {
           "name": "method"
@@ -18,6 +19,7 @@
           "name": "amount"
         }
       ],
+      [ { "name": "basisAmount" }, { "name": "frozen" } ],
       [
         {
           "name": "status"
@@ -26,6 +28,8 @@
           "name": "ruleSnapshot"
         }
       ],
+      [ { "name": "approvedAt" }, { "name": "paidAt" } ],
+      [ { "name": "settlementReference" }, false ],
       [
         false,
         {

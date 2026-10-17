@@ -1,6 +1,6 @@
 /* Loaded through app.client metadata. Presentation only; no authentication or ACL changes. */
 (() => {
-    const version = 'v10.0.10.0.s10';
+    const version = 'v10.0.10.0.s11';
     const addVersionBadge = () => {
         if (document.querySelector('.nuri-version-badge')) return;
         const badge = document.createElement('span');

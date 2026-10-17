@@ -1,10 +1,16 @@
 {
   "fields": {
+    "commissionNumber": "Commission Number",
     "booking": "Booking",
     "method": "Method",
     "amount": "Amount",
     "status": "Status",
-    "ruleSnapshot": "Rule Snapshot"
+    "ruleSnapshot": "Rule Snapshot",
+    "basisAmount": "Basis Amount",
+    "frozen": "Frozen",
+    "approvedAt": "Approved At",
+    "paidAt": "Paid At",
+    "settlementReference": "Settlement Reference"
   },
   "labels": {
     "Create NvCommission": "Create Commission"

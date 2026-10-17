@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.0.10.0.s11 — Stage 11 development
+
+- Added commission numbers, basis amounts, frozen rule snapshots, approval and paid timestamps, and settlement references.
+- Added Stage 11 commission approval, freeze and settlement smoke coverage and advanced the application marker to `v10.0.10.0.s11`.
+
 ## v10.0.10.0.s7 — Stage 7 development
 
 ## v10.0.10.0.s8 — Stage 8 development
