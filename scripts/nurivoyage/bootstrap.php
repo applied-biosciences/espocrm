@@ -214,7 +214,7 @@ foreach ([
     'NvCustomerInvoice'=>'NuriVoyage Customer Invoice PDF', 'NvPurchaseOrder'=>'NuriVoyage Purchase Order PDF'
 ] as $entity=>$templateName) {
     upsert('Template','name',$templateName,['entityType'=>$entity,'status'=>'Active',
-        'body'=>'<h1>{{name}}</h1><p>NuriVoyage local document</p><p>Record: {{id}}</p>',
+        'body'=>'<h1>{{name}}</h1><p><strong>Record ID:</strong> {{id}}</p><p><strong>Status:</strong> {{status}}</p><p><strong>Description:</strong> {{description}}</p>',
         'printHeader'=>false,'printFooter'=>true,'footer'=>'NuriVoyage · Local PDF']);
 }
 

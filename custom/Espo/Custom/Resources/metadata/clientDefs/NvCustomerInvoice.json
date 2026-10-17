@@ -3,8 +3,5 @@
   "iconClass": "fas fa-file-invoice-dollar",
   "boolFilterList": [
     "onlyMy"
-  ],
-  "massActionList": [
-    "printPdf"
   ]
 }
