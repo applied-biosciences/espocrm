@@ -5,7 +5,7 @@
             <p class="nuri-eyebrow">NURI'S TRAVEL</p>
             <h1>NuriVoyage<span class="nuri-gold-dot">.</span></h1>
             <p class="nuri-descriptor">Travel Management Platform</p>
-            <p class="nuri-version">v10.0.10.0.s11</p>
+            <p class="nuri-version">v10.0.10.0.s12</p>
             <div class="nuri-brand-rule" aria-hidden="true"></div>
             <p class="nuri-brand-caption">Your journeys.<br>One workspace.</p>
         </aside>
