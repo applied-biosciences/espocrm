@@ -3,5 +3,8 @@
   "iconClass": "fas fa-exchange-alt",
   "boolFilterList": [
     "onlyMy"
-  ]
+  ],
+  "views": {
+    "list": "custom:views/nurivoyage/fx"
+  }
 }

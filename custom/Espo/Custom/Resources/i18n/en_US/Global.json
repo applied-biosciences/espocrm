@@ -12,7 +12,7 @@
     "NvCustomerPayment": "Customer Payment",
     "NvSupplierPayment": "Supplier Payment",
     "NvCommission": "Commission",
-    "NvFxRate": "FX Rate",
+    "NvFxRate": "Exchange Rates & Currency Converter",
     "NvTravelDocument": "Travel Document",
     "NvHotel": "Hotel",
     "NvFlight": "Flight",
@@ -21,7 +21,10 @@
     "NvPackage": "Package",
     "NvSightseeing": "Sightseeing",
     "NvItinerarySegment": "City Segment",
-    "Account": "Customer"
+    "Account": "Customer",
+    "NvTaxRule": "Tax Rule",
+    "NvConversionSnapshot": "Conversion Snapshot",
+    "NvCommunication": "Customer Communication"
   },
   "scopeNamesPlural": {
     "NvEnquiry": "Enquiries",
@@ -36,7 +39,7 @@
     "NvCustomerPayment": "Customer Payments",
     "NvSupplierPayment": "Supplier Payments",
     "NvCommission": "Commissions",
-    "NvFxRate": "FX Rates",
+    "NvFxRate": "Exchange Rates & Currency Converter",
     "NvTravelDocument": "Travel Documents",
     "NvHotel": "Hotels",
     "NvFlight": "Flights",
@@ -45,6 +48,9 @@
     "NvPackage": "Packages",
     "NvSightseeing": "Sightseeing",
     "NvItinerarySegment": "City Segments",
-    "Account": "Customers"
+    "Account": "Customers",
+    "NvTaxRule": "Tax Rules",
+    "NvConversionSnapshot": "Conversion Snapshots",
+    "NvCommunication": "Customer Communications"
   }
 }

@@ -229,3 +229,5 @@ Reusable templates remain in Email Templates. Customer communication history is 
 ### Stage 15 multi-currency
 
 Exchange-rate records support the Frankfurter provider (`https://frankfurter.dev`). Tax rules and conversion snapshots preserve the rate, tax, provider and calculation context used for each auditable calculation.
+
+Stage 15 repair: **Purchasing & Finance → Exchange Rates & Currency Converter** opens the live four-currency table. Enter USD, GBP, ZAR or SAR in any row; the remaining amounts update immediately. **Update rates** fetches Frankfurter v2 daily reference rates and displays the provider date and refresh time. Conversion inputs stay in the browser; no amounts are sent to Frankfurter. This calculator does not overwrite saved transaction conversion snapshots.

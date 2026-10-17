@@ -88,3 +88,8 @@
 ## v10.0.10.0.s15 — Stage 15 development
 
 - Added exchange-rate provider configuration for Frankfurter, tax rules and immutable conversion snapshots with audit context.
+
+### Stage 15 route, bootstrap and calculator repair
+- Registered browser controllers for Tax Rules, Conversion Snapshots and Customer Communications, resolving frontend 404s.
+- Repaired agent-table collation mismatch that caused bootstrap exit 255.
+- Added the USD/GBP/ZAR/SAR currency table with live Frankfurter v2 refresh, provider date and error feedback; retained one finance FX navigation item.

@@ -1,7 +1,11 @@
 <?php
 /** Idempotent local schema-v1 bootstrap. Secrets come only from the container environment. */
 chdir('/var/www/html');
-require 'bootstrap.php';
+require_once 'bootstrap.php';
+set_exception_handler(function (Throwable $error) {
+    fwrite(STDERR, get_class($error) . ': ' . $error->getMessage() . PHP_EOL);
+    exit(1);
+});
 $app = new Espo\Core\Application();
 $c = $app->getContainer();
 $app->getInjectableFactory()->create(Espo\Core\ApplicationUser::class)->setupSystemUser();
@@ -68,8 +72,12 @@ $em->getSqlExecutor()->execute("CREATE TABLE IF NOT EXISTS nv_agent (
     description TEXT NULL,
     INDEX idx_nv_agent_name_deleted (name, deleted),
     INDEX idx_nv_agent_login_deleted (login, deleted)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
-$em->getSqlExecutor()->execute("CREATE TABLE IF NOT EXISTS nv_agent_login (id VARCHAR(24) NOT NULL PRIMARY KEY, name VARCHAR(255) NOT NULL, deleted TINYINT(1) DEFAULT 0, created_at DATETIME NULL, modified_at DATETIME NULL, agent_id VARCHAR(24) NULL, event_type VARCHAR(20) NULL, event_at DATETIME NULL, ip_address VARCHAR(64) NULL, user_agent VARCHAR(255) NULL, description TEXT NULL, INDEX idx_nv_agent_login_agent (agent_id, deleted), INDEX idx_nv_agent_login_event (event_at)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+$em->getSqlExecutor()->execute("CREATE TABLE IF NOT EXISTS nv_agent_login (id VARCHAR(24) NOT NULL PRIMARY KEY, name VARCHAR(255) NOT NULL, deleted TINYINT(1) DEFAULT 0, created_at DATETIME NULL, modified_at DATETIME NULL, agent_id VARCHAR(24) NULL, event_type VARCHAR(20) NULL, event_at DATETIME NULL, ip_address VARCHAR(64) NULL, user_agent VARCHAR(255) NULL, description TEXT NULL, INDEX idx_nv_agent_login_agent (agent_id, deleted), INDEX idx_nv_agent_login_event (event_at)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+// Repair tables previously created with the MariaDB server default collation.
+foreach (['nv_agent', 'nv_agent_login'] as $table) {
+    $em->getSqlExecutor()->execute("ALTER TABLE $table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+}
 function upsert(string $type, string $key, string $value, array $data) {
     global $em;
     $record = $em->getRDBRepository($type)->where([$key=>$value])->findOne();
