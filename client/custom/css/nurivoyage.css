@@ -36,7 +36,7 @@ a { color: #123B7A; }
 a:hover { color: #0B1F3A; }
 :where(a,button,input,select,textarea,[tabindex]):focus-visible { outline: 3px solid #123B7A; outline-offset: 3px; }
 .navbar :where(a,button,[tabindex]):focus-visible { outline-color: #D4AF37; outline-offset: -3px; }
-.panel, .dashlet, .modal-content, .table, .white-box { border: 1mm solid #D4AF37; border-radius: 12px; box-shadow: 0 3px 14px rgba(11,31,58,.045); }
+.panel, .dashlet, .modal-content, .table, .white-box { border: 2mm solid #D4AF37; border-radius: 12px; box-shadow: 0 3px 14px rgba(11,31,58,.045); }
 .panel-heading { border-color: #DCE8EE; }
 .panel-title { color: #0B1F3A; font-weight: 600; }
 .btn { border-radius: 7px; font-weight: 500; }

@@ -1,4 +1,6 @@
 {
+  "type": "Base",
+  "module": "Custom",
   "fields": {
     "name": { "type": "varchar", "required": true, "pattern": "$noBadCharacters" },
     "user": { "type": "link" },
