@@ -43,7 +43,10 @@
       "NvSupplierPayment",
       "NvCommission",
       "NvFxRate",
-      "NvPerformanceReport"
+      "NvPerformanceReport",
+      "NvFxRate",
+      "NvTaxRule",
+      "NvConversionSnapshot"
     ]
   },
   {

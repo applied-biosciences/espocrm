@@ -39,7 +39,7 @@ foreach ([
         'endpoint' => 'http://minio:9000', 'pathStyleEndpoint' => true, 'sendChunkedBody' => false,
         'credentials' => ['key'=>getenv('MINIO_ACCESS_KEY'), 'secret'=>getenv('MINIO_SECRET_KEY')],
     ],
-    'nurivoyageSchemaVersion' => 1,
+    'nurivoyageSchemaVersion' => 1, 'fxProvider' => 'Frankfurter', 'fxProviderUrl' => 'https://api.frankfurter.app',
 ] as $key=>$value) { $writer->set($key,$value); }
 $writer->save();
 // Stage 11 migration: the Agents entity is a first-class Espo record backed by nv_agent.
@@ -104,6 +104,8 @@ foreach ($roles as $name=>$allowed) {
     $allowed[] = "Template";
     $allowed[] = "NvPerformanceReport";
     $allowed[] = "NvCommunication";
+    $allowed[] = "NvTaxRule";
+    $allowed[] = "NvConversionSnapshot";
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {
