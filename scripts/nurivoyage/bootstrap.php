@@ -208,3 +208,13 @@ foreach (['quotation','invoice','purchase-order'] as $kind) {
     ]);
 }
 echo "Stage 3 theme, navigation and three branded email templates configured.\n";
+// PDF templates are required by Espo's Print PDF action; keep one active local template per document type.
+foreach ([
+    'NvTravelDocument'=>'NuriVoyage Travel Document PDF', 'NvQuote'=>'NuriVoyage Quote PDF',
+    'NvCustomerInvoice'=>'NuriVoyage Customer Invoice PDF', 'NvPurchaseOrder'=>'NuriVoyage Purchase Order PDF'
+] as $entity=>$templateName) {
+    upsert('Template','name',$templateName,['entityType'=>$entity,'status'=>'Active',
+        'body'=>'<h1>{{name}}</h1><p>NuriVoyage local document</p><p>Record: {{id}}</p>',
+        'printHeader'=>false,'printFooter'=>true,'footer'=>'NuriVoyage · Local PDF']);
+}
+
