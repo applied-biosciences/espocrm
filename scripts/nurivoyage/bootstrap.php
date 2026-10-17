@@ -100,6 +100,8 @@ $roles = [
 $roleIds=[];
 $scopes = $c->get('metadata')->get(['scopes']);
 foreach ($roles as $name=>$allowed) {
+    // PDF generation uses the Template scope; all local operational roles need read access to select layouts.
+    $allowed[] = "Template";
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {
