@@ -8,6 +8,7 @@
     "passportCountry": "Passport Country",
     "passportIssueDate": "Passport Issue Date",
     "passportExpiryDate": "Passport Expiry Date"
+    ,"passportPhoto": "Passport Photo"
   },
   "labels": {
     "Create NvTraveller": "Create Traveller"

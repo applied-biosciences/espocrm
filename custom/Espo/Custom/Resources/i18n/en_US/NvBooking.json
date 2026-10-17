@@ -8,6 +8,14 @@
     "sellingPrice": "Selling Price",
     "travelDate": "Travel Date",
     "returnDate": "Return Date"
+    ,"bookingReference": "Booking Reference"
+    ,"itineraryTitle": "Itinerary Title"
+    ,"destination": "Destination"
+    ,"departureCity": "Departure City"
+    ,"arrivalCity": "Arrival City"
+    ,"travellerCount": "Traveller Count"
+    ,"itineraryNotes": "Itinerary Notes"
+    ,"confirmedAt": "Confirmed At"
   },
   "labels": {
     "Create NvBooking": "Create Booking"

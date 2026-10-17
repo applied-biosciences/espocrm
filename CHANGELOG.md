@@ -1,5 +1,14 @@
 # Changelog
 
+## v10.0.10.0.s7 — Stage 7 development
+
+- Added a private passport photo attachment to traveller records.
+- Added booking reference, itinerary, route, traveller-count and confirmation fields.
+- Made traveller records and passport photos readable by all named application roles, including Sales.
+- Added the passport photo to the traveller detail page and Stage 7 UAT.
+- Updated login and application-page version markers to `v10.0.10.0.s7`.
+- Recorded Stage 6 acceptance.
+
 ## v10.0.10.0 — Stage 6 development
 
 - Added quote number, option name, sent-at, accepted-at and lost-reason fields.

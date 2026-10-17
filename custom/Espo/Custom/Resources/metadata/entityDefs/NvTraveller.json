@@ -51,6 +51,10 @@
     "passportCountry": { "type": "varchar" },
     "passportIssueDate": { "type": "date" },
     "passportExpiryDate": { "type": "date", "audited": true }
+    ,"passportPhoto": {
+      "type": "file",
+      "audited": true
+    }
   },
   "links": {
     "createdBy": {

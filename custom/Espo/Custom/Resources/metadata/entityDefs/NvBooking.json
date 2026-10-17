@@ -87,6 +87,33 @@
     },
     "returnDate": {
       "type": "date"
+    },
+    "bookingReference": {
+      "type": "varchar",
+      "audited": true
+    },
+    "itineraryTitle": {
+      "type": "varchar"
+    },
+    "destination": {
+      "type": "varchar"
+    },
+    "departureCity": {
+      "type": "varchar"
+    },
+    "arrivalCity": {
+      "type": "varchar"
+    },
+    "travellerCount": {
+      "type": "int",
+      "min": 1
+    },
+    "itineraryNotes": {
+      "type": "text"
+    },
+    "confirmedAt": {
+      "type": "datetime",
+      "audited": true
     }
   },
   "links": {

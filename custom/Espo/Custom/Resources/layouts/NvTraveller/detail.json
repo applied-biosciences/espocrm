@@ -35,6 +35,10 @@
         false
       ],
       [
+        { "name": "passportPhoto" },
+        false
+      ],
+      [
         {
           "name": "description"
         },
