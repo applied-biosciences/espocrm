@@ -47,6 +47,15 @@
     ]
   },
   {
+    "text": "Management Dashboards & Reporting",
+    "iconClass": "fas fa-chart-line",
+    "itemList": [
+      "NvPerformanceReport",
+      "Report",
+      "Dashboard"
+    ]
+  },
+  {
     "text": "Workspace",
     "iconClass": "fas fa-envelope",
     "itemList": [
