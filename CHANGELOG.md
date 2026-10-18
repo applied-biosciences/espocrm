@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.0.10.00 — AWS deployment preparation
+
+- Renamed the application release marker to `v10.0.10.00` for the production deployment line.
+- Added a clean AWS release checklist and infrastructure handoff documentation without provisioning resources or committing credentials.
+
 ## v10.0.10.0.s19 — Stage 19 development
 
 - Added production readiness records for infrastructure, monitoring, backups, disaster recovery, secrets and release gates.
