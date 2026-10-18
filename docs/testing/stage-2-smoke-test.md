@@ -1,6 +1,6 @@
 # Stage 2 automated localhost smoke test
 
-Run UTC: 2026-10-18T00:52:11.673322+00:00
+Run UTC: 2026-10-18T00:59:41.201343+00:00
 
 Command: `scripts/local smoke` from the branch root.
 
@@ -13,14 +13,14 @@ This executes Docker Compose startup and health checks, authenticated API reques
 | 03 Local login page | PASS | HTTP 200; EspoCRM application shell |
 | 04 Administrator authentication | PASS | admin |
 | 05 MariaDB | PASS | Connection and InnoDB healthy |
-| 06 Create customer/contact | PASS | Account 6ad417c4deb23273e; Contact 6ad417c51b9962aca |
-| 07 Stack restart and record persistence | PASS | Smoke Customer 7efa525415 |
+| 06 Create customer/contact | PASS | Account 6ad419856d4a399c9; Contact 6ad41985a0ce3d880 |
+| 07 Stack restart and record persistence | PASS | Smoke Customer 02960808fc |
 | 08 Authorised MinIO document path | PASS | MinIO object exists; authenticated admin/Operations download matches bytes; anonymous/Sales denied |
 | 09 MinIO persistence | PASS | Object survives MinIO restart and authorised download matches bytes |
-| 10 Espo email to Mailpit | PASS | Espo Email 6ad417ebdc778129d delivered to Mailpit: NuriVoyage Smoke 7efa525415 |
+| 10 Espo email to Mailpit | PASS | Espo Email 6ad419ac300d55d8b delivered to Mailpit: NuriVoyage Smoke 02960808fc |
 | 11 Daemon and scheduler | PASS | 19 scheduled jobs; at least one lastRun set; no daemon fatal errors |
 | 12 WebSocket | PASS | HTTP 101 WebSocket upgrade |
-| 13 Backup validity | PASS | backups/20261018T005053132853Z; SQL and runtime/object archive validated with SHA-256 manifest |
+| 13 Backup validity | PASS | backups/20261018T005821397012Z; SQL and runtime/object archive validated with SHA-256 manifest |
 | 14 Restore recovery and object deletion | PASS | Changed customer and deleted MinIO object recovered with matching bytes; contact relationship retained |
 | 15 Final service health | PASS | PASS db: running/healthy PASS crm: running/healthy PASS daemon: running/healthy PASS websocket: running/healthy PASS minio: running/healthy PASS mailpit: running/healthy PASS http://localhost:8080/ PASS http://localhost:9000/minio/health/live PASS http://localhost:8025/readyz |
 | 16 Organisation defaults | PASS | ZAR reporting/base; ZAR/USD/GBP/EUR/SAR/AED; DD/MM/YYYY |
