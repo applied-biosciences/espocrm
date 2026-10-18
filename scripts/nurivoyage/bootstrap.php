@@ -117,6 +117,7 @@ foreach ($roles as $name=>$allowed) {
     $allowed[] = "NvWorkflowTask";
     $allowed = array_merge($allowed, ['NvSecurityAudit','NvConsent','NvAccessReview','NvRetentionRule','NvGovernanceCheck']);
     $allowed = array_merge($allowed, ['NvApiClient','NvPortalAccess','NvIntegrationEndpoint']);
+    $allowed[] = 'NvProductionReadiness';
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {
@@ -145,6 +146,7 @@ foreach ($roles as $name=>$allowed) {
     $data['NvApiClient']=['create'=>in_array($name,['Management','Finance'])?'yes':'no','read'=>in_array($name,['Management','Finance'])?'all':'own','edit'=>in_array($name,['Management','Finance'])?'all':'no','delete'=>'no','stream'=>'no'];
     $data['NvIntegrationEndpoint']=['create'=>$name==='Management'?'yes':'no','read'=>in_array($name,['Management','Finance'])?'all':'own','edit'=>$name==='Management'?'all':'no','delete'=>'no','stream'=>'no'];
     $data['NvPortalAccess']=['create'=>in_array($name,['Management','Finance'])?'yes':'no','read'=>'all','edit'=>in_array($name,['Management','Finance'])?'all':'no','delete'=>'no','stream'=>'no'];
+    $data['NvProductionReadiness']=['create'=>$name==='Management'?'yes':'no','read'=>in_array($name,['Management','Finance'])?'all':'own','edit'=>$name==='Management'?'all':'no','delete'=>'no','stream'=>'no'];
     // Finance can see payment status and amount, but cannot rewrite commission ownership/rules.
     if ($name==='Finance') {
         $data['NvCommission']=['create'=>'no','read'=>'all','edit'=>'all','delete'=>'no','stream'=>'no'];
@@ -218,6 +220,9 @@ upsert('NvPortalAccess','name','Synthetic Ahmed Khan customer portal',['portalTy
 upsert('NvPortalAccess','name','Synthetic Demo Airways supplier portal',['portalType'=>'Supplier','status'=>'Invited','supplierId'=>$portalSupplier ? $portalSupplier->getId() : null,'contactEmail'=>'supplier.portal@nuri.local','allowedScopes'=>'booking:read, supplier:write, document:read','expiresAt'=>'2027-10-17 00:00:00','consentReference'=>'SYNTHETIC-SUPPLIER-001','notes'=>'Synthetic supplier self-service invitation']);
 upsert('NvIntegrationEndpoint','name','Frankfurter FX integration',['provider'=>'Frankfurter','endpointType'=>'Frankfurter FX','baseUrl'=>'https://api.frankfurter.dev/v2','status'=>'Healthy','lastCheckedAt'=>'2026-10-17 10:15:00','healthMessage'=>'Live rates available for local conversion UI','authMethod'=>'None','scopes'=>'rates:read','notes'=>'Public provider; no credentials required']);
 upsert('NvIntegrationEndpoint','name','Synthetic supplier webhook',['provider'=>'NuriVoyage Local','endpointType'=>'Webhook','baseUrl'=>'http://localhost:8080/api/v1/integrations/supplier','status'=>'Configured','lastCheckedAt'=>'2026-10-17 10:15:00','healthMessage'=>'Synthetic endpoint metadata only','authMethod'=>'API Key Reference','secretReference'=>'LOCAL_SECRET_REF_SUPPLIER_WEBHOOK','scopes'=>'supplier:write','notes'=>'No outbound production calls in local stage']);
+foreach ([['Infrastructure','Docker Compose services healthy','scripts/local health-check'],['Monitoring','Health endpoints and scheduler','scripts/local health-check'],['Backup','Offline SQL and object backup','scripts/local backup'],['Disaster Recovery','Restore drill completed','scripts/local restore'],['Secrets','Environment-only secret configuration','docker compose config'],['Release Gate','Stage 19 smoke suite passed','scripts/local smoke-stage19']] as [$type,$details,$evidence]) {
+    upsert('NvProductionReadiness','name','Synthetic '.$type.' readiness check',['checkType'=>$type,'status'=>'Pass','checkedAt'=>'2026-10-18 10:30:00','ownerId'=>$userIds['manager'],'evidence'=>$evidence,'details'=>$details.'; AWS release remains a separate approved step.','nextReviewAt'=>'2026-11-18']);
+}
 // Seed only once. Re-running bootstrap preserves human UAT edits and transactions.
 if (!$config->get('nurivoyageSeedVersion')) {
     $customers=[];
