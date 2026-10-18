@@ -1,0 +1,4 @@
+[
+  { "name": "name", "link": true }, { "name": "login" }, { "name": "completedSales" },
+  { "name": "openSales" }, { "name": "commissionType" }, { "name": "commissionPaid" }, { "name": "commissionOwed" }
+]

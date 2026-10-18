@@ -1,0 +1,1 @@
+[{"label":"Workflow Control","rows":[[{"name":"name"},{"name":"workflowType"}],[{"name":"status"},{"name":"priority"}],[{"name":"dueAt"},{"name":"reminderAt"}],[{"name":"assignedUser"},{"name":"customer"}],[{"name":"booking"},{"name":"sourceEntity"}],[{"name":"lastAction"},{"name":"escalatedAt"}],[{"name":"exceptionReason"},false],[{"name":"description"},false]]}]

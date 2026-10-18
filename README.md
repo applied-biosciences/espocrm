@@ -1,8 +1,8 @@
-# NuriVoyage — local travel management platform v10.0.10.0
+# NuriVoyage — local travel management platform v10.0.10.0.s17
 
-NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-6`; Stage 5 is accepted and Stage 6 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
+NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.0`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.10.0.s17`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -32,6 +32,7 @@ scripts/local smoke               # synthetic integration tests, restarts and re
 scripts/local smoke-stage4        # focused Stage 4 enquiry checks
 scripts/local smoke-stage5        # focused Stage 5 traveller/document checks
 scripts/local smoke-stage6        # focused Stage 6 quote/version checks
+scripts/local smoke-stage7        # focused Stage 7 traveller-photo checks
 scripts/local backup              # backups/<UTC timestamp>, private permissions
 scripts/local restore backups/<timestamp>  # replaces local DB/runtime/documents/email with snapshot
 scripts/local bootstrap           # reconcile local defaults, roles/users; no reseed of existing data
@@ -190,3 +191,51 @@ Stage 5 adds passport identity fields to travellers and verification metadata to
 ## Stage 6 quotes and sales pipeline
 
 Stage 6 adds quote numbers, option names, sent and accepted timestamps, lost reasons and the `v10.0.10.0` marker on the login and application pages. Run `scripts/local bootstrap`, `scripts/local smoke-stage6` and follow [the Stage 6 UAT checklist](docs/testing/stage-6-human-uat.md). Stage 6 remains separate and unmerged until accepted.
+
+## Stage 7 travellers and passport photos
+
+Stage 7 delivers the planned bookings and itineraries foundation, adds a private passport photo attachment to the traveller detail page and advances the displayed application version to `v10.0.10.0.s7`. **Sales → Travellers → Create Traveller** adds a person; enter a Customer Number in the Customer selector to link the person to a customer. Alternatively, open a Customer, use **Group Travellers → +** to create a traveller with that customer prefilled, or use **Group Travellers → ⋮ → Select** and search by Traveller Number to link an existing person. Customer and Traveller numbers appear on their pages and lists. Unlinking a group member also removes their booking link for that customer. Open an itinerary and use **City Stops → +** to enter the first two cities, then add as many more as needed. Each stop shows arrival/departure dates, its incoming Car/Bus/Plane/Train transfer and cost. Open a city stop to add one or more hotels, each with check-in/out dates and cost; the itinerary also shows all hotels by city. Transfers and sightseeing have separate related-record panels. A repeatable demonstration fixture is available with `scripts/local seed-stage7-demo`: [synthetic Al Noor customer, number 29](http://localhost:8080/#Account/view/6ad3415bbf5bbc925) and [four-city itinerary](http://localhost:8080/#NvBooking/view/6ad3415c364483e5e). Use only synthetic itinerary data and head-and-shoulders images. Run `scripts/local bootstrap`, `scripts/local smoke-stage7` and follow [the Stage 7 UAT checklist](docs/testing/stage-7-human-uat.md). Stage 7 remains separate and unmerged until accepted.
+
+For a family or group booking, the Customer is the billing/customer account. The Booking has one Lead Traveller, while every other person is a separate Traveller record linked to the same Booking and Group Reference. On a Booking, use **Travellers → +** to create a new member with the Booking prefilled, or **Travellers → ⋮ → Select** to attach an existing Traveller by Traveller Number; the member then appears in the Booking's traveller manifest. The Quote links to the Customer and Booking; the Traveller records provide the passenger manifest and each can have its own passport photo and documents.
+
+## Stage 8 supplier and product catalogue
+
+Stage 8 adds supplier contacts and reusable airline, hotel, transfer, visa, package and activity products. Products include supplier and selling rates, destination, supplier product code, validity dates and active status. Bulk airline and hotel catalogue rows can be loaded from CSV with `scripts/local import-catalogue FILE.csv`; required columns are `supplierName,supplierCategory,productName,productType,destination,supplierCost,sellingPrice`, with optional supplier contact, code, currency and validity columns. Use `NURIVOYAGE_DRY_RUN=1` to validate without writing. Run `scripts/local smoke-stage8` for focused checks.
+
+## Stage 9 procurement and purchase orders
+
+Stage 9 adds purchase-order numbers, supplier references, request and confirmation timestamps, due dates, amounts and the supplier confirmation lifecycle. Run `scripts/local smoke-stage9` for focused checks.
+
+## Stage 10 invoices payments and balances
+
+Stage 10 adds invoice numbers, paid and balance amounts, customer deposits, payments, refunds and invoice allocation references. Run `scripts/local smoke-stage10` for focused checks.
+
+## Stage 11 commissions and settlements
+
+Stage 11 adds commission numbers, basis amounts, frozen rule snapshots, approval and paid timestamps, and settlement references. Finance and Management can approve and settle commissions while agents retain own-commission visibility. Run `scripts/local smoke-stage11` for focused checks.
+
+### PDF and printing (Stage 12)
+
+On Travel Documents, Quotes, Customer Invoices and Purchase Orders, select one or more records in the list and use **Print PDF**. The generated PDF opens in the browser for download or system printing. Record detail pages also expose Espo's standard print/PDF action menu when available.
+
+### Stage 13 reporting
+
+Purchasing & Finance → Performance Reports provides role-filtered profitability, sales, operations, supplier payables, debtor and creditor summaries. Synthetic local reports are seeded by `scripts/local bootstrap` for smoke and UAT.
+
+### Stage 14 customer communications
+
+Reusable templates remain in Email Templates. Customer communication history is recorded under Customer Communications with Email, WhatsApp (Future) and SMS (Future) channel states.
+
+### Stage 15 multi-currency
+
+Exchange-rate records support the Frankfurter provider (`https://frankfurter.dev`). Tax rules and conversion snapshots preserve the rate, tax, provider and calculation context used for each auditable calculation.
+
+Stage 15 repair: **Purchasing & Finance → Exchange Rates & Currency Converter** opens the live four-currency table. Enter USD, GBP, ZAR or SAR in any row; the remaining amounts update immediately. **Update rates** fetches Frankfurter v2 daily reference rates and displays the provider date and refresh time. Conversion inputs stay in the browser; no amounts are sent to Frankfurter. This calculator does not overwrite saved transaction conversion snapshots.
+
+### Stage 16 workflow controls
+
+Management Dashboards & Reporting → Workflow Controls holds approval, reminder, document expiry, supplier follow-up and exception tasks. Each item has an owner, due/reminder dates, priority, status, escalation and auditable action context.
+
+### Stage 17 security and governance
+
+Security & Governance provides immutable security audit events, consent records, access reviews, retention rules and governance checks. Audit records are read-only, management and finance administer governance records, and operational roles receive restricted visibility. Governance checks record only status and remediation metadata; secrets are never stored in the application database.

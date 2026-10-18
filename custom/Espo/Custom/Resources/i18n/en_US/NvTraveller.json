@@ -1,6 +1,7 @@
 {
   "fields": {
     "customer": "Customer",
+    "travellerNumber": "Traveller Number",
     "booking": "Booking",
     "dateOfBirth": "Date Of Birth",
     "nationality": "Nationality",
@@ -8,6 +9,9 @@
     "passportCountry": "Passport Country",
     "passportIssueDate": "Passport Issue Date",
     "passportExpiryDate": "Passport Expiry Date"
+    ,"passportPhoto": "Passport Photo",
+    "isLeadTraveller": "Lead Traveller",
+    "groupReference": "Group Reference"
   },
   "labels": {
     "Create NvTraveller": "Create Traveller"

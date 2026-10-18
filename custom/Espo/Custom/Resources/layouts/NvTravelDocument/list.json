@@ -6,10 +6,25 @@
   {
     "name": "booking"
   },
-  { "name": "documentType" },
-  { "name": "expiryDate" },
-  { "name": "verificationStatus" },
+  {
+    "name": "documentType"
+  },
+  {
+    "name": "expiryDate"
+  },
+  {
+    "name": "verificationStatus"
+  },
   {
     "name": "assignedUser"
+  },
+  {
+    "name": "checklistStatus"
+  },
+  {
+    "name": "retentionUntil"
+  },
+  {
+    "name": "verificationStatus"
   }
 ]

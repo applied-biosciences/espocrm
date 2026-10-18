@@ -3,6 +3,7 @@
     "name": "name",
     "link": true
   },
+  { "name": "travellerNumber" },
   {
     "name": "customer"
   },

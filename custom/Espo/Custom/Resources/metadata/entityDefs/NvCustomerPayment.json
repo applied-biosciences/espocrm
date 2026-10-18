@@ -5,6 +5,7 @@
       "required": true,
       "pattern": "$noBadCharacters"
     },
+    "paymentNumber": { "type": "autoincrement", "index": true },
     "description": {
       "type": "text"
     },
@@ -48,6 +49,8 @@
       "type": "currency",
       "min": 0
     },
+    "paymentType": { "type": "enum", "options": ["Deposit", "Payment", "Refund", "Credit"], "default": "Payment", "audited": true },
+    "allocatedAmount": { "type": "currency", "min": 0 },
     "paymentDate": {
       "type": "date"
     },

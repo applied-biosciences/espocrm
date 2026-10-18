@@ -1,0 +1,7 @@
+{
+  "itinerarySegments": { "index": 0 },
+  "hotels": { "index": 1 },
+  "travellers": { "index": 2 },
+  "transfers": { "index": 3 },
+  "sightseeing": { "index": 4 }
+}

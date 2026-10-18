@@ -1,0 +1,5 @@
+[
+  { "name": "name", "link": true },
+  { "name": "travellerNumber", "widthPx": 135 },
+  { "name": "customer" }
+]

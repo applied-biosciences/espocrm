@@ -1,0 +1,1 @@
+{"scopeNames":{"NvGovernanceCheck":"Governance Check","NvGovernanceCheckPlural":"Governance Checks"},"fields":{"checkType":"Check Type","status":"Status","checkedAt":"Checked At","details":"Details","remediationOwner":"Remediation Owner"},"labels":{"Create NvGovernanceCheck":"Create Governance Check"}}

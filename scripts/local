@@ -29,6 +29,15 @@ case "${1:-help}" in
   smoke-stage4) python3 tests/nurivoyage/stage4.py ;;
   smoke-stage5) python3 tests/nurivoyage/stage5.py ;;
   smoke-stage6) python3 tests/nurivoyage/stage6.py ;;
+  smoke-stage7) python3 tests/nurivoyage/stage7.py ;;
+  smoke-stage8) python3 tests/nurivoyage/stage8.py ;;
+  smoke-stage9) python3 tests/nurivoyage/stage9.py ;;
+  smoke-stage10) python3 tests/nurivoyage/stage10.py ;;
+  smoke-stage15) python3 tests/nurivoyage/stage15.py ;;
+  smoke-stage11) python3 tests/nurivoyage/stage11.py ;;
+  smoke-stage17) python3 tests/nurivoyage/stage17.py ;;
+  seed-stage7-demo) python3 scripts/nurivoyage/seed-stage7-demo.py ;;
+  import-catalogue) python3 scripts/nurivoyage/import-catalogue.py "$2" ;;
   backup) bash scripts/nurivoyage/backup.sh ;;
   restore) bash scripts/nurivoyage/restore.sh "${2:?Usage: scripts/local restore backups/TIMESTAMP}" ;;
   reset-local)
@@ -37,5 +46,5 @@ case "${1:-help}" in
     test "$answer" = 'DELETE NURIVOYAGE' || exit 1
     docker compose down -v
     "$0" start ;;
-  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|smoke|smoke-stage3|smoke-stage4|smoke-stage5|smoke-stage6|backup|restore DIR|reset-local}' ;;
+  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|smoke|smoke-stage3|smoke-stage4|smoke-stage5|smoke-stage6|smoke-stage7|smoke-stage8|smoke-stage9|smoke-stage10|smoke-stage11|smoke-stage15|smoke-stage17|seed-stage7-demo|import-catalogue FILE.csv|backup|restore DIR|reset-local}' ;;
 esac

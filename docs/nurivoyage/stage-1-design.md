@@ -76,3 +76,5 @@ A native Group Email Account matching admin@nuri.local provides EspoCRM 10 syste
 ## Seed and scope limits
 
 Bootstrap creates Ahmed Khan, Fatima Patel, Mohammed Ismail and their Contacts; five named demo suppliers; Umrah Family Package, Dubai Holiday, Cape Town → London flight; related enquiries, quotes, bookings/items, travellers, invoices, POs and commissions. ZAR sales, USD flights/hotels and SAR transfers demonstrate mixed currencies. A separate agent commission is a negative security fixture. Other entity types are ready for manual creation; no real itineraries, stock, live rates, bank integrations, ticketing or production data are involved.
+
+Stage 15 repair adds browser controller registration for NvTaxRule, NvConversionSnapshot and NvCommunication. NvFxRate uses a custom list view for the USD/GBP/ZAR/SAR calculator, under existing NvFxRate ACL access. It fetches only currency codes from Frankfurter v2; input amounts remain local and saved transaction snapshots are unchanged.

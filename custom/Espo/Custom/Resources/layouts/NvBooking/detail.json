@@ -11,6 +11,10 @@
         }
       ],
       [
+        { "name": "leadTraveller" },
+        false
+      ],
+      [
         {
           "name": "enquiry"
         },
@@ -38,7 +42,25 @@
         {
           "name": "returnDate"
         },
-        false
+        {
+          "name": "bookingReference"
+        }
+      ],
+      [
+        { "name": "itineraryTitle" },
+        { "name": "destination" }
+      ],
+      [
+        { "name": "departureCity" },
+        { "name": "arrivalCity" }
+      ],
+      [
+        { "name": "travellerCount" },
+        { "name": "confirmedAt" }
+      ],
+      [
+        false,
+        { "name": "itineraryNotes" }
       ],
       [
         {

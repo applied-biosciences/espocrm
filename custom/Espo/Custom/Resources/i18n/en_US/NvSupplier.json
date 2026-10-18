@@ -2,6 +2,10 @@
   "fields": {
     "emailAddress": "Email Address",
     "phoneNumber": "Phone Number",
+    "contactName": "Primary Contact",
+    "website": "Website",
+    "supplierCode": "Supplier Code",
+    "active": "Active",
     "category": "Category"
   },
   "labels": {

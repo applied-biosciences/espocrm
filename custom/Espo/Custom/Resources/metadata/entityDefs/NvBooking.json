@@ -35,9 +35,8 @@
       "type": "linkMultiple",
       "view": "views/fields/teams"
     },
-    "customer": {
-      "type": "link"
-    },
+    "customer": { "type": "link" },
+    "leadTraveller": { "type": "link" },
     "enquiry": {
       "type": "link"
     },
@@ -87,6 +86,36 @@
     },
     "returnDate": {
       "type": "date"
+    },
+    "bookingReference": {
+      "type": "varchar",
+      "audited": true
+    },
+    "itineraryTitle": {
+      "type": "varchar"
+    },
+    "destination": {
+      "type": "varchar"
+    },
+    "departureCity": {
+      "type": "varchar"
+    },
+    "arrivalCity": {
+      "type": "varchar"
+    },
+    "travellerCount": {
+      "type": "int",
+      "min": 1
+    },
+    "itineraryNotes": {
+      "type": "text"
+    },
+    "itineraryCities": {
+      "type": "text"
+    },
+    "confirmedAt": {
+      "type": "datetime",
+      "audited": true
     }
   },
   "links": {
@@ -119,6 +148,35 @@
     "package": {
       "type": "belongsTo",
       "entity": "NvPackage"
+    },
+    "leadTraveller": {
+      "type": "belongsTo",
+      "entity": "NvTraveller"
+    },
+    "travellers": {
+      "type": "hasMany",
+      "entity": "NvTraveller",
+      "foreign": "booking"
+    },
+    "itinerarySegments": {
+      "type": "hasMany",
+      "entity": "NvItinerarySegment",
+      "foreign": "booking"
+    },
+    "transfers": {
+      "type": "hasMany",
+      "entity": "NvTransfer",
+      "foreign": "booking"
+    },
+    "sightseeing": {
+      "type": "hasMany",
+      "entity": "NvSightseeing",
+      "foreign": "booking"
+    },
+    "hotels": {
+      "type": "hasMany",
+      "entity": "NvHotel",
+      "foreign": "booking"
     }
   },
   "collection": {

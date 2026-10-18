@@ -5,6 +5,7 @@
       "required": true,
       "pattern": "$noBadCharacters"
     },
+    "travellerNumber": { "type": "autoincrement", "index": true },
     "description": {
       "type": "text"
     },
@@ -51,6 +52,9 @@
     "passportCountry": { "type": "varchar" },
     "passportIssueDate": { "type": "date" },
     "passportExpiryDate": { "type": "date", "audited": true }
+    ,"passportPhoto": { "type": "image", "view": "views/fields/image", "audited": true }
+    ,"isLeadTraveller": { "type": "bool", "default": false, "audited": true }
+    ,"groupReference": { "type": "varchar" }
   },
   "links": {
     "createdBy": {
@@ -82,7 +86,8 @@
   },
   "collection": {
     "orderBy": "createdAt",
-    "order": "desc"
+    "order": "desc",
+    "textFilterFields": ["name", "travellerNumber"]
   },
   "indexes": {
     "name": {

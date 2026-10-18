@@ -6,6 +6,9 @@
   {
     "name": "emailAddress"
   },
+  { "name": "category" },
+  { "name": "supplierCode" },
+  { "name": "active" },
   {
     "name": "assignedUser"
   }

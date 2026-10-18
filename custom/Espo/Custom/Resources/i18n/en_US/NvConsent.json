@@ -1,0 +1,1 @@
+{"scopeNames":{"NvConsent":"Consent","NvConsentPlural":"Consents"},"fields":{"consentType":"Consent Type","status":"Status","customer":"Customer","traveller":"Traveller","grantedAt":"Granted At","withdrawnAt":"Withdrawn At","expiresAt":"Expires At","source":"Source","evidenceReference":"Evidence Reference","notes":"Notes"},"labels":{"Create NvConsent":"Create Consent"}}

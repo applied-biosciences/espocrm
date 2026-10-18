@@ -1,6 +1,7 @@
 {
   "fields": {
     "customer": "Customer",
+    "leadTraveller": "Lead Traveller",
     "enquiry": "Enquiry",
     "package": "Package",
     "status": "Status",
@@ -8,8 +9,29 @@
     "sellingPrice": "Selling Price",
     "travelDate": "Travel Date",
     "returnDate": "Return Date"
+    ,"bookingReference": "Booking Reference"
+    ,"itineraryTitle": "Itinerary Title"
+    ,"destination": "Destination"
+    ,"departureCity": "Departure City"
+    ,"arrivalCity": "Arrival City"
+    ,"travellerCount": "Traveller Count"
+    ,"itineraryNotes": "Itinerary Notes"
+    ,"confirmedAt": "Confirmed At",
+    "itineraryCities": "Itinerary Cities",
+    "travellers": "Travellers (+ / −)",
+    "itinerarySegments": "City Segments",
+    "transfers": "Transfers",
+    "sightseeing": "Sightseeing"
+    ,"hotels": "Hotels by City"
   },
   "labels": {
     "Create NvBooking": "Create Booking"
+  },
+  "links": {
+    "travellers": "Travellers",
+    "itinerarySegments": "City Stops",
+    "hotels": "Hotels by City",
+    "transfers": "Transfers",
+    "sightseeing": "Sightseeing"
   }
 }

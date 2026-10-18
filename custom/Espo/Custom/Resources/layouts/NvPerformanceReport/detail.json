@@ -1,0 +1,8 @@
+[
+ {"label":"Main Report Summary","rows":[[{"name":"name"},{"name":"reportType"}],[{"name":"periodStart"},{"name":"periodEnd"}],[{"name":"salesTotal"},{"name":"costTotal"}],[{"name":"profitTotal"},{"name":"debtorTotal"}],[{"name":"creditorTotal"},{"name":"supplierOutstanding"}]]},
+ {"label":"Sales Performance Detail","rows":[[{"name":"salesTotal"},{"name":"completedSales"}],[{"name":"openBookings"},{"name":"description"}]]},
+ {"label":"Operations Performance Detail","rows":[[{"name":"openBookings"},{"name":"completedSales"}],[{"name":"periodStart"},{"name":"periodEnd"}]]},
+ {"label":"Supplier Payables / Creditors Detail","rows":[[{"name":"creditorTotal"},{"name":"supplierOutstanding"}],[{"name":"costTotal"},{"name":"description"}]]},
+ {"label":"Debtors Detail","rows":[[{"name":"debtorTotal"},{"name":"salesTotal"}],[{"name":"periodStart"},{"name":"periodEnd"}]]},
+ {"label":"Profitability Detail","rows":[[{"name":"salesTotal"},{"name":"costTotal"}],[{"name":"profitTotal"},{"name":"description"}]]}
+]

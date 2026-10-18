@@ -1,0 +1,6 @@
+[
+  { "name": "name", "link": true },
+  { "name": "checkIn" },
+  { "name": "checkOut" },
+  { "name": "cost" }
+]

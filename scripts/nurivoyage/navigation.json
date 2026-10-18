@@ -7,6 +7,7 @@
       "NvEnquiry",
       "Account",
       "Contact",
+      "NvTraveller",
       "NvQuote",
       "NvBooking",
       "NvPackage"
@@ -16,11 +17,14 @@
     "text": "Operations",
     "iconClass": "fas fa-plane",
     "itemList": [
+      "NvBooking",
       "NvBookingItem",
       "NvTraveller",
       "NvFlight",
       "NvHotel",
       "NvTransfer",
+      "NvSightseeing",
+      "NvItinerarySegment",
       "NvVisa",
       "NvTravelDocument",
       "Document"
@@ -30,6 +34,7 @@
     "text": "Purchasing & Finance",
     "iconClass": "fas fa-coins",
     "itemList": [
+      "NvAgent",
       "NvSupplier",
       "NvPurchaseOrder",
       "NvSupplierBill",
@@ -37,8 +42,27 @@
       "NvCustomerPayment",
       "NvSupplierPayment",
       "NvCommission",
-      "NvFxRate"
+      "NvFxRate",
+      "NvPerformanceReport",
+      "NvTaxRule",
+      "NvConversionSnapshot"
     ]
+  },
+  {
+    "text": "Management Dashboards & Reporting",
+    "iconClass": "fas fa-chart-line",
+    "itemList": [
+      "NvCommunication",
+      "NvPerformanceReport",
+      "Report",
+      "Dashboard",
+      "NvWorkflowTask"
+    ]
+  },
+  {
+    "text": "Security & Governance",
+    "iconClass": "fas fa-shield-alt",
+    "itemList": ["NvSecurityAudit", "NvConsent", "NvAccessReview", "NvRetentionRule", "NvGovernanceCheck"]
   },
   {
     "text": "Workspace",

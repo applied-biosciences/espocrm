@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [ { "name": "name" }, { "name": "customerNumber" } ],
+      [ { "name": "website" }, false ],
+      [ { "name": "emailAddress" }, { "name": "phoneNumber" } ],
+      [ { "name": "billingAddress" }, { "name": "shippingAddress" } ]
+    ]
+  },
+  {
+    "label": "Details",
+    "rows": [
+      [ { "name": "type" }, { "name": "industry" } ],
+      [ { "name": "description", "fullWidth": true } ]
+    ]
+  }
+]

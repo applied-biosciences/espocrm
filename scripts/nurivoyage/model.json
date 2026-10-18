@@ -20,7 +20,21 @@
     "NvFlight",
     "NvTransfer",
     "NvVisa",
-    "NvPackage"
+    "NvPackage",
+    "NvSightseeing",
+    "NvItinerarySegment",
+    "NvAgent",
+    "NvAgentLogin",
+    "NvPerformanceReport",
+    "NvCommunication",
+    "NvTaxRule",
+    "NvConversionSnapshot",
+    "NvWorkflowTask",
+    "NvSecurityAudit",
+    "NvConsent",
+    "NvAccessReview",
+    "NvRetentionRule",
+    "NvGovernanceCheck"
   ],
   "salesWorkflow": [
     "New Enquiry",

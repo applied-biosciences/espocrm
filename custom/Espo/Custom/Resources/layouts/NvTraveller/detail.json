@@ -6,17 +6,18 @@
         {
           "name": "name"
         },
-        {
-          "name": "customer"
-        }
+        { "name": "travellerNumber" }
       ],
       [
         {
-          "name": "booking"
-        },
+          "name": "customer"
+        }
+        ,{ "name": "booking" }
+      ],
+      [
         {
           "name": "dateOfBirth"
-        }
+        }, false
       ],
       [
         {
@@ -33,6 +34,14 @@
       [
         { "name": "passportExpiryDate" },
         false
+      ],
+      [
+        { "name": "passportPhoto" },
+        false
+      ],
+      [
+        { "name": "isLeadTraveller" },
+        { "name": "groupReference" }
       ],
       [
         {

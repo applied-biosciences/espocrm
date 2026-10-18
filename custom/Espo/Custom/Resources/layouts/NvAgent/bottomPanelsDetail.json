@@ -1,0 +1,4 @@
+{
+  "commissions": { "index": 0, "label": "Commission Ledger" },
+  "loginEvents": { "index": 1, "label": "Agent Login / Logout Audit" }
+}

@@ -1,0 +1,11 @@
+[
+  { "label": "Agent Details", "rows": [
+    [ { "name": "name" }, { "name": "user" } ],
+    [ { "name": "login" }, { "name": "lastLoginAt" } ],
+    [ { "name": "completedSales" }, { "name": "openSales" } ],
+    [ { "name": "commissionType" }, { "name": "commissionRate" } ],
+    [ { "name": "commissionPaid" }, { "name": "commissionOwed" } ],
+    [ { "name": "loginAuditTrail" }, false ],
+    [ { "name": "description" }, false ]
+  ] }
+]

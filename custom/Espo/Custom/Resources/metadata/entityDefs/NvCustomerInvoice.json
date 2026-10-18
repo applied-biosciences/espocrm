@@ -5,6 +5,7 @@
       "required": true,
       "pattern": "$noBadCharacters"
     },
+    "invoiceNumber": { "type": "autoincrement", "index": true },
     "description": {
       "type": "text"
     },
@@ -57,6 +58,8 @@
       "type": "currency",
       "min": 0
     },
+    "paidAmount": { "type": "currency", "min": 0, "default": 0 },
+    "balanceAmount": { "type": "currency", "min": 0, "readOnly": true },
     "dueDate": {
       "type": "date"
     }

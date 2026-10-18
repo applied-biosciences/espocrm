@@ -3,10 +3,9 @@
     "name": "name",
     "link": true
   },
-  {
-    "name": "booking"
-  },
-  {
-    "name": "assignedUser"
-  }
+  { "name": "city" },
+  { "name": "checkIn" },
+  { "name": "checkOut" },
+  { "name": "cost" },
+  { "name": "booking" }
 ]

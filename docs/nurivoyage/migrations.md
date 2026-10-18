@@ -23,3 +23,10 @@ Stage 5 adds passport identity metadata to `NvTraveller` and document number, is
 ## Stage 6 — quote and version metadata
 
 Stage 6 adds quote number, option name, sent-at, accepted-at and lost-reason fields to `NvQuote`. It also publishes the application version marker `v10.0.10.0` through supported custom login, navbar and client head assets. This is an additive metadata and presentation change; the EspoCRM distribution remains pinned to 10.0.10 and no core files are changed.
+
+## Stage 7 — traveller passport photo
+
+Stage 7 adds a private `passportPhoto` file field to `NvTraveller`, adds itinerary metadata to `NvBooking`, multi-city hotel and transfer fields, and the `NvSightseeing` activity entity. It publishes the application version marker `v10.0.10.0.s7` through supported login, navbar and client head assets. Traveller records and their photos are readable by all named application roles, including Sales; the separate travel-document module remains role-protected. Photos use the existing authenticated attachment storage path; no public image URL, OCR or face recognition is introduced.
+
+### Stage 15 bootstrap collation repair
+Bootstrap converts `nv_agent` and `nv_agent_login` to `utf8mb4_unicode_ci`, matching Espo's schema. Their earlier manually created tables used MariaDB's server default collation, causing joined queries and bootstrap to fail. Existing rows are retained. New table declarations now explicitly set the Espo collation.
