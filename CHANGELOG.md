@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.0.10.0.s19 — Stage 19 development
+
+- Added production readiness records for infrastructure, monitoring, backups, disaster recovery, secrets and release gates.
+- Added a full synthetic client booking smoke journey and local production guardrail checks; AWS deployment remains separately gated.
+
 ## v10.0.10.0.s18 — Stage 18 development
 
 - Added scoped API client records, customer and supplier portal access controls, integration endpoint health metadata, expiry and consent references.

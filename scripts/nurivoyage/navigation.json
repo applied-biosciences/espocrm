@@ -56,7 +56,8 @@
       "NvPerformanceReport",
       "Report",
       "Dashboard",
-      "NvWorkflowTask"
+      "NvWorkflowTask",
+      "NvProductionReadiness"
     ]
   },
   {

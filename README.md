@@ -1,8 +1,8 @@
-# NuriVoyage — local travel management platform v10.0.10.0.s18
+# NuriVoyage — local travel management platform v10.0.10.0.s19
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.0.s18`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.10.0.s19`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -243,3 +243,7 @@ Security & Governance provides immutable security audit events, consent records,
 ### Stage 18 integrations and portal access
 
 Integrations & Portal tracks scoped API clients, customer or supplier portal invitations, allowed scopes, expiry and consent references, and integration endpoint health. Credentials are represented by secret references only; this local build does not store token or password values.
+
+### Stage 19 production readiness
+
+Management Dashboards & Reporting → Production Readiness records infrastructure, monitoring, backup, disaster recovery, secrets and release-gate checks. `scripts/local production-check` validates local deployment guardrails, while `scripts/local smoke-stage19` exercises the complete synthetic client booking journey. AWS release remains gated behind a separate approved deployment process.

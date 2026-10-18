@@ -37,7 +37,8 @@
     "NvGovernanceCheck",
     "NvApiClient",
     "NvPortalAccess",
-    "NvIntegrationEndpoint"
+    "NvIntegrationEndpoint",
+    "NvProductionReadiness"
   ],
   "salesWorkflow": [
     "New Enquiry",

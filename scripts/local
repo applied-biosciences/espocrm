@@ -38,6 +38,8 @@ case "${1:-help}" in
   smoke-stage11) python3 tests/nurivoyage/stage11.py ;;
   smoke-stage17) python3 tests/nurivoyage/stage17.py ;;
   smoke-stage18) python3 tests/nurivoyage/stage18.py ;;
+  smoke-stage19) python3 tests/nurivoyage/stage19.py ;;
+  production-check) python3 scripts/nurivoyage/production-check.py ;;
   seed-stage7-demo) python3 scripts/nurivoyage/seed-stage7-demo.py ;;
   import-catalogue) python3 scripts/nurivoyage/import-catalogue.py "$2" ;;
   backup) bash scripts/nurivoyage/backup.sh ;;
@@ -48,5 +50,5 @@ case "${1:-help}" in
     test "$answer" = 'DELETE NURIVOYAGE' || exit 1
     docker compose down -v
     "$0" start ;;
-  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|smoke|smoke-stage3|smoke-stage4|smoke-stage5|smoke-stage6|smoke-stage7|smoke-stage8|smoke-stage9|smoke-stage10|smoke-stage11|smoke-stage15|smoke-stage17|smoke-stage18|seed-stage7-demo|import-catalogue FILE.csv|backup|restore DIR|reset-local}' ;;
+  *) echo 'Usage: scripts/local {configure|start|stop|bootstrap|reset-passwords|credentials|health-check|production-check|smoke|smoke-stage3|smoke-stage4|smoke-stage5|smoke-stage6|smoke-stage7|smoke-stage8|smoke-stage9|smoke-stage10|smoke-stage11|smoke-stage15|smoke-stage17|smoke-stage18|smoke-stage19|seed-stage7-demo|import-catalogue FILE.csv|backup|restore DIR|reset-local}' ;;
 esac
