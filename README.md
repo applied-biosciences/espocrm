@@ -1,8 +1,8 @@
-# NuriVoyage — local travel management platform v10.0.10.0.s16
+# NuriVoyage — local travel management platform v10.0.10.0.s17
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.0.s16`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.10.0.s17`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -235,3 +235,7 @@ Stage 15 repair: **Purchasing & Finance → Exchange Rates & Currency Converter*
 ### Stage 16 workflow controls
 
 Management Dashboards & Reporting → Workflow Controls holds approval, reminder, document expiry, supplier follow-up and exception tasks. Each item has an owner, due/reminder dates, priority, status, escalation and auditable action context.
+
+### Stage 17 security and governance
+
+Security & Governance provides immutable security audit events, consent records, access reviews, retention rules and governance checks. Audit records are read-only, management and finance administer governance records, and operational roles receive restricted visibility. Governance checks record only status and remediation metadata; secrets are never stored in the application database.

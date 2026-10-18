@@ -29,7 +29,12 @@
     "NvCommunication",
     "NvTaxRule",
     "NvConversionSnapshot",
-    "NvWorkflowTask"
+    "NvWorkflowTask",
+    "NvSecurityAudit",
+    "NvConsent",
+    "NvAccessReview",
+    "NvRetentionRule",
+    "NvGovernanceCheck"
   ],
   "salesWorkflow": [
     "New Enquiry",

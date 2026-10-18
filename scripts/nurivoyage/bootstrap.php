@@ -115,6 +115,7 @@ foreach ($roles as $name=>$allowed) {
     $allowed[] = "NvTaxRule";
     $allowed[] = "NvConversionSnapshot";
     $allowed[] = "NvWorkflowTask";
+    $allowed = array_merge($allowed, ['NvSecurityAudit','NvConsent','NvAccessReview','NvRetentionRule','NvGovernanceCheck']);
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {
@@ -134,6 +135,11 @@ foreach ($roles as $name=>$allowed) {
     }
     if (in_array($name,['Sales Agent','Operations','Sales + Operations Hybrid'])) {
         $fields['NvBookingItem']=array_fill_keys(['purchaseCost','purchaseCostCurrency','purchaseCostConverted'], ['read'=>'no','edit'=>'no']);
+    }
+    // Governance records are visible according to role; audit events are immutable and never user-editable.
+    $data['NvSecurityAudit']=['create'=>'no','read'=>in_array($name,['Management','Finance'])?'all':'own','edit'=>'no','delete'=>'no','stream'=>'no'];
+    foreach (['NvConsent','NvAccessReview','NvRetentionRule','NvGovernanceCheck'] as $governanceScope) {
+        $data[$governanceScope]=['create'=>in_array($name,['Management','Finance'])?'yes':'no','read'=>'all','edit'=>in_array($name,['Management','Finance'])?'all':'no','delete'=>'no','stream'=>'no'];
     }
     // Finance can see payment status and amount, but cannot rewrite commission ownership/rules.
     if ($name==='Finance') {
@@ -188,6 +194,16 @@ foreach ([
 // Seed one synthetic task per Stage 16 automation class for local UAT.
 foreach ([['Approval','Synthetic quote approval'],['Reminder','Synthetic customer reminder'],['Document Expiry','Synthetic passport expiry alert'],['Supplier Follow-up','Synthetic supplier confirmation follow-up'],['Exception','Synthetic unresolved exception']] as [$type,$name]) {
     upsert('NvWorkflowTask','name',$name,['workflowType'=>$type,'status'=>'Open','priority'=>$type==='Exception'?'High':'Normal','dueAt'=>'2026-10-31 09:00:00','reminderAt'=>'2026-10-24 09:00:00','lastAction'=>'Seeded Stage 16 synthetic workflow']);
+}
+// Stage 17 synthetic governance fixtures. These records contain no real personal data or secrets.
+upsert('NvSecurityAudit','name','Synthetic admin login audit',['eventType'=>'Login','severity'=>'Info','userId'=>$userIds['admin'],'targetEntity'=>'User','targetId'=>$userIds['admin'],'ipAddress'=>'127.0.0.1','occurredAt'=>'2026-10-17 08:00:00','details'=>'Synthetic local audit event','immutable'=>true]);
+upsert('NvSecurityAudit','name','Synthetic denied template access',['eventType'=>'Access Denied','severity'=>'Warning','userId'=>$userIds['sales'],'targetEntity'=>'Template','targetId'=>'synthetic-template','ipAddress'=>'127.0.0.1','occurredAt'=>'2026-10-17 08:05:00','details'=>'Synthetic least-privilege fixture','immutable'=>true]);
+$syntheticCustomer=$em->getRDBRepository('Account')->where(['name'=>'Ahmed Khan'])->findOne();
+upsert('NvConsent','name','Synthetic communication consent',['consentType'=>'Communication','status'=>'Granted','customerId'=>$syntheticCustomer ? $syntheticCustomer->getId() : null,'grantedAt'=>'2026-10-17 08:10:00','expiresAt'=>'2027-10-17 08:10:00','source'=>'Synthetic UAT','evidenceReference'=>'SYNTHETIC-CONSENT-001','notes'=>'Local-only test consent']);
+upsert('NvAccessReview','name','Synthetic quarterly access review',['reviewType'=>'Quarterly','status'=>'Approved','reviewerId'=>$userIds['manager'],'subjectUserId'=>$userIds['sales'],'dueAt'=>'2026-10-31 09:00:00','completedAt'=>'2026-10-17 09:00:00','findings'=>'No excessive access found in synthetic review','evidenceReference'=>'SYNTHETIC-REVIEW-001','lastAction'=>'Approved by Management']);
+upsert('NvRetentionRule','name','Synthetic traveller document retention',['entityType'=>'NvTravelDocument','retentionYears'=>7,'action'=>'Archive','legalBasis'=>'Synthetic policy baseline','active'=>true,'lastReviewedAt'=>'2026-10-17','nextReviewAt'=>'2027-10-17','reviewerId'=>$userIds['manager'],'notes'=>'Local UAT retention rule']);
+foreach ([['Secrets','Synthetic secrets check'],['Roles','Synthetic role ACL check'],['Field Visibility','Synthetic sensitive field check'],['Backups','Synthetic backup check'],['Retention','Synthetic retention check']] as [$type,$name]) {
+    upsert('NvGovernanceCheck','name',$name,['checkType'=>$type,'status'=>'Pass','checkedAt'=>'2026-10-17 09:30:00','details'=>'Synthetic local governance check passed; values and secrets are never stored here','remediationOwnerId'=>$userIds['manager']]);
 }
 // Seed only once. Re-running bootstrap preserves human UAT edits and transactions.
 if (!$config->get('nurivoyageSeedVersion')) {

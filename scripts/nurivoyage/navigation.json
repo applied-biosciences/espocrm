@@ -60,6 +60,11 @@
     ]
   },
   {
+    "text": "Security & Governance",
+    "iconClass": "fas fa-shield-alt",
+    "itemList": ["NvSecurityAudit", "NvConsent", "NvAccessReview", "NvRetentionRule", "NvGovernanceCheck"]
+  },
+  {
     "text": "Workspace",
     "iconClass": "fas fa-envelope",
     "itemList": [

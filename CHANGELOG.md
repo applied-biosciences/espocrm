@@ -1,5 +1,11 @@
 # Changelog
 
+## v10.0.10.0.s17 — Stage 17 development
+
+- Added role-safe Security & Governance navigation and first-class security audit, consent, access review, retention rule, and governance check entities.
+- Added immutable audit fixtures, synthetic consent and access review records, retention policy metadata, and secrets/roles/field visibility governance checks.
+- Hardened governance ACLs: audit records are read-only, management and finance administer governance records, and other operational roles have read-only or own audit visibility.
+
 ## v10.0.10.0.s16 — Stage 11 development
 
 - Added commission numbers, basis amounts, frozen rule snapshots, approval and paid timestamps, and settlement references.
