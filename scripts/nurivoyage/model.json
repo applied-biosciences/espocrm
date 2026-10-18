@@ -34,7 +34,10 @@
     "NvConsent",
     "NvAccessReview",
     "NvRetentionRule",
-    "NvGovernanceCheck"
+    "NvGovernanceCheck",
+    "NvApiClient",
+    "NvPortalAccess",
+    "NvIntegrationEndpoint"
   ],
   "salesWorkflow": [
     "New Enquiry",

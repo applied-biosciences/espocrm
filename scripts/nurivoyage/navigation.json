@@ -65,6 +65,11 @@
     "itemList": ["NvSecurityAudit", "NvConsent", "NvAccessReview", "NvRetentionRule", "NvGovernanceCheck"]
   },
   {
+    "text": "Integrations & Portal",
+    "iconClass": "fas fa-plug",
+    "itemList": ["NvApiClient", "NvPortalAccess", "NvIntegrationEndpoint"]
+  },
+  {
     "text": "Workspace",
     "iconClass": "fas fa-envelope",
     "itemList": [

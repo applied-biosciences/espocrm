@@ -116,6 +116,7 @@ foreach ($roles as $name=>$allowed) {
     $allowed[] = "NvConversionSnapshot";
     $allowed[] = "NvWorkflowTask";
     $allowed = array_merge($allowed, ['NvSecurityAudit','NvConsent','NvAccessReview','NvRetentionRule','NvGovernanceCheck']);
+    $allowed = array_merge($allowed, ['NvApiClient','NvPortalAccess','NvIntegrationEndpoint']);
     $data=[]; $fields=[];
     // Default deny every ACL scope, including native reports/import/export surfaces.
     foreach ($scopes as $scope=>$def) {
@@ -141,6 +142,9 @@ foreach ($roles as $name=>$allowed) {
     foreach (['NvConsent','NvAccessReview','NvRetentionRule','NvGovernanceCheck'] as $governanceScope) {
         $data[$governanceScope]=['create'=>in_array($name,['Management','Finance'])?'yes':'no','read'=>'all','edit'=>in_array($name,['Management','Finance'])?'all':'no','delete'=>'no','stream'=>'no'];
     }
+    $data['NvApiClient']=['create'=>in_array($name,['Management','Finance'])?'yes':'no','read'=>in_array($name,['Management','Finance'])?'all':'own','edit'=>in_array($name,['Management','Finance'])?'all':'no','delete'=>'no','stream'=>'no'];
+    $data['NvIntegrationEndpoint']=['create'=>$name==='Management'?'yes':'no','read'=>in_array($name,['Management','Finance'])?'all':'own','edit'=>$name==='Management'?'all':'no','delete'=>'no','stream'=>'no'];
+    $data['NvPortalAccess']=['create'=>in_array($name,['Management','Finance'])?'yes':'no','read'=>'all','edit'=>in_array($name,['Management','Finance'])?'all':'no','delete'=>'no','stream'=>'no'];
     // Finance can see payment status and amount, but cannot rewrite commission ownership/rules.
     if ($name==='Finance') {
         $data['NvCommission']=['create'=>'no','read'=>'all','edit'=>'all','delete'=>'no','stream'=>'no'];
@@ -205,6 +209,15 @@ upsert('NvRetentionRule','name','Synthetic traveller document retention',['entit
 foreach ([['Secrets','Synthetic secrets check'],['Roles','Synthetic role ACL check'],['Field Visibility','Synthetic sensitive field check'],['Backups','Synthetic backup check'],['Retention','Synthetic retention check']] as [$type,$name]) {
     upsert('NvGovernanceCheck','name',$name,['checkType'=>$type,'status'=>'Pass','checkedAt'=>'2026-10-17 09:30:00','details'=>'Synthetic local governance check passed; values and secrets are never stored here','remediationOwnerId'=>$userIds['manager']]);
 }
+// Stage 18 integration and portal fixtures. Tokens and passwords are references only; no secret values are persisted.
+upsert('NvApiClient','name','Synthetic customer portal API client',['clientType'=>'Customer Portal','status'=>'Active','ownerId'=>$userIds['manager'],'scopes'=>'booking:read, itinerary:read, invoice:read','expiresAt'=>'2027-10-17 00:00:00','rateLimitPerMinute'=>60,'secretReference'=>'LOCAL_SECRET_REF_CUSTOMER_PORTAL','notes'=>'Synthetic scoped client for local UAT']);
+upsert('NvApiClient','name','Synthetic supplier integration client',['clientType'=>'Supplier Portal','status'=>'Active','ownerId'=>$userIds['finance'],'scopes'=>'booking:read, supplier:write, document:read','expiresAt'=>'2027-10-17 00:00:00','rateLimitPerMinute'=>30,'secretReference'=>'LOCAL_SECRET_REF_SUPPLIER_PORTAL','notes'=>'Synthetic scoped client for local UAT']);
+$portalCustomer=$em->getRDBRepository('Account')->where(['name'=>'Ahmed Khan'])->findOne();
+$portalSupplier=$em->getRDBRepository('NvSupplier')->where(['name'=>'Demo Airways'])->findOne();
+upsert('NvPortalAccess','name','Synthetic Ahmed Khan customer portal',['portalType'=>'Customer','status'=>'Active','customerId'=>$portalCustomer ? $portalCustomer->getId() : null,'contactEmail'=>'ahmed.portal@nuri.local','allowedScopes'=>'booking:read, itinerary:read, invoice:read','lastLoginAt'=>'2026-10-17 10:00:00','expiresAt'=>'2027-10-17 00:00:00','consentReference'=>'SYNTHETIC-CONSENT-001','notes'=>'Synthetic customer self-service access']);
+upsert('NvPortalAccess','name','Synthetic Demo Airways supplier portal',['portalType'=>'Supplier','status'=>'Invited','supplierId'=>$portalSupplier ? $portalSupplier->getId() : null,'contactEmail'=>'supplier.portal@nuri.local','allowedScopes'=>'booking:read, supplier:write, document:read','expiresAt'=>'2027-10-17 00:00:00','consentReference'=>'SYNTHETIC-SUPPLIER-001','notes'=>'Synthetic supplier self-service invitation']);
+upsert('NvIntegrationEndpoint','name','Frankfurter FX integration',['provider'=>'Frankfurter','endpointType'=>'Frankfurter FX','baseUrl'=>'https://api.frankfurter.dev/v2','status'=>'Healthy','lastCheckedAt'=>'2026-10-17 10:15:00','healthMessage'=>'Live rates available for local conversion UI','authMethod'=>'None','scopes'=>'rates:read','notes'=>'Public provider; no credentials required']);
+upsert('NvIntegrationEndpoint','name','Synthetic supplier webhook',['provider'=>'NuriVoyage Local','endpointType'=>'Webhook','baseUrl'=>'http://localhost:8080/api/v1/integrations/supplier','status'=>'Configured','lastCheckedAt'=>'2026-10-17 10:15:00','healthMessage'=>'Synthetic endpoint metadata only','authMethod'=>'API Key Reference','secretReference'=>'LOCAL_SECRET_REF_SUPPLIER_WEBHOOK','scopes'=>'supplier:write','notes'=>'No outbound production calls in local stage']);
 // Seed only once. Re-running bootstrap preserves human UAT edits and transactions.
 if (!$config->get('nurivoyageSeedVersion')) {
     $customers=[];

@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.0.10.0.s18 — Stage 18 development
+
+- Added scoped API client records, customer and supplier portal access controls, integration endpoint health metadata, expiry and consent references.
+- Added role-safe Integrations & Portal navigation and synthetic customer/supplier fixtures without storing credentials.
+
 ## v10.0.10.0.s17 — Stage 17 development
 
 - Added role-safe Security & Governance navigation and first-class security audit, consent, access review, retention rule, and governance check entities.
