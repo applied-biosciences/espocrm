@@ -1,8 +1,8 @@
-# NuriVoyage — local travel management platform v10.0.10.00
+# NuriVoyage — local travel management platform v10.0.10.01
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.00`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.10.01`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
 
 ## Clone and run
 
@@ -29,6 +29,7 @@ scripts/local start               # build, start, reconcile bootstrap and rebuil
 scripts/local stop                # compose down; retain data volumes
 scripts/local health-check
 scripts/local smoke               # synthetic integration tests, restarts and restore; brief downtime
+scripts/local smoke-release       # v10.0.10.01 user, PDF and email-integration checks
 scripts/local smoke-stage4        # focused Stage 4 enquiry checks
 scripts/local smoke-stage5        # focused Stage 5 traveller/document checks
 scripts/local smoke-stage6        # focused Stage 6 quote/version checks
@@ -217,6 +218,14 @@ Stage 11 adds commission numbers, basis amounts, frozen rule snapshots, approval
 ### PDF and printing (Stage 12)
 
 On Travel Documents, Quotes, Customer Invoices and Purchase Orders, select one or more records in the list and use **Print PDF**. The generated PDF opens in the browser for download or system printing. Record detail pages also expose Espo's standard print/PDF action menu when available.
+
+The v10.0.10.01 bootstrap keeps one active NuriVoyage PDF template for each quote, customer invoice and purchase order. Each template includes the document number, dates, status, party, itinerary, amount and description fields. Run `scripts/local smoke-release` to generate synthetic PDFs for all three types.
+
+### User administration and email integration (v10.0.10.01)
+
+System Administrators can open **Management Dashboards & Reporting → User** to create and deactivate users, set their email and phone details, change passwords, and assign an authorization role such as Sales Agent, Sales + Operations Hybrid, Finance or Management. The native EspoCRM user form stores passwords through the application password service; plaintext passwords are never stored in the repository.
+
+System Administrators can open **Workspace → Email Accounts** to configure a Group Email Account for an SMTP/IMAP provider such as Outlook or another mail client, and **Workspace → Outbound Email** to verify outbound transport. Local development remains Mailpit-only until an administrator explicitly configures an approved external account. No external email is sent by the smoke tests.
 
 ### Stage 13 reporting
 

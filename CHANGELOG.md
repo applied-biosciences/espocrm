@@ -1,5 +1,11 @@
 # Changelog
 
+## v10.0.10.01 — User administration, document PDFs and email integration
+
+- Added an administrator User management link under Management with native user creation, password changes, contact fields and role-based authorization levels.
+- Enabled native generated PDFs for quotes, customer invoices and purchase orders with one NuriVoyage template per document type and populated record fields.
+- Added administrator links to Group Email Accounts and Outbound Email for SMTP/IMAP email-client integration.
+
 ## v10.0.10.00 — AWS deployment preparation
 
 - Renamed the application release marker to `v10.0.10.00` for the production deployment line.

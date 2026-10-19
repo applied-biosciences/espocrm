@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 REGION="${AWS_REGION:-eu-north-1}"
 PROFILE="${AWS_PROFILE:-HoldMyCoffee}"
-IMAGE_TAG="${IMAGE_TAG:-v10.0.10.00}"
+IMAGE_TAG="${IMAGE_TAG:-v10.0.10.01}"
 ECR_REPOSITORY="${ECR_REPOSITORY:-}"
 S3_BUCKET="${S3_BUCKET:-}"
 EC2_INSTANCE_ID="${EC2_INSTANCE_ID:-}"
@@ -36,14 +36,14 @@ echo "Platform: linux/amd64"
 
 if [ "$APPLY" -eq 0 ]; then
   echo 'DRY RUN: no image push, S3 upload, EC2 command or AWS resource creation will occur.'
-  docker buildx build --platform linux/amd64 --file "$ROOT/infrastructure/aws/Dockerfile" --tag "$IMAGE" "$ROOT" --load
+  docker buildx build --platform linux/amd64 --provenance=false --sbom=false --file "$ROOT/infrastructure/aws/Dockerfile" --tag "$IMAGE" "$ROOT" --load
   exit 0
 fi
 
 mkdir -p "$ROOT/.aws-release"
 aws ecr get-login-password --profile "$PROFILE" --region "$REGION" | docker login --username AWS --password-stdin "$REGISTRY"
-docker buildx build --platform linux/amd64 --file "$ROOT/infrastructure/aws/Dockerfile" --tag "$IMAGE" "$ROOT" --push
-tar --exclude='./.git' --exclude='./.env' --exclude='./data' --exclude='./backups' -czf "$ARCHIVE" -C "$ROOT" custom client/custom scripts/nurivoyage compose.yaml infrastructure/aws
+docker buildx build --platform linux/amd64 --provenance=false --sbom=false --file "$ROOT/infrastructure/aws/Dockerfile" --tag "$IMAGE" "$ROOT" --push
+COPYFILE_DISABLE=1 tar --no-xattrs --exclude='./.git' --exclude='./.env' --exclude='./data' --exclude='./backups' -czf "$ARCHIVE" -C "$ROOT" custom client/custom scripts/nurivoyage compose.yaml infrastructure/aws
 aws s3 cp "$ARCHIVE" "s3://$S3_BUCKET/releases/$(basename "$ARCHIVE")" --profile "$PROFILE" --region "$REGION" --sse AES256
 if [ -n "$BACKUP_DIR" ]; then
   test -f "$BACKUP_DIR/manifest.json" -a -f "$BACKUP_DIR/database.sql" || { echo 'BACKUP_DIR must contain manifest.json and database.sql' >&2; exit 1; }

@@ -45,3 +45,7 @@ backups/
 !/client/custom/**
 __pycache__/
 *.pyc
+.terraform/
+*.tfstate
+*.tfstate.*
+.aws-release/

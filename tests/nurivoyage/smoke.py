@@ -14,6 +14,30 @@ def cmd(*args):
     if r.returncode: raise RuntimeError(r.stdout[-2000:]+'\n'+r.stderr[-2000:])
     return r.stdout
 
+def compose_up():
+    """Start the stack without --wait, because minio-init is a successful one-shot job."""
+    result=subprocess.run(['docker','compose','up','-d'],text=True,capture_output=True)
+    output=result.stdout+result.stderr
+    deadline=time.monotonic()+300
+    while time.monotonic()<deadline:
+        result=subprocess.run(['scripts/local','health-check'],text=True,capture_output=True)
+        if result.returncode==0:
+            return output
+        time.sleep(2)
+    raise RuntimeError(result.stdout[-4000:]+"\n"+result.stderr[-2000:])
+
+def health_check():
+    """Allow daemon/websocket startup time after a restore or restart."""
+    deadline=time.monotonic()+300
+    last=''
+    while time.monotonic()<deadline:
+        result=subprocess.run(['scripts/local','health-check'],text=True,capture_output=True)
+        last=result.stdout+result.stderr
+        if result.returncode==0:
+            return last.strip()
+        time.sleep(2)
+    raise RuntimeError(last)
+
 def api(path,method='GET',data=None,user='admin',raw=False,expected=(200,201)):
     headers={'Content-Type':'application/json'}
     if user:
@@ -52,8 +76,8 @@ def report():
 
 try:
     stamp=uuid.uuid4().hex[:10]
-    check('01 Compose startup',lambda: (cmd('docker','compose','up','-d','--wait','--wait-timeout','300'),'docker compose up -d --wait succeeded')[1])
-    check('02 Container health',lambda:cmd('scripts/local','health-check').strip())
+    check('01 Compose startup',lambda: (compose_up(),'docker compose up -d; long-running services healthy')[1])
+    check('02 Container health',health_check)
     def loginpage():
         body=urllib.request.urlopen('http://localhost:8080/').read().decode()
         assert 'EspoCRM' in body or 'NuriVoyage' in body
@@ -64,7 +88,7 @@ try:
     customer=api('Account','POST',{'name':'Smoke Customer '+stamp,'description':'SYNTHETIC; safe to remove'})
     contact=api('Contact','POST',{'firstName':'Smoke','lastName':stamp,'accountId':customer['id']})
     check('06 Create customer/contact',lambda:f"Account {customer['id']}; Contact {contact['id']}")
-    check('07 Stack restart and record persistence',lambda:(cmd('docker','compose','down'),cmd('docker','compose','up','-d','--wait','--wait-timeout','300'),api('Account/'+customer['id'])['name'])[-1])
+    check('07 Stack restart and record persistence',lambda:(cmd('docker','compose','down'),compose_up(),api('Account/'+customer['id'])['name'])[-1])
     # Tiny valid synthetic PNG, no personal/customer data.
     PNG=base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aKfkAAAAASUVORK5CYII=')
     document=api('NvTravelDocument','POST',{'name':'SYNTHETIC Smoke Document '+stamp})
@@ -87,7 +111,7 @@ try:
     check('08 Authorised MinIO document path',document_proof)
     def restart_minio():
         cmd('docker','compose','restart','minio')
-        cmd('docker','compose','up','-d','--wait','--wait-timeout','300')
+        compose_up()
         assert api('Attachment/file/'+attachment['id'],raw=True)==PNG
         return 'Object survives MinIO restart and authorised download matches bytes'
     check('09 MinIO persistence',restart_minio)
@@ -141,7 +165,7 @@ try:
         assert api('Attachment/file/'+attachment['id'],raw=True)==PNG
         return 'Changed customer and deleted MinIO object recovered with matching bytes; contact relationship retained'
     check('14 Restore recovery and object deletion',restore_proof)
-    check('15 Final service health',lambda:cmd('scripts/local','health-check').strip())
+    check('15 Final service health',health_check)
     def currency():
         settings=api('Settings')
         assert settings['defaultCurrency']=='ZAR' and settings['baseCurrency']=='ZAR'

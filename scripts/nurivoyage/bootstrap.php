@@ -19,7 +19,7 @@ $model = json_decode(file_get_contents('/opt/nurivoyage/model.json'), true, 512,
 if ($config->get('version') !== $model['espoVersion']) {
     throw new RuntimeException('EspoCRM version mismatch; do not silently upgrade.');
 }
-$tabs = array_merge(['Account', 'Contact', 'Lead'], $model['entities'], ['Email', 'Task', 'Document', 'EmailTemplate']);
+$tabs = array_merge(['Account', 'Contact', 'Lead'], $model['entities'], ['Email', 'Task', 'Document', 'EmailTemplate', 'User']);
 $navigation = json_decode(file_get_contents('/opt/nurivoyage/navigation.json'), false, 512, JSON_THROW_ON_ERROR);
 foreach ([
     'siteUrl' => getenv('APP_URL'), 'webSocketUrl' => getenv('WS_URL') ?: 'ws://localhost:8081',
@@ -275,8 +275,21 @@ foreach ([
     'NvTravelDocument'=>'NuriVoyage Travel Document PDF', 'NvQuote'=>'NuriVoyage Quote PDF',
     'NvCustomerInvoice'=>'NuriVoyage Customer Invoice PDF', 'NvPurchaseOrder'=>'NuriVoyage Purchase Order PDF'
 ] as $entity=>$templateName) {
-    upsert('Template','name',$templateName,['entityType'=>$entity,'status'=>'Active',
-        'body'=>'<h1>{{name}}</h1><p><strong>Record ID:</strong> {{id}}</p><p><strong>Status:</strong> {{status}}</p><p><strong>Description:</strong> {{description}}</p>',
-        'printHeader'=>false,'printFooter'=>true,'footer'=>'NuriVoyage · Local PDF']);
+    $body = match ($entity) {
+        'NvQuote' => '<h1>NuriVoyage Quotation</h1><p><strong>Quote number:</strong> {{quoteNumber}}<br><strong>Date:</strong> {{today}}<br><strong>Status:</strong> {{status}}</p><p><strong>Customer:</strong> {{customerName}}<br><strong>Itinerary:</strong> {{bookingName}}</p><p><strong>Option:</strong> {{optionName}}</p><p><strong>Total:</strong> {{sellingPriceCurrency}} {{sellingPrice}}</p><p>{{description}}</p>',
+        'NvCustomerInvoice' => '<h1>NuriVoyage Customer Invoice</h1><p><strong>Invoice number:</strong> {{invoiceNumber}}<br><strong>Date:</strong> {{today}}<br><strong>Status:</strong> {{status}}<br><strong>Due date:</strong> {{dueDate}}</p><p><strong>Customer:</strong> {{customerName}}<br><strong>Itinerary:</strong> {{bookingName}}</p><p><strong>Amount:</strong> {{amountCurrency}} {{amount}}<br><strong>Paid:</strong> {{paidAmountCurrency}} {{paidAmount}}<br><strong>Balance:</strong> {{balanceAmountCurrency}} {{balanceAmount}}</p><p>{{description}}</p>',
+        'NvPurchaseOrder' => '<h1>NuriVoyage Purchase Order</h1><p><strong>PO number:</strong> {{purchaseOrderNumber}}<br><strong>Date:</strong> {{today}}<br><strong>Status:</strong> {{status}}<br><strong>Due date:</strong> {{dueDate}}</p><p><strong>Supplier:</strong> {{supplierName}}<br><strong>Itinerary:</strong> {{bookingName}}</p><p><strong>Amount:</strong> {{amountCurrency}} {{amount}}</p><p>{{description}}</p>',
+        default => '<h1>NuriVoyage Travel Document</h1><p><strong>Document:</strong> {{name}}<br><strong>Date:</strong> {{today}}<br><strong>Status:</strong> {{status}}</p><p>{{description}}</p>',
+    };
+    $template = upsert('Template','name',$templateName,['entityType'=>$entity,'status'=>'Active','filename'=>'NuriVoyage_{{name}}_{{today}}.pdf',
+        'body'=>$body,'printHeader'=>false,'printFooter'=>true,'footer'=>'NuriVoyage · Nuri\'s Travel']);
+    // Earlier Stage 12 bootstraps used entity names in these titles, leaving
+    // duplicate choices in the native PDF template picker. Remove only those
+    // NuriVoyage-managed duplicates and preserve any user-created templates.
+    foreach ($em->getRDBRepository('Template')->where(['entityType'=>$entity,'deleted'=>false])->find() as $existingTemplate) {
+        if ($existingTemplate->getId() !== $template->getId() && str_starts_with((string) $existingTemplate->get('name'), 'NuriVoyage ')) {
+            $em->removeEntity($existingTemplate);
+        }
+    }
 }
 

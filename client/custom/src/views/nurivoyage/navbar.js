@@ -23,8 +23,18 @@ define('custom:views/nurivoyage/navbar', ['views/site/navbar'], NavbarView => {
             if (brand && !brand.querySelector('.nuri-version')) {
                 const version = document.createElement('small');
                 version.className = 'nuri-version';
-                version.textContent = 'v10.0.10.00';
+                version.textContent = 'v10.0.10.01';
                 brand.append(version);
+            }
+            if (!this.element.querySelector('.nuri-logout-button')) {
+                const logoutButton = document.createElement('button');
+                logoutButton.type = 'button';
+                logoutButton.className = 'nuri-logout-button';
+                logoutButton.setAttribute('aria-label', 'Log out');
+                logoutButton.title = 'Log out';
+                logoutButton.innerHTML = '<span class="fas fa-sign-out-alt" aria-hidden="true"></span><span>Log out</span>';
+                logoutButton.addEventListener('click', () => this.getRouter().logout());
+                this.element.append(logoutButton);
             }
         }
     };
