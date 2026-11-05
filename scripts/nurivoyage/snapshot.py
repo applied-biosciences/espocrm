@@ -33,4 +33,7 @@ try:
                 'find /snapshot/espo /snapshot/minio /snapshot/mailpit -mindepth 1 -maxdepth 1 -exec rm -rf {} +; tar xzf - -C /snapshot'],stdin=data)
         print('RESTORED='+str(p),flush=True)
 finally:
-    run(['up','-d','--wait','--wait-timeout','300'])
+    # minio-init is a successful one-shot dependency; Compose --wait treats
+    # its exited(0) state as a failure. Start the long-running services and
+    # let the caller's health check verify readiness.
+    run(['up','-d'])

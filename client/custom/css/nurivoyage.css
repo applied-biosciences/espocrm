@@ -54,6 +54,9 @@ a:hover { color: #0B1F3A; }
 .nuri-app-name { display: block; color: white; font-weight: 650; font-size: 17px; letter-spacing: -.03em; line-height: 1.1; }
 .nuri-version { display: block; color: #D4AF37; font-size: 10px; letter-spacing: .08em; line-height: 1.2; }
 .nuri-version-badge { position: fixed; right: 12px; bottom: 8px; z-index: 1000; color: #435E70; font-size: 10px; letter-spacing: .06em; opacity: .78; pointer-events: none; }
+.nuri-logout-button { position: fixed; left: 12px; bottom: 12px; z-index: 1050; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 116px; min-height: 40px; padding: 8px 14px; border: 1px solid #D4AF37; border-radius: 7px; background: #0B1F3A; color: #FFFFFF; font-size: 13px; font-weight: 600; box-shadow: 0 3px 10px rgba(11,31,58,.22); cursor: pointer; }
+.nuri-logout-button:hover, .nuri-logout-button:focus { background: #123B7A; color: #FFFFFF; }
+.nuri-logout-button .fas { color: #D4AF37; }
 .field[data-name="passportPhoto"], [data-name="passportPhoto"] .field, [data-name="passportPhoto"] .file-field { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 154px; min-height: 190px; padding: 10px; border: 1px solid #B9DCE5; border-radius: 10px; background: #FFFFFF; box-shadow: 0 3px 12px rgba(11,31,58,.08); }
 .field[data-name="passportPhoto"] img, [data-name="passportPhoto"] img { max-width: 132px; max-height: 168px; object-fit: cover; border-radius: 5px; }
 .navbar-logo-container { min-height: 100px; }

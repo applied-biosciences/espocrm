@@ -57,7 +57,14 @@
       "Report",
       "Dashboard",
       "NvWorkflowTask",
-      "NvProductionReadiness"
+      "NvProductionReadiness",
+      {
+        "type": "url",
+        "url": "#User",
+        "text": "Users",
+        "iconClass": "fas fa-users",
+        "onlyAdmin": true
+      }
     ]
   },
   {
@@ -76,7 +83,21 @@
     "itemList": [
       "Email",
       "Task",
-      "EmailTemplate"
+      "EmailTemplate",
+      {
+        "type": "url",
+        "url": "#Admin/groupEmailAccounts",
+        "text": "Email Accounts",
+        "iconClass": "fas fa-inbox",
+        "onlyAdmin": true
+      },
+      {
+        "type": "url",
+        "url": "#Admin/outboundEmails",
+        "text": "Outbound Email",
+        "iconClass": "fas fa-paper-plane",
+        "onlyAdmin": true
+      }
     ]
   }
 ]
