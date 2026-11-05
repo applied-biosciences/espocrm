@@ -1,4 +1,6 @@
-# NuriVoyage — local travel management platform v10.0.10.01
+# NuriVoyage
+
+![UTNT logo](branding/logo/utnt-logo.png) — local travel management platform v10.0.10.01
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
