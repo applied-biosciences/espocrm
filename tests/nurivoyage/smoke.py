@@ -7,7 +7,8 @@ ROOT=pathlib.Path(__file__).resolve().parents[2]
 import os
 os.chdir(ROOT)
 ENV=dict(line.split('=',1) for line in pathlib.Path('.env').read_text().splitlines() if line and not line.startswith('#'))
-BASE='http://localhost:8080/api/v1/'
+ROOT_URL=os.environ.get('NURIVOYAGE_URL','http://localhost:8080').rstrip('/')
+BASE=ROOT_URL+'/api/v1/'
 RESULTS=[]
 def cmd(*args):
     r=subprocess.run(args,text=True,capture_output=True)
@@ -79,7 +80,7 @@ try:
     check('01 Compose startup',lambda: (compose_up(),'docker compose up -d; long-running services healthy')[1])
     check('02 Container health',health_check)
     def loginpage():
-        body=urllib.request.urlopen('http://localhost:8080/').read().decode()
+        body=urllib.request.urlopen(ROOT_URL+'/').read().decode()
         assert 'EspoCRM' in body or 'NuriVoyage' in body
         return 'HTTP 200; EspoCRM application shell'
     check('03 Local login page',loginpage)

@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 REGION="${AWS_REGION:-eu-north-1}"
 PROFILE="${AWS_PROFILE:-HoldMyCoffee}"
-IMAGE_TAG="${IMAGE_TAG:-v10.0.10.01}"
+IMAGE_TAG="${IMAGE_TAG:-v10.0.11.00}"
 ECR_REPOSITORY="${ECR_REPOSITORY:-}"
 S3_BUCKET="${S3_BUCKET:-}"
 EC2_INSTANCE_ID="${EC2_INSTANCE_ID:-}"

@@ -1,4 +1,4 @@
-FROM espocrm/espocrm:10.0.10@sha256:debf48652fed511424825839185fd67e773081ee0d665ab62cbce985acb32636
+FROM espocrm/espocrm:10.0.11@sha256:8e1c7e97e0a1a08953a86af89c3808cb95410b6a5eb487d1e3475d2c7289357d
 
 # Package the UI and supported custom application extensions into the immutable amd64 release image.
 COPY custom /var/www/html/custom

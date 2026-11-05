@@ -68,6 +68,7 @@ interface SearchViewOptions {
     viewMode: string;
     viewModeList?: string[];
     filterList?: string[];
+    storageKey?: string | null,
 }
 
 interface ViewSchema {
@@ -222,7 +223,7 @@ class SearchView extends View<ViewSchema> {
 
         this.searchManager = this.options.searchManager;
 
-        this.storedTextSearchHelper = new StoredTextSearch(this.scope, this.getHelper().storage);
+        this.storedTextSearchHelper = new StoredTextSearch(this.options.storageKey ?? this.scope);
 
         this.textSearchStoringDisabled = this.getPreferences().get('textSearchStoringDisabled');
 
@@ -879,7 +880,15 @@ class SearchView extends View<ViewSchema> {
                     autocomplete.hide();
                     // 200 is hardcoded in autocomplete lib.
 
-                    setTimeout(() => this.textFilterInputElement?.focus(), 201);
+                    setTimeout(() => {
+                        if (this.textFilterInputElement && document.activeElement === this.textFilterInputElement) {
+                            $(this.textFilterInputElement).triggerHandler('focus.autocomplete');
+
+                            return;
+                        }
+
+                        this.textFilterInputElement?.focus();
+                    }, 201);
                 });
             },
         });

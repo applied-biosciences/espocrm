@@ -186,7 +186,7 @@ class AuthorizationServerTest extends BaseTestCase
 
         $codeChallenge = PkceUtil::generateCodeVerifier();
 
-        $this->obtainCodeInitital(
+        $this->obtainCodeInitial(
             client: $client,
             redirectUri: $redirectUri,
             codeChallenge: $codeChallenge,
@@ -194,6 +194,28 @@ class AuthorizationServerTest extends BaseTestCase
         );
 
         $this->authorizeCompleteScopeMismatch($client);
+    }
+
+    public function testStartExtraScopesNotAllowed(): void
+    {
+        $redirectUri = self::REDIRECT_URI;
+
+        $client = $this->createClient();
+
+        $user = $this->createUserForTest();
+
+        //
+
+        $codeChallenge = PkceUtil::generateCodeVerifier();
+
+        $this->obtainCodeInitial(
+            client: $client,
+            redirectUri: $redirectUri,
+            codeChallenge: $codeChallenge,
+            user: $user,
+            scopes: [...$this->getScopes(), Contact::ENTITY_TYPE],
+            expectedErrorCode: 400,
+        );
     }
 
     /**
@@ -676,7 +698,7 @@ class AuthorizationServerTest extends BaseTestCase
         User $user,
     ): string {
 
-        $this->obtainCodeInitital(
+        $this->obtainCodeInitial(
             client: $client,
             redirectUri: $redirectUri,
             codeChallenge: $codeChallenge,
@@ -1413,13 +1435,16 @@ class AuthorizationServerTest extends BaseTestCase
     }
 
     /**
+     * @param ?string[] $scopes
      * @noinspection PhpUnhandledExceptionInspection
      */
-    private function obtainCodeInitital(
+    private function obtainCodeInitial(
         Client $client,
         string $redirectUri,
         string $codeChallenge,
         User $user,
+        ?array $scopes = null,
+        ?int $expectedErrorCode = null,
     ): void {
 
         $session = $this->createMock(Session::class);
@@ -1434,13 +1459,19 @@ class AuthorizationServerTest extends BaseTestCase
 
         //
 
+        if ($scopes !== null) {
+            $scopesString = implode(' ', $scopes);
+        } else {
+            $scopesString = $this->getScopesString();
+        }
+
         $request = $this->createRequest(
             method: Method::GET,
             queryParams: [
                 'client_id' => $client->getIdentifier(),
                 'redirect_uri' => $redirectUri,
                 'response_type' => 'code',
-                'scope' => $this->getScopesString(),
+                'scope' => $scopesString,
                 'code_challenge' => PkceUtil::hashAndEncodeCodeVerifier($codeChallenge),
                 'code_challenge_method' => 'S256',
             ],
@@ -1471,6 +1502,12 @@ class AuthorizationServerTest extends BaseTestCase
             );
 
         $authorizeEntryPoint->run($request, $response);
+
+        if ($expectedErrorCode !== null) {
+            $this->assertEquals($expectedErrorCode, $response->getStatusCode());
+
+            return;
+        }
 
         //
 

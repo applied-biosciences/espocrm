@@ -1,17 +1,17 @@
-# NuriVoyage — local travel management platform v10.0.10.01
+# NuriVoyage — local travel management platform v10.0.11.00
 
 ![UTNT logo](branding/logo/utnt-logo.png)
 
 NuriVoyage is Nuri's Travel's local travel-management platform on this EspoCRM fork. The current development line is `codex/nurivoyage-stage-7`; Stage 6 is accepted and Stage 7 is under localhost acceptance. No AWS deployment has been made. Native EspoCRM licensing and legal notices remain intact; upstream documentation follows below.
 
-The application version shown in the login and application pages is `v10.0.10.01`. This is the NuriVoyage application version; the bundled EspoCRM distribution remains pinned to 10.0.10.
+The application version shown in the login and application pages is `v10.0.11.00`. This is the NuriVoyage application version; the bundled EspoCRM distribution is pinned to 10.0.11.
 
 ## Clone and run
 
-Prerequisites: Docker Desktop/Engine with Compose v2, Git, Python 3 (standard library only), and free localhost ports 8080, 8081, 8025, 9000, 9001. First MinIO source build requires internet access and a few minutes. The Compose image version matches the fork's package.json (10.0.10); there are no core source changes in this stage. It runs the matching official distribution with this checkout's custom directories mounted, rather than building Espo's raw development frontend.
+Prerequisites: Docker Desktop/Engine with Compose v2, Git, Python 3 (standard library only), and free localhost ports 8080, 8081, 8025, 9000, 9001. First MinIO source build requires internet access and a few minutes. The Compose image version matches the fork's package.json (10.0.11); upstream EspoCRM 10.0.11 changes are reconciled with the NuriVoyage custom directories.
 
 ```sh
-git clone --branch codex/nurivoyage-stage-1-2 https://github.com/applied-biosciences/espocrm.git
+git clone --branch release/v10.0.11.00 https://github.com/applied-biosciences/espocrm.git
 cd espocrm
 scripts/local configure
 scripts/local start
@@ -31,7 +31,7 @@ scripts/local start               # build, start, reconcile bootstrap and rebuil
 scripts/local stop                # compose down; retain data volumes
 scripts/local health-check
 scripts/local smoke               # synthetic integration tests, restarts and restore; brief downtime
-scripts/local smoke-release       # v10.0.10.01 user, PDF and email-integration checks
+scripts/local smoke-release       # v10.0.11.00 user, PDF and email-integration checks
 scripts/local smoke-stage4        # focused Stage 4 enquiry checks
 scripts/local smoke-stage5        # focused Stage 5 traveller/document checks
 scripts/local smoke-stage6        # focused Stage 6 quote/version checks
@@ -221,9 +221,9 @@ Stage 11 adds commission numbers, basis amounts, frozen rule snapshots, approval
 
 On Travel Documents, Quotes, Customer Invoices and Purchase Orders, select one or more records in the list and use **Print PDF**. The generated PDF opens in the browser for download or system printing. Record detail pages also expose Espo's standard print/PDF action menu when available.
 
-The v10.0.10.01 bootstrap keeps one active NuriVoyage PDF template for each quote, customer invoice and purchase order. Each template includes the document number, dates, status, party, itinerary, amount and description fields. Run `scripts/local smoke-release` to generate synthetic PDFs for all three types.
+The v10.0.11.00 bootstrap keeps one active NuriVoyage PDF template for each quote, customer invoice and purchase order. Each template includes the document number, dates, status, party, itinerary, amount and description fields. Run `scripts/local smoke-release` to generate synthetic PDFs for all three types.
 
-### User administration and email integration (v10.0.10.01)
+### User administration and email integration (v10.0.11.00)
 
 System Administrators can open **Management Dashboards & Reporting → User** to create and deactivate users, set their email and phone details, change passwords, and assign an authorization role such as Sales Agent, Sales + Operations Hybrid, Finance or Management. The native EspoCRM user form stores passwords through the application password service; plaintext passwords are never stored in the repository.
 

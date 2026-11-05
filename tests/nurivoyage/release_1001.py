@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Focused v10.0.10.01 regression checks for users, PDF output and email links."""
+"""Focused v10.0.11.00 regression checks for users, PDF output and email links."""
 import base64
 import json
+import os
 import pathlib
 import urllib.error
 import urllib.parse
@@ -11,7 +12,7 @@ import uuid
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 ENV = dict(line.split('=', 1) for line in (ROOT / '.env').read_text().splitlines()
            if line and not line.startswith('#') and '=' in line)
-BASE = 'http://localhost:8080/'
+BASE = os.environ.get('NURIVOYAGE_URL','http://localhost:8080').rstrip('/') + '/'
 ADMIN = (ENV['ESPO_ADMIN_USERNAME'], ENV['ESPO_ADMIN_PASSWORD'])
 
 def request(path, method='GET', data=None, user=ADMIN, expected=(200, 201)):
@@ -33,8 +34,8 @@ def get(path, user=ADMIN):
     return request(path, user=user)
 
 head = urllib.request.urlopen(BASE + 'client/custom/nurivoyage-head.js', timeout=30).read().decode()
-assert 'v10.0.10.01' in head
-print('PASS v10.0.10.01 version asset')
+assert 'v10.0.11.00' in head
+print('PASS v10.0.11.00 version asset')
 
 app = get('api/v1/App/user')
 tab_list = app['settings']['tabList']
@@ -104,4 +105,4 @@ for entity, template_name in records.items():
     assert pdf.startswith(b'%PDF-') and len(pdf) > 1000 and b'/Count 1' in pdf
     print(f'PASS generated PDF: {entity} ({len(pdf)} bytes)')
 
-print('ALL v10.0.10.01 CHECKS PASSED.')
+print('ALL v10.0.11.00 CHECKS PASSED.')
