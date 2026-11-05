@@ -2,6 +2,12 @@
 
 ![UTNT logo](branding/logo/utnt-logo.png)
 
+## v10.0.11.00 — EspoCRM 10.0.11 upstream reconciliation
+
+- Reconciled the original EspoCRM `master` baseline through v10.0.11 with the NuriVoyage v10.0.10.01 fork state.
+- Preserved the existing UTNT white-label branding, NuriVoyage custom application areas, role boundaries, local services and release smoke coverage.
+- Updated the local EspoCRM distribution pin and NuriVoyage release markers to v10.0.11.00.
+
 ## v10.0.10.01 — User administration, document PDFs and email integration
 
 - Added an administrator User management link under Management with native user creation, password changes, contact fields and role-based authorization levels.

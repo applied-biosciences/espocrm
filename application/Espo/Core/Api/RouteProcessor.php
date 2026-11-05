@@ -36,7 +36,6 @@ use Espo\Core\Utils\Config;
 use Espo\Core\Utils\Log;
 use Espo\Core\ApplicationUser;
 
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as Psr7Response;
 use Psr\Http\Message\ServerRequestInterface as Psr7Request;
 
@@ -107,11 +106,13 @@ class RouteProcessor
         $this->assertContentTypeAllowed($processData, $request);
 
         $authRequired = !$processData->getRoute()->noAuth();
+        $apiAuthForbidden = $processData->getRoute()->apiAuthForbidden();
 
         $apiAuth = $this->authBuilderFactory
             ->create()
             ->setAuthentication($this->authenticationFactory->create())
             ->setAuthRequired($authRequired)
+            ->setApiAuthForbidden($apiAuthForbidden)
             ->build();
 
         $authResult = $apiAuth->process($request, $response);

@@ -1,4 +1,4 @@
-import json, subprocess, urllib.request, sys
+import json, os, subprocess, urllib.request, sys
 result = subprocess.run(['docker','compose','ps','--format','json'],capture_output=True,text=True,check=True)
 try:
     rows=json.loads(result.stdout)
@@ -12,7 +12,8 @@ for service in ['db','crm','daemon','websocket','minio','mailpit']:
     passed=r.get('State')=='running' and r.get('Health')=='healthy'
     print(('PASS' if passed else 'FAIL')+' '+service+': '+r.get('State','missing')+'/'+r.get('Health','unknown'))
     ok &= passed
-for url in ['http://localhost:8080/','http://localhost:9000/minio/health/live','http://localhost:8025/readyz']:
+base = os.environ.get('NURIVOYAGE_URL', 'http://localhost:8080').rstrip('/')
+for url in [base + '/','http://localhost:9000/minio/health/live','http://localhost:8025/readyz']:
     try:
         with urllib.request.urlopen(url,timeout=10) as r: assert r.status==200
         print('PASS '+url)
