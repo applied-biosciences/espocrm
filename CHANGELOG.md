@@ -1,5 +1,7 @@
 # Changelog
 
+![UTNT logo](branding/logo/utnt-logo.png)
+
 ## v10.0.10.01 — User administration, document PDFs and email integration
 
 - Added an administrator User management link under Management with native user creation, password changes, contact fields and role-based authorization levels.
