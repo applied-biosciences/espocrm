@@ -1,0 +1,55 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "fromCurrency"
+        }
+      ],
+      [
+        {
+          "name": "toCurrency"
+        },
+        {
+          "name": "sourceAmount"
+        }
+      ],
+      [
+        {
+          "name": "rate"
+        },
+        {
+          "name": "convertedAmount"
+        }
+      ],
+      [
+        {
+          "name": "taxAmount"
+        },
+        {
+          "name": "taxRate"
+        }
+      ],
+      [
+        {
+          "name": "snapshotAt"
+        },
+        {
+          "name": "provider"
+        }
+      ],
+      [
+        {
+          "name": "providerReference"
+        },
+        {
+          "name": "calculationContext"
+        }
+      ]
+    ]
+  }
+]

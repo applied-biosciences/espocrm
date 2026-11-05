@@ -1,0 +1,103 @@
+[
+  {
+    "text": "Sales",
+    "iconClass": "fas fa-compass",
+    "itemList": [
+      "Lead",
+      "NvEnquiry",
+      "Account",
+      "Contact",
+      "NvTraveller",
+      "NvQuote",
+      "NvBooking",
+      "NvPackage"
+    ]
+  },
+  {
+    "text": "Operations",
+    "iconClass": "fas fa-plane",
+    "itemList": [
+      "NvBooking",
+      "NvBookingItem",
+      "NvTraveller",
+      "NvFlight",
+      "NvHotel",
+      "NvTransfer",
+      "NvSightseeing",
+      "NvItinerarySegment",
+      "NvVisa",
+      "NvTravelDocument",
+      "Document"
+    ]
+  },
+  {
+    "text": "Purchasing & Finance",
+    "iconClass": "fas fa-coins",
+    "itemList": [
+      "NvAgent",
+      "NvSupplier",
+      "NvPurchaseOrder",
+      "NvSupplierBill",
+      "NvCustomerInvoice",
+      "NvCustomerPayment",
+      "NvSupplierPayment",
+      "NvCommission",
+      "NvFxRate",
+      "NvPerformanceReport",
+      "NvTaxRule",
+      "NvConversionSnapshot"
+    ]
+  },
+  {
+    "text": "Management Dashboards & Reporting",
+    "iconClass": "fas fa-chart-line",
+    "itemList": [
+      "NvCommunication",
+      "NvPerformanceReport",
+      "Report",
+      "Dashboard",
+      "NvWorkflowTask",
+      "NvProductionReadiness",
+      {
+        "type": "url",
+        "url": "#User",
+        "text": "Users",
+        "iconClass": "fas fa-users",
+        "onlyAdmin": true
+      }
+    ]
+  },
+  {
+    "text": "Security & Governance",
+    "iconClass": "fas fa-shield-alt",
+    "itemList": ["NvSecurityAudit", "NvConsent", "NvAccessReview", "NvRetentionRule", "NvGovernanceCheck"]
+  },
+  {
+    "text": "Integrations & Portal",
+    "iconClass": "fas fa-plug",
+    "itemList": ["NvApiClient", "NvPortalAccess", "NvIntegrationEndpoint"]
+  },
+  {
+    "text": "Workspace",
+    "iconClass": "fas fa-envelope",
+    "itemList": [
+      "Email",
+      "Task",
+      "EmailTemplate",
+      {
+        "type": "url",
+        "url": "#Admin/groupEmailAccounts",
+        "text": "Email Accounts",
+        "iconClass": "fas fa-inbox",
+        "onlyAdmin": true
+      },
+      {
+        "type": "url",
+        "url": "#Admin/outboundEmails",
+        "text": "Outbound Email",
+        "iconClass": "fas fa-paper-plane",
+        "onlyAdmin": true
+      }
+    ]
+  }
+]

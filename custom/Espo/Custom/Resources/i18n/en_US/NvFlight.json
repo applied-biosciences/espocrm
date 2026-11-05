@@ -1,0 +1,14 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "bookingItem": "Booking Item",
+    "departure": "Departure",
+    "flightNumber": "Flight Number",
+    "route": "Route",
+    "confirmation": "Confirmation"
+  },
+  "labels": {
+    "Create NvFlight": "Create Flight"
+  }
+}

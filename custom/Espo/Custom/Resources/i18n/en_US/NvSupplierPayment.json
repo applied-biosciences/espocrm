@@ -1,0 +1,13 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "supplierBill": "Supplier Bill",
+    "amount": "Amount",
+    "paymentDate": "Payment Date",
+    "reference": "Reference"
+  },
+  "labels": {
+    "Create NvSupplierPayment": "Create Supplier Payment"
+  }
+}

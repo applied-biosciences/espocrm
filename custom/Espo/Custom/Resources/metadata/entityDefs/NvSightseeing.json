@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "name": { "type": "varchar", "required": true, "pattern": "$noBadCharacters" },
+    "description": { "type": "text" },
+    "booking": { "type": "link" },
+    "city": { "type": "varchar", "required": true },
+    "activityDate": { "type": "date" },
+    "cost": { "type": "currency", "min": 0 },
+    "status": { "type": "enum", "options": ["Planned", "Booked", "Completed", "Cancelled"], "default": "Planned", "audited": true },
+    "assignedUser": { "type": "link", "view": "views/fields/assigned-user" }
+  },
+  "links": { "booking": { "type": "belongsTo", "entity": "NvBooking" }, "assignedUser": { "type": "belongsTo", "entity": "User" } },
+  "collection": { "orderBy": "activityDate", "order": "asc" },
+  "indexes": { "name": { "columns": ["name", "deleted"] }, "booking": { "columns": ["bookingId", "deleted"] } }
+}

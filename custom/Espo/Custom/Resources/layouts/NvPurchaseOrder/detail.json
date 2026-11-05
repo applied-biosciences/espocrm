@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [ { "name": "purchaseOrderNumber" }, { "name": "supplierReference" } ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "status"
+        }
+      ],
+      [
+        {
+          "name": "amount"
+        },
+        {
+          "name": "dueDate"
+        }
+      ],
+      [ { "name": "requestedAt" }, { "name": "confirmedAt" } ],
+      [
+        false,
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

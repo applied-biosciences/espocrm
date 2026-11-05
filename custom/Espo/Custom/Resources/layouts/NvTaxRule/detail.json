@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "country"
+        }
+      ],
+      [
+        {
+          "name": "taxType"
+        },
+        {
+          "name": "rate"
+        }
+      ],
+      [
+        {
+          "name": "effectiveFrom"
+        },
+        {
+          "name": "effectiveTo"
+        }
+      ],
+      [
+        {
+          "name": "active"
+        },
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

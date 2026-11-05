@@ -1,0 +1,1 @@
+{"scopeNames":{"NvApiClient":"API Client","NvApiClientPlural":"API Clients"},"fields":{"clientType":"Client Type","status":"Status","owner":"Owner","scopes":"Scopes","lastUsedAt":"Last Used","expiresAt":"Expires At","rateLimitPerMinute":"Rate Limit / Minute","secretReference":"Secret Reference","notes":"Notes"},"labels":{"Create NvApiClient":"Create API Client"}}

@@ -1,0 +1,43 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "purchaseOrder"
+        }
+      ],
+      [
+        {
+          "name": "status"
+        },
+        {
+          "name": "amount"
+        }
+      ],
+      [
+        {
+          "name": "dueDate"
+        },
+        false
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

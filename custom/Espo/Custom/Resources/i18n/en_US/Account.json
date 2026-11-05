@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "travellers": "Group Travellers (+ / −)",
+    "customerNumber": "Customer Number"
+  },
+  "links": {
+    "travellers": "Group Travellers"
+  }
+}

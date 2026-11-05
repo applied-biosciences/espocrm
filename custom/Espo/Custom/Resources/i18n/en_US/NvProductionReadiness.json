@@ -1,0 +1,1 @@
+{"scopeNames":{"NvProductionReadiness":"Production Readiness","NvProductionReadinessPlural":"Production Readiness"},"fields":{"checkType":"Check Type","status":"Status","checkedAt":"Checked At","owner":"Owner","evidence":"Evidence","details":"Details","nextReviewAt":"Next Review"},"labels":{"Create NvProductionReadiness":"Create Readiness Check"}}

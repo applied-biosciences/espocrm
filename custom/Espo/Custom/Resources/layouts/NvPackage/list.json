@@ -1,0 +1,16 @@
+[
+  {
+    "name": "name",
+    "link": true
+  },
+  {
+    "name": "destination"
+  },
+  { "name": "productType" },
+  { "name": "supplier" },
+  { "name": "supplierCost" },
+  { "name": "active" },
+  {
+    "name": "assignedUser"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "supplier": "Supplier",
+    "bookingItem": "Booking Item",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "confirmation": "Confirmation",
+    "city": "City",
+    "staySequence": "Stay Sequence"
+    ,"itinerarySegment": "City Stop"
+    ,"cost": "Hotel Cost"
+  },
+  "links": { "itinerarySegment": "City Stop" },
+  "labels": {
+    "Create NvHotel": "Create Hotel"
+  }
+}

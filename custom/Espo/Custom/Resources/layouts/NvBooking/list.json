@@ -1,0 +1,15 @@
+[
+  {
+    "name": "name",
+    "link": true
+  },
+  {
+    "name": "status"
+  },
+  { "name": "bookingReference" },
+  { "name": "destination" },
+  { "name": "travelDate" },
+  {
+    "name": "assignedUser"
+  }
+]

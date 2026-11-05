@@ -1,0 +1,73 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "customer"
+        }
+      ],
+      [
+        { "name": "leadTraveller" },
+        false
+      ],
+      [
+        {
+          "name": "enquiry"
+        },
+        {
+          "name": "package"
+        }
+      ],
+      [
+        {
+          "name": "status"
+        },
+        {
+          "name": "supplierStatus"
+        }
+      ],
+      [
+        {
+          "name": "sellingPrice"
+        },
+        {
+          "name": "travelDate"
+        }
+      ],
+      [
+        {
+          "name": "returnDate"
+        },
+        {
+          "name": "bookingReference"
+        }
+      ],
+      [
+        { "name": "itineraryTitle" },
+        { "name": "destination" }
+      ],
+      [
+        { "name": "departureCity" },
+        { "name": "arrivalCity" }
+      ],
+      [
+        { "name": "travellerCount" },
+        { "name": "confirmedAt" }
+      ],
+      [
+        false,
+        { "name": "itineraryNotes" }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

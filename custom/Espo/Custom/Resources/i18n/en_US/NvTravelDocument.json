@@ -1,0 +1,25 @@
+{
+  "fields": {
+    "booking": "Booking",
+    "traveller": "Traveller",
+    "file": "File",
+    "documentType": "Document Type",
+    "expiryDate": "Expiry Date",
+    "documentNumber": "Document Number",
+    "countryOfIssue": "Country of Issue",
+    "issueDate": "Issue Date",
+    "verificationStatus": "Verification Status",
+    "verifiedAt": "Verified At",
+    "verifiedBy": "Verified By",
+    "verificationHistory": "Verification History",
+    "retentionRule": "Retention Rule",
+    "retentionUntil": "Retain Until",
+    "expiryAlertDays": "Expiry Alert (Days)",
+    "checklistStatus": "Checklist Status",
+    "pdfReady": "PDF Ready",
+    "printable": "Printable"
+  },
+  "labels": {
+    "Create NvTravelDocument": "Create Travel Document"
+  }
+}

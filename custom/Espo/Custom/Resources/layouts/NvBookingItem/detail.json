@@ -1,0 +1,43 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "productType"
+        }
+      ],
+      [
+        {
+          "name": "sellingPrice"
+        },
+        {
+          "name": "purchaseCost"
+        }
+      ],
+      [
+        {
+          "name": "supplierStatus"
+        },
+        false
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

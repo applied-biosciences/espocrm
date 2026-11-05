@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "paymentNumber": "Payment Number",
+    "booking": "Booking",
+    "customer": "Customer",
+    "customerInvoice": "Customer Invoice",
+    "amount": "Amount",
+    "paymentDate": "Payment Date",
+    "reference": "Reference",
+    "paymentType": "Payment Type",
+    "allocatedAmount": "Allocated Amount"
+  },
+  "labels": {
+    "Create NvCustomerPayment": "Create Customer Payment"
+  }
+}

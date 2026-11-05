@@ -1,0 +1,35 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "fromCurrency"
+        }
+      ],
+      [
+        {
+          "name": "toCurrency"
+        },
+        {
+          "name": "rate"
+        }
+      ],
+      [
+        {
+          "name": "rateDate"
+        },
+        false
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

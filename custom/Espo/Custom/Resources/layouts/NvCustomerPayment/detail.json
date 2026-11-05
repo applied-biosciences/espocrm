@@ -1,0 +1,45 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [ { "name": "paymentNumber" }, { "name": "paymentType" } ],
+      [
+        {
+          "name": "customer"
+        },
+        {
+          "name": "customerInvoice"
+        }
+      ],
+      [
+        {
+          "name": "amount"
+        },
+        {
+          "name": "paymentDate"
+        }
+      ],
+      [ { "name": "allocatedAmount" }, { "name": "paymentDate" } ],
+      [
+        {
+          "name": "reference"
+        },
+        false
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

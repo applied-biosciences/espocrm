@@ -1,0 +1,33 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "destination"
+        }
+      ],
+      [
+        {
+          "name": "sellingPrice"
+        },
+        {
+          "name": "durationDays"
+        }
+      ],
+      [ { "name": "productType" }, { "name": "supplier" } ],
+      [ { "name": "supplierProductCode" }, { "name": "supplierCost" } ],
+      [ { "name": "validFrom" }, { "name": "validTo" } ],
+      [ { "name": "active" }, false ],
+      [
+        false,
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

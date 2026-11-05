@@ -1,0 +1,91 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "traveller"
+        },
+        {
+          "name": "file"
+        }
+      ],
+      [
+        {
+          "name": "documentType"
+        },
+        {
+          "name": "expiryDate"
+        }
+      ],
+      [
+        {
+          "name": "documentNumber"
+        },
+        {
+          "name": "countryOfIssue"
+        }
+      ],
+      [
+        {
+          "name": "issueDate"
+        },
+        {
+          "name": "verificationStatus"
+        }
+      ],
+      [
+        {
+          "name": "verifiedAt"
+        },
+        {
+          "name": "verifiedBy"
+        }
+      ],
+      [
+        {
+          "name": "retentionRule"
+        },
+        {
+          "name": "retentionUntil"
+        }
+      ],
+      [
+        {
+          "name": "expiryAlertDays"
+        },
+        {
+          "name": "checklistStatus"
+        }
+      ],
+      [
+        {
+          "name": "pdfReady"
+        },
+        {
+          "name": "printable"
+        }
+      ],
+      [
+        {
+          "name": "verificationHistory"
+        },
+        false
+      ],
+      [
+        false,
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

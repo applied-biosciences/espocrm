@@ -1,0 +1,18 @@
+{
+  "fields": {
+    "enquiry": "Enquiry",
+    "customer": "Customer",
+    "booking": "Booking",
+    "status": "Status",
+    "sellingPrice": "Selling Price",
+    "validUntil": "Valid Until",
+    "quoteNumber": "Quote Number",
+    "optionName": "Option Name",
+    "sentAt": "Sent At",
+    "acceptedAt": "Accepted At",
+    "lostReason": "Lost Reason"
+  },
+  "labels": {
+    "Create NvQuote": "Create Quote"
+  }
+}

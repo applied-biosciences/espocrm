@@ -1,0 +1,46 @@
+{
+  "stylesheet": "client/custom/css/nurivoyage.css",
+  "stylesheetIframe": "client/custom/css/nurivoyage-iframe.css",
+  "logo": "client/custom/branding/utnt-logo.png",
+  "textColor": "#0B1F3A",
+  "hoverColor": "#123B7A",
+  "isDark": false,
+  "params": {
+    "navbar": {
+      "type": "enum",
+      "default": "side",
+      "options": [
+        "side"
+      ]
+    },
+    "direction": {
+      "type": "enum",
+      "default": "ltr",
+      "options": [
+        "ltr",
+        "rtl"
+      ]
+    }
+  },
+  "navbarHeight": 40,
+  "dashboardCellHeight": 40,
+  "dashboardCellMargin": 16,
+  "fontSize": 14,
+  "chartGridColor": "#D4E3EC",
+  "chartTickColor": "#D4E3EC",
+  "chartSuccessColor": "#23654B",
+  "chartColorList": [
+    "#123B7A",
+    "#C9A227",
+    "#267B82",
+    "#6262A0",
+    "#0B1F3A",
+    "#527097"
+  ],
+  "chartColorAlternativeList": [
+    "#123B7A",
+    "#267B82",
+    "#6262A0",
+    "#C9A227"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "invoiceNumber": "Invoice Number",
+    "booking": "Booking",
+    "customer": "Customer",
+    "status": "Status",
+    "amount": "Amount",
+    "dueDate": "Due Date",
+    "paidAmount": "Paid Amount",
+    "balanceAmount": "Balance Amount"
+  },
+  "labels": {
+    "Create NvCustomerInvoice": "Create Customer Invoice"
+  }
+}

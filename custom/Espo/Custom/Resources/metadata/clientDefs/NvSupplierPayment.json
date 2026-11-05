@@ -1,0 +1,7 @@
+{
+  "controller": "controllers/record",
+  "iconClass": "fas fa-money-bill-wave",
+  "boolFilterList": [
+    "onlyMy"
+  ]
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "name",
+    "link": true
+  },
+  { "name": "city" },
+  { "name": "checkIn" },
+  { "name": "checkOut" },
+  { "name": "cost" },
+  { "name": "booking" }
+]

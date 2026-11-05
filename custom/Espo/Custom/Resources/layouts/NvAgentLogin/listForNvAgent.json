@@ -1,0 +1,6 @@
+[
+  {"name":"eventType"},
+  {"name":"eventAt"},
+  {"name":"ipAddress"},
+  {"name":"userAgent"}
+]

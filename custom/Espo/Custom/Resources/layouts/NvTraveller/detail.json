@@ -1,0 +1,54 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        { "name": "travellerNumber" }
+      ],
+      [
+        {
+          "name": "customer"
+        }
+        ,{ "name": "booking" }
+      ],
+      [
+        {
+          "name": "dateOfBirth"
+        }, false
+      ],
+      [
+        {
+          "name": "nationality"
+        },
+        {
+          "name": "passportNumber"
+        }
+      ],
+      [
+        { "name": "passportCountry" },
+        { "name": "passportIssueDate" }
+      ],
+      [
+        { "name": "passportExpiryDate" },
+        false
+      ],
+      [
+        { "name": "passportPhoto" },
+        false
+      ],
+      [
+        { "name": "isLeadTraveller" },
+        { "name": "groupReference" }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

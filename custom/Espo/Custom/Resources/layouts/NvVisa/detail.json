@@ -1,0 +1,43 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "traveller"
+        }
+      ],
+      [
+        {
+          "name": "bookingItem"
+        },
+        {
+          "name": "status"
+        }
+      ],
+      [
+        {
+          "name": "country"
+        },
+        false
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

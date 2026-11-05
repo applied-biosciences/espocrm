@@ -1,0 +1,51 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "bookingItem"
+        }
+      ],
+      [
+        {
+          "name": "pickupAt"
+        },
+        {
+          "name": "pickupLocation"
+        }
+      ],
+      [
+        {
+          "name": "confirmation"
+        },
+        false
+      ],
+      [
+        { "name": "transferType" },
+        { "name": "cost" }
+      ],
+      [
+        { "name": "originCity" },
+        { "name": "destinationCity" }
+      ],
+      [
+        {
+          "name": "description"
+        },
+        false
+      ]
+    ]
+  }
+]

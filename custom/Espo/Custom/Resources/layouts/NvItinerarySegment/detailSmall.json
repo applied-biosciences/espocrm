@@ -1,0 +1,13 @@
+[
+  {
+    "label": "City Stop",
+    "rows": [
+      [ { "name": "name" }, { "name": "booking" } ],
+      [ { "name": "sequence" }, { "name": "city" } ],
+      [ { "name": "arrivalDate" }, { "name": "departureDate" } ],
+      [ { "name": "transferFromCity" }, { "name": "transferMode" } ],
+      [ { "name": "transferCost" }, { "name": "transferCostCurrency" } ],
+      [ { "name": "notes", "fullWidth": true } ]
+    ]
+  }
+]

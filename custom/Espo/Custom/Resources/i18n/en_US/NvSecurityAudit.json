@@ -1,0 +1,1 @@
+{"scopeNames":{"NvSecurityAudit":"Security Audit","NvSecurityAuditPlural":"Security Audit"},"fields":{"eventType":"Event Type","severity":"Severity","user":"User","occurredAt":"Occurred At","targetEntity":"Target Entity","targetId":"Target ID","ipAddress":"IP Address","details":"Details","immutable":"Immutable"},"labels":{"Create NvSecurityAudit":"Create Audit Event"}}

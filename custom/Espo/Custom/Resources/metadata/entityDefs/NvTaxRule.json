@@ -1,0 +1,1 @@
+{"fields":{"name":{"type":"varchar","required":true},"country":{"type":"varchar"},"taxType":{"type":"enum","options":["VAT","GST","Tourism Levy","Other"]},"rate":{"type":"float","min":0},"effectiveFrom":{"type":"date"},"effectiveTo":{"type":"date"},"active":{"type":"bool","default":true},"description":{"type":"text"}},"collection":{"orderBy":"effectiveFrom","order":"desc"}}

@@ -1,0 +1,15 @@
+[
+  {
+    "name": "name",
+    "link": true
+  },
+  { "name": "travellerNumber" },
+  {
+    "name": "customer"
+  },
+  { "name": "nationality" },
+  { "name": "passportExpiryDate" },
+  {
+    "name": "assignedUser"
+  }
+]

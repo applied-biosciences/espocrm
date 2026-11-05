@@ -1,0 +1,149 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "required": true,
+      "pattern": "$noBadCharacters"
+    },
+    "description": {
+      "type": "text"
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "readOnly": true,
+      "view": "views/fields/user"
+    },
+    "modifiedBy": {
+      "type": "link",
+      "readOnly": true,
+      "view": "views/fields/user"
+    },
+    "assignedUser": {
+      "type": "link",
+      "required": false,
+      "view": "views/fields/assigned-user"
+    },
+    "teams": {
+      "type": "linkMultiple",
+      "view": "views/fields/teams"
+    },
+    "enquiry": {
+      "type": "link"
+    },
+    "customer": {
+      "type": "link"
+    },
+    "booking": {
+      "type": "link"
+    },
+    "quoteNumber": {
+      "type": "varchar",
+      "audited": true
+    },
+    "optionName": {
+      "type": "varchar"
+    },
+    "status": {
+      "type": "enum",
+      "options": [
+        "Draft",
+        "Sent",
+        "Accepted",
+        "Lost",
+        "Cancelled",
+        "Expired Quote"
+      ],
+      "default": "Draft",
+      "audited": true
+    },
+    "sellingPrice": {
+      "type": "currency",
+      "min": 0
+    },
+    "validUntil": {
+      "type": "date"
+    },
+    "sentAt": {
+      "type": "datetime",
+      "audited": true
+    },
+    "acceptedAt": {
+      "type": "datetime",
+      "audited": true
+    },
+    "lostReason": {
+      "type": "enum",
+      "options": ["Price", "No Response", "Travel Cancelled", "Chose Another Provider", "Dates Unavailable", "Other"]
+    }
+  },
+  "links": {
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "teams": {
+      "type": "hasMany",
+      "entity": "Team",
+      "relationName": "entityTeam",
+      "layoutRelationshipsDisabled": true
+    },
+    "enquiry": {
+      "type": "belongsTo",
+      "entity": "NvEnquiry"
+    },
+    "customer": {
+      "type": "belongsTo",
+      "entity": "Account"
+    },
+    "booking": {
+      "type": "belongsTo",
+      "entity": "NvBooking"
+    }
+  },
+  "collection": {
+    "orderBy": "createdAt",
+    "order": "desc"
+  },
+  "indexes": {
+    "name": {
+      "columns": [
+        "name",
+        "deleted"
+      ]
+    },
+    "assignedUser": {
+      "columns": [
+        "assignedUserId",
+        "deleted"
+      ]
+    },
+    "createdAt": {
+      "columns": [
+        "createdAt"
+      ]
+    },
+    "createdAtId": {
+      "unique": true,
+      "columns": [
+        "createdAt",
+        "id"
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [
+        {
+          "name": "supplier"
+        },
+        {
+          "name": "bookingItem"
+        }
+      ],
+      [
+        {
+          "name": "departure"
+        },
+        {
+          "name": "flightNumber"
+        }
+      ],
+      [
+        {
+          "name": "route"
+        },
+        {
+          "name": "confirmation"
+        }
+      ],
+      [
+        false,
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

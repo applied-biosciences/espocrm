@@ -1,0 +1,14 @@
+NuriVoyage — Travel Management Platform
+Nuri's Travel
+
+Purchase order
+Dear [[SUPPLIER_NAME]],
+
+Please review this purchase order and confirm availability and booking details.
+Reference: [[DOCUMENT_NUMBER]]
+Total: [[CURRENCY]] [[TOTAL]]
+[[DOCUMENT_MESSAGE_OR_ATTACHMENT_NOTE]]
+
+Nuri's Travel
+[[CONSULTANT_NAME]] — [[CONTACT_DETAILS]]
+Local synthetic preview only.

@@ -1,0 +1,506 @@
+{
+  "recordedUtc": "2026-10-17T04:21:05.259Z",
+  "method": "Desktop CUA browser automation; read-only DOM measurements and native UI actions",
+  "checks": [
+    {
+      "screen": "bookings",
+      "width": 1440,
+      "height": 900,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210404",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 1429,
+        "themeColor": "#C9A227",
+        "width": 1440
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "bookings",
+      "width": 1280,
+      "height": 800,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210404",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 1269,
+        "themeColor": "#C9A227",
+        "width": 1280
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "bookings",
+      "width": 768,
+      "height": 1024,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210404",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 757,
+        "themeColor": "#C9A227",
+        "width": 768
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "bookings",
+      "width": 390,
+      "height": 844,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210404",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 379,
+        "themeColor": "#C9A227",
+        "width": 390
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "mobile navigation",
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "result": "Menu expanded through the labelled toggle; Sales/Operations/Purchasing/Workspace usable"
+    },
+    {
+      "screen": "booking form",
+      "width": 390,
+      "height": 844,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210404",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 379,
+        "themeColor": "#C9A227",
+        "width": 390
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "login",
+      "width": 1440,
+      "height": 900,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210520",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/login.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": true,
+        "logoLoaded": true,
+        "navigation": false,
+        "scrollWidth": 1429,
+        "themeColor": "#C9A227",
+        "width": 1440,
+        "controls": {
+          "buttonFits": true,
+          "buttonHeight": 46,
+          "descriptor": true,
+          "fieldsLabelled": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "login",
+      "width": 1280,
+      "height": 800,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210520",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/login.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": true,
+        "logoLoaded": true,
+        "navigation": false,
+        "scrollWidth": 1269,
+        "themeColor": "#C9A227",
+        "width": 1280,
+        "controls": {
+          "buttonFits": true,
+          "buttonHeight": 46,
+          "descriptor": true,
+          "fieldsLabelled": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "login",
+      "width": 768,
+      "height": 1024,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210520",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/login.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": true,
+        "logoLoaded": true,
+        "navigation": false,
+        "scrollWidth": 757,
+        "themeColor": "#C9A227",
+        "width": 768,
+        "controls": {
+          "buttonFits": true,
+          "buttonHeight": 46,
+          "descriptor": true,
+          "fieldsLabelled": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "login",
+      "width": 390,
+      "height": 844,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210520",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/login.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": true,
+        "logoLoaded": true,
+        "navigation": false,
+        "scrollWidth": 379,
+        "themeColor": "#C9A227",
+        "width": 390,
+        "controls": {
+          "buttonFits": true,
+          "buttonHeight": 46,
+          "descriptor": true,
+          "fieldsLabelled": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "role navigation sales",
+      "width": 1280,
+      "height": 800,
+      "status": "PASS",
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "groups": [
+          "Sales",
+          "Operations",
+          "Purchasing & Finance",
+          "Workspace"
+        ],
+        "links": [
+          "#",
+          "#Lead",
+          "#NvEnquiry",
+          "#Account",
+          "#Contact",
+          "#NvQuote",
+          "#NvBooking",
+          "#NvPackage",
+          "#NvBookingItem",
+          "#NvCustomerInvoice",
+          "#NvCustomerPayment",
+          "#NvCommission",
+          "#Email",
+          "#Task"
+        ]
+      }
+    },
+    {
+      "screen": "role navigation hybrid",
+      "width": 1280,
+      "height": 800,
+      "status": "PASS",
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "groups": [
+          "Sales",
+          "Operations",
+          "Purchasing & Finance",
+          "Workspace"
+        ],
+        "links": [
+          "#",
+          "#Lead",
+          "#NvEnquiry",
+          "#Account",
+          "#Contact",
+          "#NvQuote",
+          "#NvBooking",
+          "#NvPackage",
+          "#NvBookingItem",
+          "#NvTraveller",
+          "#NvFlight",
+          "#NvHotel",
+          "#NvTransfer",
+          "#NvVisa",
+          "#NvTravelDocument",
+          "#Document",
+          "#NvSupplier",
+          "#NvCustomerInvoice",
+          "#NvCustomerPayment",
+          "#NvCommission",
+          "#Email",
+          "#Task"
+        ]
+      }
+    },
+    {
+      "screen": "role navigation finance",
+      "width": 1280,
+      "height": 800,
+      "status": "PASS",
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "groups": [
+          "Sales",
+          "Operations",
+          "Purchasing & Finance",
+          "Workspace"
+        ],
+        "links": [
+          "#",
+          "#Account",
+          "#Contact",
+          "#NvBooking",
+          "#NvBookingItem",
+          "#NvSupplier",
+          "#NvPurchaseOrder",
+          "#NvSupplierBill",
+          "#NvCustomerInvoice",
+          "#NvCustomerPayment",
+          "#NvSupplierPayment",
+          "#NvCommission",
+          "#NvFxRate",
+          "#Email",
+          "#Task"
+        ]
+      }
+    },
+    {
+      "screen": "role navigation manager",
+      "width": 1280,
+      "height": 800,
+      "status": "PASS",
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "groups": [
+          "Sales",
+          "Operations",
+          "Purchasing & Finance",
+          "Workspace"
+        ],
+        "links": [
+          "#",
+          "#Lead",
+          "#NvEnquiry",
+          "#Account",
+          "#Contact",
+          "#NvQuote",
+          "#NvBooking",
+          "#NvPackage",
+          "#NvBookingItem",
+          "#NvTraveller",
+          "#NvFlight",
+          "#NvHotel",
+          "#NvTransfer",
+          "#NvVisa",
+          "#NvTravelDocument",
+          "#Document",
+          "#NvSupplier",
+          "#NvPurchaseOrder",
+          "#NvSupplierBill",
+          "#NvCustomerInvoice",
+          "#NvCustomerPayment",
+          "#NvSupplierPayment",
+          "#NvCommission",
+          "#NvFxRate",
+          "#Email",
+          "#Task",
+          "#EmailTemplate"
+        ]
+      }
+    },
+    {
+      "screen": "login after restart and restore",
+      "width": 1440,
+      "height": 900,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210763",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/login.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": true,
+        "logoLoaded": true,
+        "navigation": false,
+        "scrollWidth": 1429,
+        "themeColor": "#C9A227",
+        "width": 1440
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "bookings after restart and restore",
+      "width": 1440,
+      "height": 900,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210763",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/login.js?r=1792186331",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 1429,
+        "themeColor": "#C9A227",
+        "width": 1440
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "booking form after layout polish",
+      "width": 390,
+      "height": 844,
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "brandName": "NuriVoyage",
+        "customAssetNodes": [
+          "client/custom/nurivoyage-head.js?r=1792186331",
+          "client/custom/css/nurivoyage.css?r=1792210763",
+          "client/custom/branding/plane.png",
+          "client/custom/branding/plane.png",
+          "http://localhost:8080/client/custom/src/views/nurivoyage/navbar.js?r=1792186331",
+          "client/custom/branding/utnt-logo.png"
+        ],
+        "loginVisible": false,
+        "logoLoaded": true,
+        "navigation": true,
+        "scrollWidth": 379,
+        "themeColor": "#C9A227",
+        "width": 390
+      },
+      "status": "PASS"
+    },
+    {
+      "screen": "PDF layout foundation preview",
+      "width": 1440,
+      "height": 900,
+      "status": "PASS",
+      "result": {
+        "background": "rgb(194, 249, 255)",
+        "hasPlaceholders": true,
+        "images": true,
+        "overflow": false,
+        "themeColor": "#C9A227"
+      }
+    }
+  ],
+  "browserErrors": [
+    {
+      "level": "error",
+      "message": "Autobahn not connected",
+      "timestamp": "2026-10-17T04:17:42.633Z",
+      "url": "http://localhost:8080/client/lib/espo.js?r=1792186331"
+    },
+    {
+      "level": "error",
+      "message": "Autobahn not connected",
+      "timestamp": "2026-10-17T04:17:43.690Z",
+      "url": "http://localhost:8080/client/lib/espo.js?r=1792186331"
+    },
+    {
+      "level": "error",
+      "message": "Autobahn not connected",
+      "timestamp": "2026-10-17T04:17:44.872Z",
+      "url": "http://localhost:8080/client/lib/espo.js?r=1792186331"
+    },
+    {
+      "level": "error",
+      "message": "Autobahn not connected",
+      "timestamp": "2026-10-17T04:17:45.988Z",
+      "url": "http://localhost:8080/client/lib/espo.js?r=1792186331"
+    }
+  ]
+}

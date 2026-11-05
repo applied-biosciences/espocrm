@@ -1,0 +1,1 @@
+{"scopeNames":{"NvCommunication":"Customer Communication","NvCommunicationPlural":"Customer Communications"},"fields":{"name":"Subject","channel":"Channel","direction":"Direction","status":"Status","customer":"Customer","booking":"Booking","message":"Message","sentAt":"Sent At","templateName":"Template"}}

@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "booking"
+        }
+      ],
+      [ { "name": "invoiceNumber" }, { "name": "status" } ],
+      [
+        {
+          "name": "customer"
+        },
+        {
+          "name": "status"
+        }
+      ],
+      [
+        {
+          "name": "amount"
+        },
+        {
+          "name": "dueDate"
+        }
+      ],
+      [ { "name": "paidAmount" }, { "name": "balanceAmount" } ],
+      [
+        false,
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [
+        {
+          "name": "name"
+        },
+        {
+          "name": "emailAddress"
+        }
+      ],
+      [
+        {
+          "name": "phoneNumber"
+        },
+        { "name": "contactName" },
+        { "name": "supplierCode" }
+      ],
+      [
+        { "name": "website" },
+        {
+          "name": "category"
+        }
+      ],
+      [ { "name": "active" }, false ],
+      [
+        false,
+        {
+          "name": "description"
+        }
+      ]
+    ]
+  }
+]
